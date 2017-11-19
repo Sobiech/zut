@@ -163,7 +163,7 @@ H = [ H_1 ; H_2;  H_3;  H_4 ;  H_5 ;  H_6 ;  H_7;   H_8;   H_9 ;  H_10 ;  H_11 ;
 % ktora z kolei kombinacja
 matrixIndex
 
-% maksymalna wartosc
+% maksymalna pojemnosc integarlana wynosi
 hMax
 
-% sa to x2x3 (H8)
+% zmienne okreœlaj¹ce maksymalna wartoœæ dla pojemnoœci integralnej to x2 i x3 (H8)
