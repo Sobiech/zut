@@ -14,11 +14,30 @@ namespace CsLabs04
         private float pX;
         private float pY;
 
+        private Pen pen;
+
+        private int penSize;
+        private Color selectedColor;
+
         public MainWindow()
         {
-            InitializeComponent();
 
-            drawing = new Bitmap(panel1.Width, panel1.Height, panel1.CreateGraphics());
+            InitializeComponent();
+            Console.SetOut(new ConsoleWriter(logger));
+            Console.WriteLine("Inicjalizacja aplikacji");
+            penSize = 4;
+            selectedColor = Color.Black;
+
+            initializePen();
+
+            initializeGraphics();
+
+        }
+
+        private void initializeGraphics()
+        {
+
+            drawing = new Bitmap(panel1.Width - 5, panel1.Height - 5, panel1.CreateGraphics());
             Graphics.FromImage(drawing).Clear(Color.White);
         }
 
@@ -28,9 +47,7 @@ namespace CsLabs04
             {
                 Graphics panel = Graphics.FromImage(drawing);
 
-                Pen pen = new Pen(Color.Black, 14);
-
-                panel.DrawLine(Pens.Black, pX, pY, e.X, e.Y);
+                panel.DrawLine(pen, pX, pY, e.X, e.Y);
 
                 panel1.CreateGraphics().DrawImageUnscaled(drawing, new Point(0, 0));
             }
@@ -55,6 +72,38 @@ namespace CsLabs04
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.DrawImageUnscaled(drawing, new Point(0, 0));
+        }
+
+        private void colorBtn_Click(object sender, EventArgs e)
+        {
+            colorDialog1.ShowDialog();
+
+            selectedColor = colorDialog1.Color;
+            colorBtn.BackColor = selectedColor;
+            initializePen();
+        }
+
+        private void fontSizeIndex_Changed(object sender, EventArgs e)
+        {
+            this.penSize = this.fontSizeCb.SelectedIndex + 1;
+            initializePen();
+        }
+
+        private void clearPanelBtn_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("Czyszcze panel !");
+            panel1.Invalidate();
+            initializeGraphics();
+
+        }
+
+
+
+        private void initializePen() 
+        {
+            Console.WriteLine("Zmiana ustawien pędzla: kolor: {0} ,  wielkosc: {1}", selectedColor.Name, penSize.ToString());
+            pen = new Pen(selectedColor, penSize);
+
         }
     }
 
