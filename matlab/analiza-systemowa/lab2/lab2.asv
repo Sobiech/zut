@@ -159,11 +159,7 @@ H_15 = h_151 + h_152 + h_153 + h_154;
 H = [ H_1 ; H_2;  H_3;  H_4 ;  H_5 ;  H_6 ;  H_7;   H_8;   H_9 ;  H_10 ;  H_11 ; H_12 ; H_13 ; H_14 ; H_15];
 
 [hMax,matrixIndex] = max(H);
-
-% ktora z kolei kombinacja
+% ktora z kolei
 matrixIndex
 
-% maksymalna wartosc
 hMax
-
-% sa to x2x3 (H8)
