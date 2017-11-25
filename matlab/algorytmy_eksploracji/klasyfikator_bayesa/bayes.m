@@ -4,7 +4,8 @@
 % wyjscie 
 %  PY - prawdodopodobienstwo klasyfikacji PY ( 1 wymiarowe )
 %  P - ( 3 wymiarowe )
-function [ PY, P] = bayes( D,  domains )
+%  useLaplace - 0 - nie , 1 - tak
+function [ PY, P ] = bayes( D,  domains, useLaplace )
 
     [m,n] = size(D);
     
@@ -36,13 +37,30 @@ function [ PY, P] = bayes( D,  domains )
            P ( j, x(j), y ) = P (j, x(j), y) + 1; 
             
         end
-    end    
-    
-    
-    for y = 1 : K 
+    end     
+  
+
+    if ( useLaplace == 0 )
         
-        P(:,:,y ) = P ( :, : , y ) / ( m * PY(y) );
+        for y = 1 : K 
+            
+            P(:,:,y ) = P ( :, : , y ) / ( m * PY(y) );
+            
+        end
+        
+    else
+        for y = 1 : K
+
+            for i = 1 : n
+            
+                P(i,:,y) = ( P ( i, :, y ) + 1 ) / ( m * PY(y) + domains(i));
+                
+            end
+            
+        end
         
     end
+        
+    
 end
 

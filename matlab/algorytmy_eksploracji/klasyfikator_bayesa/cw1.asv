@@ -12,7 +12,7 @@ D = wineDataSet('wine.data');
 
 [ PY , P ] = bayes( D, 5 * ones(1, 13), 0 ); 
 
-% 13 - podajemy ilosc cech ( ilosc kolumn )
+% 13 - poda
 [ PLY , PL ] = bayes ( D, 5 * ones(1, 13), 1);
 
 % x = DT(5, :)
@@ -32,16 +32,7 @@ D = wineDataSet('wine.data');
 ];
 
 % zadanie domowe 
-% http://wikizmsi.zut.edu.pl/wiki/AED/LN/z1
-% ostatni punkt zignorowaæ ( zrobiæ tylko 3 )
-
-% k krotna krzy¿owa walidacja ( K - fold crossValidation )
-% k > 1 liczba naturalna
-% wynikiem k krotnej krzyzowej walidacji jest œrednia 
-% paczek testowych accuracy
-
-
-
+% 
 
 
 
