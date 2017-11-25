@@ -5,3 +5,7 @@ clear all
 close all
 
 format long
+
+load transactions.mat
+
+% whos
