@@ -9,3 +9,4 @@ format long
 load transactions.mat
 
 % whos
+F = frequentSets(dataSet, 0.15);
