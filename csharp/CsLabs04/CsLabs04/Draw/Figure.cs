@@ -12,7 +12,10 @@ namespace CsLabs04.Draw
 
         public Rectangle() { }
 
-        public void drawFigure() { }
+        public void drawFigure() {
+
+
+        }
     }
 
 

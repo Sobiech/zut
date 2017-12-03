@@ -35,11 +35,11 @@ namespace CsLabs03
         private void button1_Click(object sender, EventArgs e)
         {
 
-            XmlUtils xmlUtils = new XmlUtils(choosenDirectoryPath);
+            PathProcessor xmlUtils = new PathProcessor(choosenDirectoryPath);
 
             try
             {
-                xmlUtils.readXml();
+                xmlUtils.read();
 
             } catch ( Exception e1 )
             {

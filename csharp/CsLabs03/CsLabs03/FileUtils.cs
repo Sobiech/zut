@@ -46,18 +46,22 @@ namespace CsLabs03
             string[] sFiles = Directory.GetFiles(sInDir, "*.*", SearchOption.AllDirectories);
             int iDirLen = sInDir[sInDir.Length - 1] == Path.DirectorySeparatorChar ? sInDir.Length : sInDir.Length + 1;
 
-            using (FileStream outFile = new FileStream(sOutFile, FileMode.Create, FileAccess.Write, FileShare.None))
+            using (FileStream outFile = new FileStream(sOutFile + ".gz", FileMode.Create, FileAccess.Write, FileShare.None))
             using (GZipStream str = new GZipStream(outFile, CompressionMode.Compress))
                 foreach (string sFilePath in sFiles)
                 {
-                    string sRelativePath = sFilePath.Substring(iDirLen);
                     
-                    CompressFile(sInDir, sRelativePath, str);
+                    string sRelativePath = sFilePath.Substring(iDirLen);
+                    if ( !sRelativePath.StartsWith(".vs") && !sRelativePath.Contains("\\bin\\") && !sRelativePath.Contains("\\obj\\")) {
+                        Console.WriteLine("Compressing: " + sRelativePath);
+                        CompressFile(sInDir , sRelativePath , str);
+                    }
                 }
         }
 
         static void CompressFile(string sDir, string sRelativePath, GZipStream zipStream)
         {
+            
             //Compress file name
             char[] chars = sRelativePath.ToCharArray();
             zipStream.Write(BitConverter.GetBytes(chars.Length), 0, sizeof(int));
