@@ -1,0 +1,59 @@
+clc
+clear all
+close all
+
+format long
+
+% pobranie danych
+D = domDataSet('messidor_features.arff');
+[maxRn,~] = size(D);
+
+[ PY , P ]   = bayes( D, 5 * ones(1, 20), 0 ); 
+[ PLY , PL ] = bayes ( D, 5 * ones(1, 20), 1);
+
+startSplit = 1;
+randomSplit = randi([1 maxRn - 1]);
+
+map = containers.Map;
+
+for i = 1 : startSplit >= size(D)
+    
+    data = D ( startSplit : randomSplit, : );
+    
+    map(num2str(i) = data;
+    startSplit = randomSplit + 1;
+    randomSplit = randomSplit .* 2;
+    
+    if randomSplit >= size(D)
+        [randomSplit, ~] = size(D);
+    end
+    
+    i = i + 1;
+end
+
+
+% dokladnosc
+%[ acc ] = [
+
+    % bez laplace'a
+ %   accuracy( DL, PY , P ) accuracy( DT, PY , P ); 
+
+    % z laplace'm
+  %  accuracy( DL, PLY , PL ) accuracy( DT, PLY , PL )
+
+%];
+
+% zadanie domowe 
+% http://wikizmsi.zut.edu.pl/wiki/AED/LN/z1
+% ostatni punkt zignorowaæ ( zrobiæ tylko 3 )
+
+% k krotna krzy¿owa walidacja ( K - fold crossValidation )
+% k > 1 liczba naturalna
+% wynikiem k krotnej krzyzowej walidacji jest œrednia 
+% paczek testowych accuracy
+
+
+
+
+
+

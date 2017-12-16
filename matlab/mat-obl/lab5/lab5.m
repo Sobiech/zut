@@ -4,6 +4,7 @@ close all
 
 %f1 = @(x,y) (x.^2)-(y.^2)-1;
 %f2 = @(x,y) (x.^3).*(y.^2)-1;
+
 %x = 1:0.1:3;
 %y = -3:0.1:3;
 f1 = @(x,y) y-(1/2)*(exp(x/2)+exp(-x/2));
@@ -30,15 +31,20 @@ poch1_f1 = [];
 poch2_f2 = [];
 
 while 1
+    
    %licze pochodne dla kazdje z funkcji
    poch1_f1 = [(f1(x0+h,y0)- f1(x0-h,y0))/(2*h),(f1(x0,y0+h)-f1(x0,y0-h))/(2*h)];
    poch1_f2 = [(f2(x0+h,y0)- f2(x0-h,y0))/(2*h),(f2(x0,y0+h)-f2(x0,y0-h))/(2*h)]; 
-   %macierz Jacobiego (chyba)
+   
+   %macierz Jacobiego
    J = [poch1_f1(1) poch1_f1(2); poch1_f2(1) poch1_f2(2) ];
+   
    %wyliczenie drugiego punktu algorytmu
    fxy = [f1(x0,y0);f2(x0,y0)];
+   
    %wyznacznie d
    d = J\fxy;
+   
    %wyznaczenie kolejnego oszacowania rozwi¹zania
    x1 = x0 - d(1);
    y1 = y0 - d(2);
@@ -47,6 +53,7 @@ while 1
    if (abs(d(1))<h && abs(d(2))<h)
         break;
    end
+   
    %aktualizuje punkty
    x0 = x1;
    y0 = y1;

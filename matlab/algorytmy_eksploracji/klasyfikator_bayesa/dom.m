@@ -5,31 +5,68 @@ close all
 format long
 
 % pobranie danych
-D = wineDataSet('bank-additional.csv');
+D = domDataSet('messidor_features.arff');
+[maxRn,~] = size(D);
 
-% wykonywanie trenowania
-[ DL, DT ] = dataSplit(D, 0.7); 
-
-[ PY , P ] = bayes( D, 5 * ones(1, 20), 0 ); 
-
-% 20 - podajemy ilosc cech ( ilosc kolumn )
+[ PY , P ]   = bayes( D, 5 * ones(1, 20), 0 ); 
 [ PLY , PL ] = bayes ( D, 5 * ones(1, 20), 1);
 
-% x = DT(5, :)
-% 
-% % zwraca klasyfikacje ( tj. 1 )
-% y = classify(x, PY, P)
+startSplit = 1;
+randomSplit = randi([1 maxRn - 1]);
 
+
+map = containers.Map;
+
+i = 1;
+
+while 1
+    
+    data = D ( startSplit : randomSplit, : );
+    
+    map(num2str(i)) = data;
+    startSplit = randomSplit + 1;
+    randomSplit = randomSplit .* 2;
+    
+    if startSplit >= size(D)
+        break;
+    end
+    
+    if randomSplit >= size(D)
+        [randomSplit, ~] = size(D);
+    end
+    
+    i = i + 1;
+end
+
+[max_rows,max_colls] = size(D);
+
+mapSize = size(map,1);
+ALL_ACC = [];
+
+for i = 1 : mapSize
+
+    DT = map(num2str(i));
+    
+    max_rows = max_rows - length(DT); 
+    
+    DL = [];
+    
+    for j = 1 : mapSize
+        
+        if j ~= i 
+            data = map(num2str(j));
+            DL = [ DL ; data ];
+        end
+    end
+    
+    [ acc ] = [ accuracy( DL, PY , P ) accuracy( DT, PY , P ) accuracy( DL, PLY , PL ) accuracy( DT, PLY , PL ) ];
+    
+    ALL_ACC = [ALL_ACC; acc];
+
+end
 % dokladnosc
-[ acc ] = [
-    
-    % bez laplace'a
-    accuracy( DL, PY , P ) accuracy( DT, PY , P ); 
-    
-    % z laplace'm
-    accuracy( DL, PLY , PL ) accuracy( DT, PLY , PL )
-    
-];
+
+
 
 % zadanie domowe 
 % http://wikizmsi.zut.edu.pl/wiki/AED/LN/z1
