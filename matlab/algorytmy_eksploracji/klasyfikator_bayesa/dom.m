@@ -13,55 +13,45 @@ D = domDataSet('messidor_features.arff');
 
 startSplit = 1;
 randomSplit = randi([1 maxRn - 1]);
-
-
 map = containers.Map;
-
 i = 1;
 
 while 1
     
-    data = D ( startSplit : randomSplit, : );
+    map(num2str(i)) = D ( startSplit : randomSplit, : );
     
-    map(num2str(i)) = data;
     startSplit = randomSplit + 1;
-    randomSplit = randomSplit .* 2;
-    
-    if startSplit >= size(D)
+    if  startSplit >= size(D)
         break;
     end
     
-    if randomSplit >= size(D)
-        [randomSplit, ~] = size(D);
+    randomSplit = randomSplit .* 2;
+    if randomSplit >= length(D)
+        randomSplit = length(D);
     end
     
     i = i + 1;
 end
-
-[max_rows,max_colls] = size(D);
 
 mapSize = size(map,1);
 ALL_ACC = [];
 
 for i = 1 : mapSize
 
-    DT = map(num2str(i));
-    
-    max_rows = max_rows - length(DT); 
-    
+    DT = map(num2str(i));    
     DL = [];
     
     for j = 1 : mapSize
-        
         if j ~= i 
             data = map(num2str(j));
             DL = [ DL ; data ];
         end
     end
     
-    [ acc ] = [ accuracy( DL, PY , P ) accuracy( DT, PY , P ) accuracy( DL, PLY , PL ) accuracy( DT, PLY , PL ) ];
-    
-    ALL_ACC = [ALL_ACC; acc];
+    ALL_ACC = [
+        ALL_ACC; 
+        accuracy( DL, PY , P ) accuracy( DT, PY , P ) accuracy( DL, PLY , PL ) accuracy( DT, PLY , PL )
+    ];
 
 end
 % dokladnosc

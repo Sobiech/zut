@@ -13,17 +13,20 @@ D = domDataSet('messidor_features.arff');
 
 startSplit = 1;
 randomSplit = randi([1 maxRn - 1]);
-
 map = containers.Map;
 
-for i = 1 : startSplit >= size(D)
+i = 1;
+
+while startSplit >= size(D)
     
-    data = D ( startSplit : randomSplit, : );
+    map(num2str(i)) = D ( startSplit : randomSplit, : );
     
-    map(num2str(i) = data;
     startSplit = randomSplit + 1;
-    randomSplit = randomSplit .* 2;
+    if startSplit >= size(D)
+        break;
+    end
     
+    randomSplit = randomSplit .* 2;
     if randomSplit >= size(D)
         [randomSplit, ~] = size(D);
     end
@@ -31,17 +34,30 @@ for i = 1 : startSplit >= size(D)
     i = i + 1;
 end
 
+mapSize = size(map,1);
+ALL_ACC = [];
 
+for i = 1 : mapSize
+
+    DT = map(num2str(i));    
+    DL = [];
+    
+    for j = 1 : mapSize
+        if j ~= i 
+            data = map(num2str(j));
+            DL = [ DL ; data ];
+        end
+    end
+    
+    ALL_ACC = [
+        ALL_ACC; 
+        accuracy( DL, PY , P ) accuracy( DT, PY , P ) accuracy( DL, PLY , PL ) accuracy( DT, PLY , PL )
+    ];
+
+end
 % dokladnosc
-%[ acc ] = [
 
-    % bez laplace'a
- %   accuracy( DL, PY , P ) accuracy( DT, PY , P ); 
 
-    % z laplace'm
-  %  accuracy( DL, PLY , PL ) accuracy( DT, PLY , PL )
-
-%];
 
 % zadanie domowe 
 % http://wikizmsi.zut.edu.pl/wiki/AED/LN/z1
