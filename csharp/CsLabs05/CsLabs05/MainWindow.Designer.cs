@@ -1,4 +1,4 @@
-﻿namespace CsLabs04
+﻿namespace CsLabs05
 {
     partial class MainWindow
     {
@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.logger = new System.Windows.Forms.TextBox();
-            this.normalDrawBtn = new System.Windows.Forms.Button();
+            this.drawNormalBtn = new System.Windows.Forms.Button();
             this.clearPanelBtn = new System.Windows.Forms.Button();
             this.drawRectBtn = new System.Windows.Forms.Button();
-            this.drawPointBtn = new System.Windows.Forms.Button();
             this.drawLineBtn = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.colorBtn = new System.Windows.Forms.Button();
             this.fontSizeCb = new System.Windows.Forms.ComboBox();
             this.colorDialog2 = new System.Windows.Forms.ColorDialog();
+            this.drawElipseBtn = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -46,68 +46,63 @@
             // 
             // logger
             // 
-            this.logger.Location = new System.Drawing.Point(12, 413);
+            this.logger.Location = new System.Drawing.Point(16, 508);
+            this.logger.Margin = new System.Windows.Forms.Padding(4);
             this.logger.Multiline = true;
             this.logger.Name = "logger";
             this.logger.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.logger.Size = new System.Drawing.Size(980, 208);
+            this.logger.Size = new System.Drawing.Size(1305, 255);
             this.logger.TabIndex = 1;
             // 
-            // normalDrawBtn
+            // drawNormalBtn
             // 
-            this.normalDrawBtn.Location = new System.Drawing.Point(12, 12);
-            this.normalDrawBtn.Name = "normalDrawBtn";
-            this.normalDrawBtn.Size = new System.Drawing.Size(165, 42);
-            this.normalDrawBtn.TabIndex = 3;
-            this.normalDrawBtn.Text = "Normal";
-            this.normalDrawBtn.UseVisualStyleBackColor = true;
+            this.drawNormalBtn.Location = new System.Drawing.Point(16, 15);
+            this.drawNormalBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.drawNormalBtn.Name = "drawNormalBtn";
+            this.drawNormalBtn.Size = new System.Drawing.Size(220, 27);
+            this.drawNormalBtn.TabIndex = 3;
+            this.drawNormalBtn.Text = "Normal Mode";
+            this.drawNormalBtn.UseVisualStyleBackColor = true;
             // 
             // clearPanelBtn
             // 
-            this.clearPanelBtn.Location = new System.Drawing.Point(12, 365);
+            this.clearPanelBtn.Location = new System.Drawing.Point(13, 445);
+            this.clearPanelBtn.Margin = new System.Windows.Forms.Padding(4);
             this.clearPanelBtn.Name = "clearPanelBtn";
-            this.clearPanelBtn.Size = new System.Drawing.Size(165, 42);
+            this.clearPanelBtn.Size = new System.Drawing.Size(220, 52);
             this.clearPanelBtn.TabIndex = 4;
             this.clearPanelBtn.Text = "Clear";
             this.clearPanelBtn.UseVisualStyleBackColor = true;
-            this.clearPanelBtn.Click += new System.EventHandler(this.clearPanelBtn_Click);
             // 
             // drawRectBtn
             // 
-            this.drawRectBtn.Location = new System.Drawing.Point(12, 156);
+            this.drawRectBtn.Location = new System.Drawing.Point(16, 85);
+            this.drawRectBtn.Margin = new System.Windows.Forms.Padding(4);
             this.drawRectBtn.Name = "drawRectBtn";
-            this.drawRectBtn.Size = new System.Drawing.Size(165, 42);
+            this.drawRectBtn.Size = new System.Drawing.Size(220, 27);
             this.drawRectBtn.TabIndex = 5;
-            this.drawRectBtn.Text = "Draw Rectangles";
+            this.drawRectBtn.Text = "Rectangle Mode";
             this.drawRectBtn.UseVisualStyleBackColor = true;
-            // 
-            // drawPointBtn
-            // 
-            this.drawPointBtn.Location = new System.Drawing.Point(12, 108);
-            this.drawPointBtn.Name = "drawPointBtn";
-            this.drawPointBtn.Size = new System.Drawing.Size(165, 42);
-            this.drawPointBtn.TabIndex = 6;
-            this.drawPointBtn.Text = "Draw Point";
-            this.drawPointBtn.UseVisualStyleBackColor = true;
             // 
             // drawLineBtn
             // 
-            this.drawLineBtn.Location = new System.Drawing.Point(12, 60);
+            this.drawLineBtn.Location = new System.Drawing.Point(16, 50);
+            this.drawLineBtn.Margin = new System.Windows.Forms.Padding(4);
             this.drawLineBtn.Name = "drawLineBtn";
-            this.drawLineBtn.Size = new System.Drawing.Size(165, 42);
+            this.drawLineBtn.Size = new System.Drawing.Size(220, 27);
             this.drawLineBtn.TabIndex = 7;
-            this.drawLineBtn.Text = "Draw Line";
+            this.drawLineBtn.Text = "Line Mode";
             this.drawLineBtn.UseVisualStyleBackColor = true;
             // 
             // colorBtn
             // 
             this.colorBtn.BackColor = System.Drawing.SystemColors.Control;
-            this.colorBtn.Location = new System.Drawing.Point(12, 214);
+            this.colorBtn.Location = new System.Drawing.Point(16, 155);
+            this.colorBtn.Margin = new System.Windows.Forms.Padding(4);
             this.colorBtn.Name = "colorBtn";
-            this.colorBtn.Size = new System.Drawing.Size(165, 23);
+            this.colorBtn.Size = new System.Drawing.Size(220, 27);
             this.colorBtn.TabIndex = 8;
             this.colorBtn.UseVisualStyleBackColor = false;
-            this.colorBtn.Click += new System.EventHandler(this.colorBtn_Click);
             // 
             // fontSizeCb
             // 
@@ -128,64 +123,70 @@
             "12",
             "13",
             "14"});
-            this.fontSizeCb.Location = new System.Drawing.Point(13, 244);
+            this.fontSizeCb.Location = new System.Drawing.Point(16, 191);
+            this.fontSizeCb.Margin = new System.Windows.Forms.Padding(4);
             this.fontSizeCb.Name = "fontSizeCb";
-            this.fontSizeCb.Size = new System.Drawing.Size(164, 21);
+            this.fontSizeCb.Size = new System.Drawing.Size(217, 24);
             this.fontSizeCb.TabIndex = 9;
-            this.fontSizeCb.SelectedIndexChanged += new System.EventHandler(this.fontSizeIndex_Changed);
+            // 
+            // drawElipseBtn
+            // 
+            this.drawElipseBtn.Location = new System.Drawing.Point(16, 120);
+            this.drawElipseBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.drawElipseBtn.Name = "drawElipseBtn";
+            this.drawElipseBtn.Size = new System.Drawing.Size(217, 27);
+            this.drawElipseBtn.TabIndex = 10;
+            this.drawElipseBtn.Text = "Elipse Mode";
+            this.drawElipseBtn.UseMnemonic = false;
+            this.drawElipseBtn.UseVisualStyleBackColor = true;
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(183, 12);
+            this.tabControl1.Location = new System.Drawing.Point(243, 15);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(809, 395);
-            this.tabControl1.TabIndex = 0;
-            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.changedTabPage);
+            this.tabControl1.Size = new System.Drawing.Size(1078, 486);
+            this.tabControl1.TabIndex = 11;
             // 
             // tabPage1
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(801, 369);
+            this.tabPage1.Size = new System.Drawing.Size(1070, 457);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Paint += new System.Windows.Forms.PaintEventHandler(this.EventPaint);
-            this.tabPage1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.EventMouseDown);
-            this.tabPage1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.EventMouseMove);
-            this.tabPage1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.EventMouseUp);
             // 
             // tabPage2
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(801, 369);
+            this.tabPage2.Size = new System.Drawing.Size(1070, 457);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // MainWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1004, 633);
+            this.ClientSize = new System.Drawing.Size(1339, 779);
             this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.drawElipseBtn);
             this.Controls.Add(this.fontSizeCb);
             this.Controls.Add(this.colorBtn);
             this.Controls.Add(this.drawLineBtn);
-            this.Controls.Add(this.drawPointBtn);
             this.Controls.Add(this.drawRectBtn);
             this.Controls.Add(this.clearPanelBtn);
-            this.Controls.Add(this.normalDrawBtn);
+            this.Controls.Add(this.drawNormalBtn);
             this.Controls.Add(this.logger);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainWindow";
-            this.Text = "CsLabs04";
+            this.Text = "CsLabs05";
             this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -194,15 +195,15 @@
 
         #endregion
         private System.Windows.Forms.TextBox logger;
-        private System.Windows.Forms.Button normalDrawBtn;
+        private System.Windows.Forms.Button drawNormalBtn;
         private System.Windows.Forms.Button clearPanelBtn;
         private System.Windows.Forms.Button drawRectBtn;
-        private System.Windows.Forms.Button drawPointBtn;
         private System.Windows.Forms.Button drawLineBtn;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Button colorBtn;
         private System.Windows.Forms.ComboBox fontSizeCb;
         private System.Windows.Forms.ColorDialog colorDialog2;
+        private System.Windows.Forms.Button drawElipseBtn;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
