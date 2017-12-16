@@ -8,5 +8,9 @@ format long
 
 load transactions.mat
 
+tic
+
 % whos
-F = frequentSets(dataSet, 0.15);
+F = frequentSets(dataSet, 0.1);
+
+toc

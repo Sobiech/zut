@@ -101,11 +101,11 @@ function [ F ] = frequentSets( D, minSupp )
         % kandydaci
         keys = C.keySet().toArray();
         
-        for j = 1 : length(keys)
+        for i = 1 : length(keys)
             
-            num = str2num (keys(j));
-            for i = 1 : length(D)
-                    
+            for j = 1 : length(D)
+                
+                num = str2num (keys(i));
                 %condition = length(intersect(num, D{i})) == k + 1
                 condition = ( sum( ismember( num, D{i} ) ) == k + 1 );
                 if condition
