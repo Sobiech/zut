@@ -13,7 +13,7 @@ function [DL, DT ] = dataSplit( D, trainFraction)
     D = D( randperm(m), :);
     
     split = round ( trainFraction * m );
-
+    split
     DL = D ( 1 : split, : );
     DT = D ( split + 1 : m , : );
     

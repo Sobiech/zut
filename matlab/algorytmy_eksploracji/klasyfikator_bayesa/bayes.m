@@ -19,9 +19,9 @@ function [ PY, P ] = bayes( D,  domains, useLaplace )
     
     
     for y = 1 : K 
-   
-        PY ( y ) = length ( find ( D ( :, end ) == y ) ) / m;
     
+        PY ( y ) = length ( find ( D ( :, end ) == y ) ) / m;
+        
     end
     
     %max domains wielkosc maksymalna dziedziny
@@ -33,7 +33,7 @@ function [ PY, P ] = bayes( D,  domains, useLaplace )
         y = D ( i, n + 1 );
         
         for j = 1 : n
-            
+      
            P ( j, x(j), y ) = P (j, x(j), y) + 1; 
             
         end

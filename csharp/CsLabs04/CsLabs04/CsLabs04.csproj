@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConsoleWriter.cs" />
-    <Compile Include="Draw\Figure.cs" />
+    <Compile Include="Draw\DrawingMode.cs" />
     <Compile Include="Draw\IDrawable.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
