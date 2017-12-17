@@ -32,11 +32,6 @@ function [ PY, P ] = bayes( D,  domains, useLaplace )
         x = D ( i, 1 : n );
         y = D ( i, n + 1 );
         
-        if y == 0
-            D ( i, n + 1 ) = 1;
-            y = 1;
-        end
-        
         for j = 1 : n
       
            P ( j, x(j), y ) = P (j, x(j), y) + 1; 

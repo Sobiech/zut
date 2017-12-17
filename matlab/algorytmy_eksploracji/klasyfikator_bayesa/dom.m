@@ -6,10 +6,13 @@ format long
 
 % pobranie danych
 D = domDataSet('messidor_features.arff');
-[maxRn,~] = size(D);
 
-[ PY , P ]   = bayes( D, 5 * ones(1, 20), 0 ); 
-[ PLY , PL ] = bayes ( D, 5 * ones(1, 20), 1);
+[maxRn,colls] = size(D);
+
+randomVector = randi(10,1,colls);
+
+[ PY , P ]   = bayes( D, randomVector, 0 ); 
+[ PLY , PL ] = bayes( D, randomVector, 1);
 
 startSplit = 1;
 randomSplit = randi([1 maxRn - 1]);
