@@ -32,11 +32,11 @@ poch2_f2 = [];
 
 while 1
     
-   %licze pochodne dla kazdje z funkcji
+   %licze pochodne dla ka¿dej z funkcji
    poch1_f1 = [(f1(x0+h,y0)- f1(x0-h,y0))/(2*h),(f1(x0,y0+h)-f1(x0,y0-h))/(2*h)];
    poch1_f2 = [(f2(x0+h,y0)- f2(x0-h,y0))/(2*h),(f2(x0,y0+h)-f2(x0,y0-h))/(2*h)]; 
    
-   %macierz Jacobiego
+   %obliczamy jacobiego
    J = [poch1_f1(1) poch1_f1(2); poch1_f2(1) poch1_f2(2) ];
    
    %wyliczenie drugiego punktu algorytmu
@@ -59,6 +59,7 @@ while 1
    y0 = y1;
    
 end
+
 
 x = x0
 y = y0
