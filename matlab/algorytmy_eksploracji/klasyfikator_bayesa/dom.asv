@@ -5,15 +5,17 @@ close all
 format long
 
 % pobranie danych
-q = 5000;
-D = domDataSet('messidor_features.arff', q);
+D = domDataSet('messidor_features.arff');
 
-[maxRn,colls] = size(D);
+[maxRn,~] = size(D);
 
+randomVector = randi(maxVal,1,colls);
 
+[ PY , P ]   = bayes( D,  randomVector, 0 ); 
+[ PLY , PL ] = bayes( D,  randomVector, 1);
 
 startSplit = 1;
-randomSplit = 100; %randi([1 maxRn - 1]);
+randomSplit = randi([1 maxRn - 1]);
 map = containers.Map;
 i = 1;
 
@@ -30,6 +32,7 @@ while 1
     if randomSplit >= length(D)
         randomSplit = length(D);
     end
+    1
     i = i + 1;
 end
 
@@ -47,22 +50,15 @@ for i = 1 : mapSize
             DL = [ DL ; data ];
         end
     end
-
-
-[ PLY , PL ] = bayes( DL,  q * ones(1,colls), 1);
     
     ALL_ACC = [
         ALL_ACC; 
-%         accuracy( DL, PY , P ) 
-%         accuracy( DT, PY , P ) 
-%         accuracy( DL, PLY , PL ) 
-        accuracy( DT, PLY , PL )
+        accuracy( DL, PY , P ) accuracy( DT, PY , P ) accuracy( DL, PLY , PL ) accuracy( DT, PLY , PL )
     ];
     
+    
+
 end
-
-sr = mean(ALL_ACC);
-
 % dokladnosc
 
 

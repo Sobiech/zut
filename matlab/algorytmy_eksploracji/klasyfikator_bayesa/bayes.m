@@ -33,9 +33,7 @@ function [ PY, P ] = bayes( D,  domains, useLaplace )
         y = D ( i, n + 1 );
         
         for j = 1 : n
-      
            P ( j, x(j), y ) = P (j, x(j), y) + 1; 
-            
         end
     end     
   
@@ -63,4 +61,3 @@ function [ PY, P ] = bayes( D,  domains, useLaplace )
         
     
 end
-
