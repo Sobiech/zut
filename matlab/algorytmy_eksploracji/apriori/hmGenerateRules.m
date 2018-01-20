@@ -2,8 +2,10 @@
 % zadanie domowe / zrobic wykresy regulowe
 % labelMappery mapowanie liczb do wartosci danych elementow (string)
 % formatowanie
-function [ ] = generateRules( F, minConf, labelMapper )
+function [ X ] = hmGenerateRules( F, minConf )
     
+    X = [];
+
     for k = 2 : length(F)
     
         keys = F{k}.keySet().toArray();
@@ -19,19 +21,13 @@ function [ ] = generateRules( F, minConf, labelMapper )
                     conf = F{k}.get(keys(i))/F{j}.get(num2str(g));
                     
                     if conf >= minConf
-                        str1 = '';
-                        str2 = '';
-                        
                         diff = setdiff(f,g);
-                        for y = 1 : length(g)
-                            str1 = [ str1 ' ' labelMapper.get(num2str(g(y))) ]; 
-                        end
                         
-                        for z = 1 : length(diff)
-                            str2 = [ str2 ' ' labelMapper.get(num2str(diff(z))) ];
-                        end
+                        temp(1) = num2str(g); 
+                        temp(2) = num2str(diff); 
+                        temp(3) = num2str(conf);
                         
-                        %disp([str1 ' -> ' str2 ' conf = ' num2str(conf)]);
+                        X = [ X temp ];
                     end
                 end
             end

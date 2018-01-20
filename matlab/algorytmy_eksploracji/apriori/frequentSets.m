@@ -41,8 +41,8 @@ function [ F ] = frequentSets( D, minSupp )
     
     k = 1;
     while F{k}.size() >= k + 1
-        disp('---------------------------------');
-        disp(['k: ' num2str(k)]);
+        %disp('---------------------------------');
+        %disp(['k: ' num2str(k)]);
         C = HashMap;
         %sklejanie par
         keys = F{k}.keySet().toArray();
@@ -74,7 +74,7 @@ function [ F ] = frequentSets( D, minSupp )
             
         end
         
-        disp('candidates done');
+        %disp('candidates done');
         
         if k >= 2
             
@@ -95,7 +95,7 @@ function [ F ] = frequentSets( D, minSupp )
                 end 
             end
             
-            disp('first removal done');
+            %disp('first removal done');
         end
         
         % kandydaci
@@ -115,7 +115,7 @@ function [ F ] = frequentSets( D, minSupp )
                 end
             end
         end
-        disp('counting supports done');
+        %disp('counting supports done');
         
         keys = C.keySet().toArray();
         
@@ -127,7 +127,7 @@ function [ F ] = frequentSets( D, minSupp )
             end
             
         end
-        disp('second removal done');
+        %disp('second removal done');
         
         F{k+1} = C;
         k = k + 1;
