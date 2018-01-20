@@ -23,7 +23,7 @@ minData = [
 ];
 
 suppMap = containers.Map;
-
+X = [];
 tic
 for matrixIndex = 1 : length(minData)
     
@@ -34,9 +34,15 @@ for matrixIndex = 1 : length(minData)
     disp(str);
     
     F = frequentSets(dataSet, minSupp);
-    suppMap( num2str(matrixIndex) ) = hmGenerateRules(F,minConf);
+    gen_rules = hmGenerateRules( F, minConf );
+    X = [ X gen_rules ];
+    for i = 1 : length (gen_rules)
+        str = gen_rules(i);
+        splited = strsplit(str,';');
+        strRepo = strrep(splited,'  ',',');
+        disp(strRepo);
+    end
     
-     
 end
 fprintf('\n');
 disp('Algorithm done in:');

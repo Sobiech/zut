@@ -41,15 +41,15 @@ function [ F ] = frequentSets( D, minSupp )
     
     k = 1;
     while F{k}.size() >= k + 1
-        %disp('---------------------------------');
-        %disp(['k: ' num2str(k)]);
+%         disp('---------------------------------');
+%         disp(['k: ' num2str(k)]);
         C = HashMap;
         %sklejanie par
         keys = F{k}.keySet().toArray();
+        
         %petle po kluczach
-        
         nums = zeros(length(keys), k);
-        
+        %klucze do tablicy
         for i = 1 : length(keys)            
             nums(i, :) = str2num(keys(i));
         end
@@ -67,14 +67,14 @@ function [ F ] = frequentSets( D, minSupp )
                 
                 % ~ negacja
                 if ~C.containsKey(key)
-                    C.put(key, 0);
+                    C.put(key, 1);
                 end
                 
             end
             
         end
         
-        %disp('candidates done');
+%         disp('candidates done');
         
         if k >= 2
             
@@ -95,17 +95,17 @@ function [ F ] = frequentSets( D, minSupp )
                 end 
             end
             
-            %disp('first removal done');
+%             disp('first removal done');
         end
         
         % kandydaci
         keys = C.keySet().toArray();
         
-        for j = 1 : length(keys)
+        for i = 1 : length(D)
             
-            num = str2num (keys(j));
-            for i = 1 : length(D)
-                    
+            for j = 1 : length(keys)
+                
+                num = str2num (keys(j));
                 %condition = length(intersect(num, D{i})) == k + 1
                 condition = ( sum( ismember( num, D{i} ) ) == k + 1 );
                 if condition
@@ -115,7 +115,7 @@ function [ F ] = frequentSets( D, minSupp )
                 end
             end
         end
-        %disp('counting supports done');
+%         disp('counting supports done');
         
         keys = C.keySet().toArray();
         
@@ -127,7 +127,7 @@ function [ F ] = frequentSets( D, minSupp )
             end
             
         end
-        %disp('second removal done');
+%         disp('second removal done');
         
         F{k+1} = C;
         k = k + 1;

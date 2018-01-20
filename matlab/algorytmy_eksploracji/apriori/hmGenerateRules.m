@@ -22,12 +22,12 @@ function [ X ] = hmGenerateRules( F, minConf )
                     
                     if conf >= minConf
                         diff = setdiff(f,g);
+                        if length(g) > 0 && length(diff) > 0
+                            e = {};
+                            e = [num2str(g) ';' num2str(diff) ';' num2str(conf) ];
+                            X = [ X e ];
+                        end
                         
-                        temp(1) = num2str(g); 
-                        temp(2) = num2str(diff); 
-                        temp(3) = num2str(conf);
-                        
-                        X = [ X temp ];
                     end
                 end
             end

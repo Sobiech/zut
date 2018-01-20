@@ -1,31 +1,5 @@
-clc
-clear all
-close all
-
-format long
-
-load transactions.mat
-minConfArray = [0.6,0.8,0.9];
-minSuppArray = [0.2,0.15,0.1];
-k = 1;
-for i =1:length(minConfArray)
-    for j = 1:length(minSuppArray)
-        disp(['minConf: ' num2str(minConfArray(i))]);
-        disp(['minSupp: ' num2str(minSuppArray(j))]);
-        subplot(3,3,k);
-        title(['minConf: ' ,num2str(minConfArray(i)), ' | minSupp: ' ,num2str(minSuppArray(j))])
-        hold on;
-        l = linspace(0,1);
-        plot(linspace(0,1,1000),ones(1,1000)*minConfArray(i),'k:');
-        hold on;
-        plot(ones(1,1000)*minSuppArray(j),linspace(0,1,1000),'b:');
-        hold on;
-        dataLength = length(dataSet);
-        F = frequentSets(dataSet, minSuppArray(j));
-        [from,to,conf] = generateRules(F,minConfArray(i),labelMapper,dataLength);
-        cellLength = length(from);
-        k = k+1;
-        disp('-----------------------------------------------');
+function equivalence(from, to, conf,labelMapper)
+disp('-----------------------------------------------');
         for z=1:length(from)-1
             for i1 = 1:length(from{z})
                 a = from{z}(i1,:);
@@ -55,7 +29,5 @@ for i =1:length(minConfArray)
                 
             end
         end
-    end
 end
-
 
