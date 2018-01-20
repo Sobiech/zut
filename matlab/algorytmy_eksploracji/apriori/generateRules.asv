@@ -1,21 +1,18 @@
 % zadanie domowe / zrobic wykresy regulowe
 % labelMappery mapowanie liczb do wartosci danych elementow (string)
 % formatowanie
-function [txRules, ruleResults, confSet] = generateRules( F, minConf, dataSetLength )
+function [txRegule, tx, confidence] = generateRules( F, minConf, labelMapper, dataLength )
     
-    colorSet = {' ','b.','g.','r.','p.','o.'};
+    C = {' ','m.','b.','r.','g.','y.'};
     for k = 2 : length(F)
-        
-        txIndex  = 1;
-        txRule   = 0;
-        txResult = 0;
-        
+        w = 1;
+        from = 0;
+        to = 0;
         confidence = 0;
         
         keys = F{k}.keySet().toArray();
-
+        
         for i = 1 : length(keys)
-            
             f = str2num(keys(i));
             for j = 1 : k -1
                 subsets = nchoosek(f, j);
@@ -25,34 +22,34 @@ function [txRules, ruleResults, confSet] = generateRules( F, minConf, dataSetLen
                     conf = F{k}.get(keys(i))/F{j}.get(num2str(g));
                     
                     if conf >= minConf
+                        str1 = '';
+                        str2 = '';
                         
                         diff = setdiff(f,g);
                         for y = 1 : length(g)
-                            txRule(txIndex,y) = g(y);
+                            from(w,y) = g(y);
+                            str1 = [ str1 ' ' labelMapper.get(num2str(g(y))) ]; 
                         end
                         
                         for z = 1 : length(diff)
-                            txResult(txIndex,z) = diff(z);
+                            to(w,z) = diff(z);
+                            str2 = [ str2 ' ' labelMapper.get(num2str(diff(z))) ];
                         end
-                        
-                        confidence(txIndex,:) = conf;
-                        
-                        txIndex = txIndex+1;
-                        
-                        supp = F{length(g)}.get(num2str(g))/dataSetLength;
-                        scatter(supp, conf, colorSet{k});
+                        confidence(w,:) = conf;
+                        w = w+1;
+                        disp([str1 ' -> ' str2 ' conf = ' num2str(conf)]);
+                        supp = F{length(g)}.get(num2str(g))/dataLength;
+                        scatter(supp,conf,C{k});
                         hold on;
                     end
                 end
             end
         end
-        
-        txRules{k-1}     = txRule;
-        ruleResults{k-1} = txResult;
-        confSet{k-1}     = confidence;
-        
-        txRule = [];
-        txResult = [];
+        regules{k-1} = from;
+        tx{k-1} = to;
+        confidence{k-1} = confidence;
+        from = [];
+        to = [];
         confidence = [];
     end
 end

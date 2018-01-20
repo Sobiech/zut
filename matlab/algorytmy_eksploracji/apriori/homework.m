@@ -1,5 +1,3 @@
-% http://wikizmsi.zut.edu.pl/wiki/AED/LN/z2
-
 clc
 clear all
 close all
@@ -8,44 +6,50 @@ format long
 
 load transactions.mat
 
-minData = [
-    0.2 0.6;
-    0.2 0.8;
-    0.2 0.9;
-    
-    0.15 0.6;
-    0.15 0.8;
-    0.15 0.9;
-    
-    0.1 0.6; 
-    0.1 0.8; 
-    0.1 0.9
-];
+minConfV = [0.6,0.8,0.9];
+minSuppV = [0.2,0.15,0.1];
+graphIndex = 1;
 
-suppMap = containers.Map;
-X = [];
-tic
-for matrixIndex = 1 : length(minData)
+for i =1:length(minConfV)
     
-    minSupp = minData(matrixIndex, 1); 
-    minConf = minData(matrixIndex, 2);
-    
-    str = ['Obliczam reguly dla minSupp=' num2str(minSupp) ', minConf=' num2str(minConf)];
-    disp(str);
-    
-    F = frequentSets(dataSet, minSupp);
-    gen_rules = hmGenerateRules( F, minConf );
-    X = [ X gen_rules ];
-    for i = 1 : length (gen_rules)
-        str = gen_rules(i);
-        splited = strsplit(str,';');
-        strRepo = strrep(splited,'  ',',');
-        disp(strRepo);
+    for j = 1:length(minSuppV)
+        
+        minConf = minConfV(i);
+        minSupp = minSuppV(j);
+        
+        graphTitle = [ ' minConf: ' num2str(minConf) ', minSupp:' num2str(minSupp)];
+        tic
+        fprintf('\n');
+        disp(['Konfiguracja -> ' graphTitle]);
+        fprintf('--------------------------------------------\n');
+        subplot( 3, 3, graphIndex);
+        title(graphTitle)
+        hold on;
+        
+        A = ones(1, 1000);
+        B = linspace(0, 1, 1000);
+        
+        plot( B, A * minConf, 'black:' );
+        hold on;
+        
+        plot( A * minSupp, B, 'red:');
+        hold on;
+        
+        fprintf('- szukam zbiorow czestych\n');
+        F = frequentSets(dataSet, minSupp);
+        
+        fprintf('- generuje reguly\n');
+        [ txRules, txResults, confSet ] = generateRules(F, minConf, length(dataSet));
+        
+        cellLength = length(txRules);
+        graphIndex = graphIndex + 1;
+        fprintf('- wyszukuje rownowaznosci\n');
+        findEquivalenceRules(txRules, txResults, confSet, labelMapper);
+        fprintf('--------------------------------------------\n');
+        
+        toc
+        fprintf('\n');
     end
-    
 end
-fprintf('\n');
-disp('Algorithm done in:');
 
-toc
 
