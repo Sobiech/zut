@@ -68,7 +68,6 @@ INSERT INTO javaz.handlowiec VALUES ('11122233356', 'Mateusz', 'Forbek', 9993, '
 INSERT INTO javaz.handlowiec VALUES ('11122233357', 'Zbigniew', 'Grawik', 9943, 'Handlowiec', '911222346', 10, 15 );
 INSERT INTO javaz.handlowiec VALUES ('11122233358', 'Andrzej', 'M¹kol', 8881, 'Handlowiec', '911222347', 10, 15 );
 
-
-
-
-
+INSERT INTO javaz.dyrektor VALUES('15122233365','Krzystof','Jarzyna',999999,'Dyrektor wszystkiego','111522344',999999,99,99999 );
+INSERT INTO javaz.dyrektor VALUES('11122233365','Karolina','Zamek',115330,'Dyrektor transportu','911522344',15000,99,50000 );
+INSERT INTO javaz.dyrektor VALUES('11122233364','Robert','Markus',100993,'Dyrektor dzia³u sprzeda¿y','911252343',15000,98,50000 );
