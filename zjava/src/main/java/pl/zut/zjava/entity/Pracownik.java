@@ -11,7 +11,7 @@ public class Pracownik implements Serializable {
 	
 	private static final long serialVersionUID = -3890684154176837336L;
 
-	@Column( name = "id", 			 description = "Identyfikator PESEL",  primaryKey = 1 )
+	@Column( name = "id", 			 description = "Identyfikator PESEL",  primaryKey = Column.IS_PRIMARY_KEY )
 	protected String pesel;
 	
 	@Column( name = "imie", 		 description = "Imię" )

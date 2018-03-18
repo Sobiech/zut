@@ -9,6 +9,11 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Column {
 	
+	public static final int IS_PRIMARY_KEY = 0;
+	
+	public static final int IS_NOT_PRIMARY_KEY = 1;
+	
+	
 	String name();
 	
 	String description();
@@ -19,6 +24,6 @@ public @interface Column {
 	 * 
 	 * @return
 	 */
-	int primaryKey() default 1;
+	int primaryKey() default IS_NOT_PRIMARY_KEY;
 	
 }

@@ -85,7 +85,7 @@ public abstract class AbstractDAOService<E> implements DAOService<E> {
 	 * @return
 	 * @throws SQLException
 	 */
-	public Boolean executeUpdateQuery(String query) throws SQLException {
+	public Boolean executeQuery(String query) throws SQLException {
 		
 		Connection con = RdbmsConnectionManager.GetConnection();
 		Boolean result = false;
@@ -103,36 +103,7 @@ public abstract class AbstractDAOService<E> implements DAOService<E> {
 		return result; 
 	}
 	
-	
-	
-	/**
-	 * 
-	 * @param query
-	 * @return
-	 * @throws SQLException
-	 */
-	public Boolean executeDeleteQuery(String query) throws SQLException {
-		
-		Connection con = RdbmsConnectionManager.GetConnection();
-		Boolean result = false;
 
-		try {
-		
-			PreparedStatement statement = con.prepareStatement(query);
-			result = statement.execute();
-			con.commit();
-			
-			return result;
-		} catch (SQLException e) {
-			
-			con.rollback();
-		}
-		
-		return result;
-	}
-	
-	
-	
 	/**
 	 * 
 	 * @param resultSet
@@ -170,4 +141,90 @@ public abstract class AbstractDAOService<E> implements DAOService<E> {
 			return null;
 		}
 	}
+	
+	/*
+	 * (non-Javadoc)
+	 * @see pl.zut.zjava.entity.service.DAOService#findById(java.lang.Object, java.lang.Class)
+	 */
+	@Override
+	public E findById(String id, Class<E> clazz) {
+		
+		E result = null;
+		
+		try {
+
+			String query = ReflectionUtils.BuildSelectQuery(String.valueOf(id), clazz);
+			result = getResult(query, clazz);
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+	
+	/*
+	 * (non-Javadoc)
+	 * @see pl.zut.zjava.entity.service.DAOService#save(java.lang.Object)
+	 */
+	@Override
+	public E save(E entity) {
+		
+		try {
+
+			String query = ReflectionUtils.BuildInsertQuery(entity);
+			executeQuery(query);
+		} catch (IllegalArgumentException | IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return entity;
+	}
+
+
+	/*
+	 * (non-Javadoc)
+	 * @see pl.zut.zjava.entity.service.DAOService#delete(java.lang.Object)
+	 */
+	@Override
+	public Boolean delete(E entity) {
+		
+		try {
+
+			String query = ReflectionUtils.BuildDeleteQuery(entity);
+			return executeQuery(query);
+		} catch (IllegalArgumentException | IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return false;
+	}
+	
+	
+	/*
+	 * (non-Javadoc)
+	 * @see pl.zut.zjava.entity.service.DAOService#update(java.lang.Object)
+	 */
+	@Override
+	public E update(E entity) {
+		
+		try {
+
+			String query = ReflectionUtils.BuildUpdateQuery(entity);
+			executeQuery(query);
+		} catch (IllegalArgumentException | IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return entity;
+	}
+	
 }
