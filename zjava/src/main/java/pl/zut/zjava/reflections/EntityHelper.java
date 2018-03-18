@@ -119,7 +119,7 @@ public class EntityHelper {
 			for ( Field field : fields ) {
 				
 				Column col = field.getAnnotation(Column.class);
-				if ( col == null || ( col != null && col.primaryKey() == Column.IS_PRIMARY_KEY )) {
+				if ( col == null || ( col != null && col.primaryKey() == Column.PRIMARY_KEY )) {
 					continue;
 				}
 				
@@ -180,7 +180,7 @@ public class EntityHelper {
 		Column column = null;
 		for ( Field field : clazz.getSuperclass().getDeclaredFields() ) {
 			column = field.getAnnotation(Column.class);
-			if ( column != null && column.primaryKey() == Column.IS_PRIMARY_KEY ) {
+			if ( column != null && column.primaryKey() == Column.PRIMARY_KEY ) {
 				pkField = field;
 				break;
 			}
@@ -190,7 +190,7 @@ public class EntityHelper {
 		if ( pkField == null ) {
 			for ( Field field : clazz.getDeclaredFields() ) {
 				column = field.getAnnotation(Column.class);
-				if (column != null  &&  column.primaryKey() == Column.IS_PRIMARY_KEY ) {
+				if (column != null  &&  column.primaryKey() == Column.PRIMARY_KEY ) {
 					pkField = field;
 					break;
 				}
@@ -240,7 +240,7 @@ public class EntityHelper {
 		Column column = null;
 		for ( Field field : entity.getClass().getSuperclass().getDeclaredFields() ) {
 			column = field.getAnnotation(Column.class);
-			if ( column != null && column.primaryKey() == Column.IS_PRIMARY_KEY ) {
+			if ( column != null && column.primaryKey() == Column.PRIMARY_KEY ) {
 				pkField = field;
 				break;
 			}
@@ -249,7 +249,7 @@ public class EntityHelper {
 		if ( pkField == null ) {
 			for ( Field field : entity.getClass().getDeclaredFields() ) {
 				column = field.getAnnotation(Column.class);
-				if ( column != null && column.primaryKey() == Column.IS_PRIMARY_KEY ) {
+				if ( column != null && column.primaryKey() == Column.PRIMARY_KEY ) {
 					pkField = field;
 					break;
 				}

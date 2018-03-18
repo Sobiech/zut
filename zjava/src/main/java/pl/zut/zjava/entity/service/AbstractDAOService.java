@@ -19,7 +19,7 @@ public abstract class AbstractDAOService<E> implements DAOService<E> {
 	 * @return
 	 * @throws SQLException
 	 */
-	public E getResult(String query,  Class<E> clazz) throws SQLException {
+	protected E getResult(String query,  Class<E> clazz) throws SQLException {
 		
 		Connection con = RdbmsConnectionManager.GetConnection();
 		E instance = null;
@@ -104,44 +104,6 @@ public abstract class AbstractDAOService<E> implements DAOService<E> {
 		return result; 
 	}
 	
-
-	/**
-	 * 
-	 * @param resultSet
-	 * @param clazz
-	 * @return
-	 * @throws SQLException
-	 */
-	private E reflectResultSet(ResultSet resultSet, Class<E> clazz) throws SQLException {
-		
-		try {
-			
-			E instance = clazz.newInstance();
-			for ( Field field : instance.getClass().getDeclaredFields() ) {
-				
-				Column column = field.getAnnotation(Column.class);
-				if ( column != null ) {
-					Object fieldValue = resultSet.getObject(column.name());
-					ReflectionUtils.SetField(instance, field.getName(), fieldValue);
-				}
-			}
-			
-			for ( Field field : instance.getClass().getSuperclass().getDeclaredFields() ) {
-				
-				Column column = field.getAnnotation(Column.class);
-				if ( column != null ) {
-					Object fieldValue = resultSet.getObject(column.name());
-					ReflectionUtils.SetField(instance, field.getName(), fieldValue);
-				}
-			}
-			
-			return instance;
-		} catch (InstantiationException | IllegalAccessException e) {
-			
-			e.printStackTrace();
-			return null;
-		}
-	}
 	
 	
 	/*
@@ -155,7 +117,7 @@ public abstract class AbstractDAOService<E> implements DAOService<E> {
 		
 		try {
 
-			String query = EntityHelper.BuildSelectQuery(String.valueOf(id), clazz);
+			String query = EntityHelper.BuildSelectQuery(id, clazz);
 			result = getResult(query, clazz);
 		} catch (IllegalArgumentException e) {
 			e.printStackTrace();
@@ -228,5 +190,43 @@ public abstract class AbstractDAOService<E> implements DAOService<E> {
 		
 		return entity;
 	}
+
 	
+	/**
+	 * 
+	 * @param resultSet
+	 * @param clazz
+	 * @return
+	 * @throws SQLException
+	 */
+	private E reflectResultSet(ResultSet resultSet, Class<E> clazz) throws SQLException {
+		
+		try {
+			
+			E instance = clazz.newInstance();
+			for ( Field field : instance.getClass().getDeclaredFields() ) {
+				
+				Column column = field.getAnnotation(Column.class);
+				if ( column != null ) {
+					Object fieldValue = resultSet.getObject(column.name());
+					ReflectionUtils.SetField(instance, field.getName(), fieldValue);
+				}
+			}
+			
+			for ( Field field : instance.getClass().getSuperclass().getDeclaredFields() ) {
+				
+				Column column = field.getAnnotation(Column.class);
+				if ( column != null ) {
+					Object fieldValue = resultSet.getObject(column.name());
+					ReflectionUtils.SetField(instance, field.getName(), fieldValue);
+				}
+			}
+			
+			return instance;
+		} catch (InstantiationException | IllegalAccessException e) {
+			
+			e.printStackTrace();
+			return null;
+		}
+	}
 }
