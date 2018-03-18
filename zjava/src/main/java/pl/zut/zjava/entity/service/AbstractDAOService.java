@@ -5,11 +5,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 import pl.zut.zjava.RdbmsConnectionManager;
 import pl.zut.zjava.entity.annotation.Column;
+import pl.zut.zjava.reflections.EntityHelper;
 import pl.zut.zjava.reflections.ReflectionUtils;
 
 public abstract class AbstractDAOService<E> implements DAOService<E> {
@@ -30,7 +29,9 @@ public abstract class AbstractDAOService<E> implements DAOService<E> {
 			PreparedStatement statement = con.prepareStatement(query);
 			ResultSet resultSet = statement.executeQuery();
 			while ( resultSet.next() ) {
-				instance = reflectResultSet(resultSet, clazz); 
+				if ( resultSet.getMetaData().getColumnCount() > 0 ) {
+					instance = reflectResultSet(resultSet, clazz); 
+				}
 			}
 			
 		} catch (SQLException e) {
@@ -48,7 +49,7 @@ public abstract class AbstractDAOService<E> implements DAOService<E> {
 	 * @return
 	 * @throws SQLException
 	 */
-	public List<E> getResultList(String query,  Class<E> clazz, Integer limit) throws SQLException {
+	/**public List<E> getResultList(String query,  Class<E> clazz, Integer limit) throws SQLException {
 		
 		Connection con = RdbmsConnectionManager.GetConnection();
 		List<E> result = new ArrayList<>();
@@ -76,7 +77,7 @@ public abstract class AbstractDAOService<E> implements DAOService<E> {
 		
 		return result;
 	}
-
+	 **/
 	
 	
 	/**
@@ -142,6 +143,7 @@ public abstract class AbstractDAOService<E> implements DAOService<E> {
 		}
 	}
 	
+	
 	/*
 	 * (non-Javadoc)
 	 * @see pl.zut.zjava.entity.service.DAOService#findById(java.lang.Object, java.lang.Class)
@@ -153,7 +155,7 @@ public abstract class AbstractDAOService<E> implements DAOService<E> {
 		
 		try {
 
-			String query = ReflectionUtils.BuildSelectQuery(String.valueOf(id), clazz);
+			String query = EntityHelper.BuildSelectQuery(String.valueOf(id), clazz);
 			result = getResult(query, clazz);
 		} catch (IllegalArgumentException e) {
 			e.printStackTrace();
@@ -174,7 +176,7 @@ public abstract class AbstractDAOService<E> implements DAOService<E> {
 		
 		try {
 
-			String query = ReflectionUtils.BuildInsertQuery(entity);
+			String query = EntityHelper.BuildInsertQuery(entity);
 			executeQuery(query);
 		} catch (IllegalArgumentException | IllegalAccessException e) {
 			e.printStackTrace();
@@ -195,7 +197,7 @@ public abstract class AbstractDAOService<E> implements DAOService<E> {
 		
 		try {
 
-			String query = ReflectionUtils.BuildDeleteQuery(entity);
+			String query = EntityHelper.BuildDeleteQuery(entity);
 			return executeQuery(query);
 		} catch (IllegalArgumentException | IllegalAccessException e) {
 			e.printStackTrace();
@@ -216,7 +218,7 @@ public abstract class AbstractDAOService<E> implements DAOService<E> {
 		
 		try {
 
-			String query = ReflectionUtils.BuildUpdateQuery(entity);
+			String query = EntityHelper.BuildUpdateQuery(entity);
 			executeQuery(query);
 		} catch (IllegalArgumentException | IllegalAccessException e) {
 			e.printStackTrace();
