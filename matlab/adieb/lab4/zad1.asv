@@ -1,0 +1,32 @@
+clc
+clear all
+close all
+
+format long
+
+Y = [ 910 778 784 805 790 1020 746 835 850 750 850 826 725 680 735 865 985 700 ];
+X = [ 40 112 116 90 95 25 157 59 48 132 57 70 175 210 168 48 35 180 ];
+
+alfa = 0.05;
+
+% funkcja liniowa
+[b0, b1, yModel] = regression(X,Y);
+frpintf('Regresja liniowa\n');
+fprintf('-> wartoœæ wsp. b1 = %d\n', b1);
+fprintf('-> wartoœæ wsp. b0 = %d\n', b0 );
+
+e = Y - yMoldel;
+bladStandardowy = sqrt((sum(e.^2))/(size(e,2)-2));
+fprintf('-> b³¹d standardowy estymacji = %f', bladStandardowy );
+
+R = sum((Xo - mean(Xo)).*(Yo - mean(Yo)))/sqrt(sum((Xo - mean(Xo)).^2)*sum((Yo - mean(Yo)).^2));
+fprintf('-> wsp. korelacji R = %f ', R);
+R2 = R^2;
+fprintf('-> wsp. determinacji R^2 = %f', R2);
+
+fprintf('-> Równanie regresji y = %fx + %f + %f', b1, b0, bladStandardowy);
+XL = min(X):max(X);
+YL = b1*XL+b0;
+
+%Ywp = log10(Yo);
+%Xp = log10(Xo);
