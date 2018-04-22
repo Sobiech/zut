@@ -70,18 +70,17 @@ RW = sum((Xw - mean(Xw)).*(Yw - mean(Yw)))/sqrt(sum((Xw - mean(Xw)).^2)*sum((Yw 
 fprintf('-> wsp. korelacji R = %f\n', RW);
 R2W = RW^2;
 fprintf('-> wsp. determinacji R^2 = %f\n', R2W);
-fprintf('-> postaæ funkcji f(x) = %fx + %f + %f\n\n', bw1, bw0, bladStandardowyW);    
-
-
+fprintf('-> postaæ funkcji f(x) = %f^x + %f + %f\n\n', bw1, bw0, bladStandardowyW);    
 YW = ( bw0 )*(( bw1 ).^XL );
-R2ALL = [ R2, R2P, R2W ];
-R2MAX = max(R2ALL);
+
+R2_all = [ R2, R2P, R2W ];
+R2_max = max(R2_all);
 
 model_array = {'liniowy', 'potêgowy', 'wyk³adniczy'};
 fprintf('Wnioski:\n');
 
-for i = 1:max(size(R2ALL))
-    if (R2ALL(i) == R2MAX)
+for i = 1:max(size(R2_all))
+    if (R2_all(i) == R2_max)
         disp(['-> najlepszym modelem jest model:', model_array(i)]);
         break;
     end
