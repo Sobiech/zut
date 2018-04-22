@@ -43,86 +43,74 @@ Y = [ 5 5.6 9.4 26.7;
         7 11.5 22.4 67.8;
         7 5.2 8 26.7;
         7 6.4 10.1 3];
-    
-xsr = mean(X);
-ysr = mean(Y);
-xstd = std(X);
-ystd = std(Y);
 
-Xu = [ ((X(:,1)-xsr(1))/xstd(1)), ((X(:,2)-xsr(2))/xstd(2)), ((X(:,3)-xsr(3))/xstd(3)) ];
-Yu = [ ((Y(:,1)-ysr(1))/ystd(1)), ((Y(:,2)-ysr(2))/ystd(2)), ((Y(:,3)-ysr(3))/ystd(3)), ((Y(:,4)-ysr(4))/ystd(4)) ];
-xs = size(Xu,2);
-ys = size(Yu,2);
-Z = [Xu,Yu];
+% standaryzacja  / 1
+X_sr = mean(X);
+Y_sr = mean(Y);
 
-Cz = cov(Z)
-[w k] = size(Cz);
-Cxx = Cz(1:xs,1:xs);
-Cxy = Cz(1:xs,ys:k);
-Cyx = Cz(ys:w,1:xs);
-Cyy = Cz(ys:w,ys:k);
+X_std = std(X);
+Y_std = std(Y);
 
-Cm = inv(Cxx)*Cxy*inv(Cyy)*Cyx
+[ x_row x_col ] = size(X);
+[ y_row y_col ] = size(Y);
 
-[V D] = eig(Cm) % D to wartoœci w³asne (lamda^2), V to wektory w³asne 
+X_u = [];
+Y_u = [];
 
-SORT = [sum(real(D)); V];
+for i = 1 : x_col
+    X_u = [ X_u ((X(:,i) - X_sr(i)) / X_std(i)) ]; 
+end
+
+for i = 1 : y_col 
+    Y_u = [ Y ((Y(:,i) - Y_sr(i)) / Y_std(i)) ]; 
+end
+
+% budowa macierzy / 2
+Z = [X_u, Y_u];
+
+% macierz kowariancji / 3
+C_z = cov(Z);
+[cz_row cz_col] = size(C_z);
+
+C_xx = C_z( 1:x_col, 1:x_col );
+C_xy = C_z( 1:x_col, y_col:cz_col );
+
+C_yx = C_z( y_col:cz_row, 1:x_col );
+C_yy = C_z( y_col:cz_row, y_col:cz_col);
+
+
+C_m = inv(C_xx) * C_xy * inv(C_yy)* C_yx;
+
+[A U] = eig(C_m);
+
+SORT = [sum(U); A];
 SORT = fliplr(sortrows(SORT',1)');
 
-D = SORT(1,:)
-V = SORT(2:size(SORT,1),:)
+U = SORT(1,:);
+A = SORT(2:size(SORT,1),:);
 
-Su = sum(V'*Cxx*V)
-sqrtSu = sqrt(Su)
-A = V(1,:)./sqrtSu;
-for i = 2:size(V,1)
-    A = [A; V(i,:)./sqrtSu];
+S_u = sum( A' * C_xx * A );
+S_u_sqrt = sqrt(S_u);
+A = U(1,:)./S_u_sqrt;
+
+for i = 2:size(U,1)
+    A = [A; U(i,:)./S_u_sqrt];
 end
-disp(['Wagi kanoniczne zmiennej X']);
-A % wagi kanoniczne dla X
 
-test = A'*Cxx*A;
+fprintf('wagi kanoniczne zmiennej x: \n');
+fprintf('\t- %s \n', A);
 
-disp(['Wartoœæ korelacji kanonicznej']);
-R = sqrt(D) %Wartoœæ korelacji kanonicznej
-B = (1./R(1))*inv(Cyy)*Cyx*A(:,1);
+
+R = sqrt(U);
+fprintf('\nwartoœæ korelacji kanonicznej: \n');
+fprintf('\t- %s \n', R);
+
+B = ( 1./ R(1) ) * inv(C_yy) * C_yx * A(:,1);
 for i = 2:size(A,2)
-    B = [B,(1./R(1))*inv(Cyy)*Cyx*A(:,i)];
-end
-disp(['Wagi kanoniczne zmiennej Y']);
-B % wagi kanoniczne zmiennej
-
-for i = 1:size(B,2)
-    [a pozA] = max(abs(A(:,i)));
-    [b pozB] = max(abs(B(:,i)));
-    disp(['Dla ', num2str(i), ' zmiennej kanonicznej najwiêkszy wp³yw ma X', num2str(pozA), ' oraz Y',  num2str(pozB)]);
+    B = [B,(1./R(1)) * inv(C_yy) * C_yx * A(:,i)];
 end
 
-p = size(Xu,2);
-q = size(Yu,2);
-n = size(Yu,1);
-alfa = 0.05;
-for i = 1:size(R,2)
-    disp(['Dla R', num2str(i), ':']);
-    D1 = D(i:size(D,2));
-    z = q + 1 - i;
-    t = p + 1 - i;
-    H = -1*(n-(1/2)*(z+t+3))*log(prod(1-D1));
-    P = 1 - chi2cdf(H,z*t);
-    if (P < alfa)
-        disp('H1: Przynajmniej jeden ze wspó³czynników korelacji kanonicznej jest istotny.');
-    else
-        disp('H0: Wszystkie korelacje s¹ nie istone');
-        break;
-    end
-end
+B = SORT(1,:);
+fprintf('\n wagi kanoniczne zmiennej y: \n');
+fprintf('\t- %s \n', B);
 
-disp('ladunki czynnikowe')
-X = A'*Xu';
-Y = B'*Yu';
-Kor_X = corr(Xu,X')
-Kor_Y = corr(Yu,Y')
-
-disp('wariancje wyodrebnione')
-warX = sum(Kor_X.^2)/3
-warY = sum(Kor_Y.^2)/4
