@@ -1,13 +1,17 @@
 package pl.zut.zjava.entity.service;
 
+import java.sql.SQLException;
+import java.util.List;
+
 public interface DAOService<E> {
 	
-	public E findById(String obj, Class<E> clazz);
+	E findById(String obj, Class<E> clazz) throws SQLException;
 	
-	public E save(E entity); 
+	E save(E entity) throws SQLException;
 	
-	public E update(E entity);
+	E update(E entity) throws SQLException, IllegalAccessException;
 	
-	public Boolean delete(E entity);
-	
+	Boolean delete(E entity) throws IllegalAccessException, SQLException;
+
+	List<E> getList() throws SQLException;
 }

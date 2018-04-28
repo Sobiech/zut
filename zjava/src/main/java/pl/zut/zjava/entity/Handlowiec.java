@@ -10,18 +10,13 @@ public class Handlowiec extends Pracownik {
 
 	private static final long serialVersionUID = -2056805239800720312L;
 
-	@Column( name = "stawka_prowizji", 	description = "Prowizja (%)" )
+	@Column(name = "stawka_prowizji", description = "Prowizja (%)")
 	private BigDecimal stawkaProwizji;
 
-	@Column( name = "limit_prowizji", 	description = "Limit prowizji/miesi¹c (z³)" )
+	@Column(name = "limit_prowizji", description = "Limit prowizji/miesi¹c (z³)")
 	private Integer limitProwizji;
-	
-	@Override
-	public String toString() {
-		return "Handlowiec [stawkaProwizji=" + stawkaProwizji + ", limitProwizji=" + limitProwizji + ", pesel=" + pesel
-				+ ", imie=" + imie + ", nazwisko=" + nazwisko + ", wynagrodzenie=" + wynagrodzenie + ", stanowisko="
-				+ stanowisko + ", telefon=" + telefon + "]";
-	}
+
+
 
 	public BigDecimal getStawkaProwizji() {
 		return stawkaProwizji;
@@ -38,5 +33,39 @@ public class Handlowiec extends Pracownik {
 	public void setLimitProwizji(Integer limitProwizji) {
 		this.limitProwizji = limitProwizji;
 	}
-	
+
+
+	/** strings **/
+
+	public String getStawkaProwizjiStr() {
+		return String.valueOf(stawkaProwizji);
+	}
+
+	public void setStawkaProwizjiStr(String stawkaProwizji) {
+		this.stawkaProwizji = BigDecimal.valueOf(Float.valueOf(stawkaProwizji));
+	}
+
+	public String getLimitProwizjiStr() {
+		return String.valueOf(limitProwizji);
+	}
+
+	public void setLimitProwizjiStr(String limitProwizji) {
+		this.limitProwizji = Integer.parseInt(limitProwizji);
+	}
+
+
+	@Override
+	protected StringBuilder getData() {
+
+		StringBuilder data = super.getData();
+
+		if(stawkaProwizji != null)
+			data.append("Stawka prowizji: ").append(stawkaProwizji).append("\n");
+
+		if(limitProwizji != null)
+			data.append("Limit prowizji : ").append(limitProwizji).append("\n");
+
+		return data;
+	}
+
 }

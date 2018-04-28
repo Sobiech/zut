@@ -2,6 +2,7 @@ package pl.zut.zjava.entity;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Objects;
 
 import pl.zut.zjava.entity.annotation.Column;
 import pl.zut.zjava.entity.annotation.Table;
@@ -28,11 +29,10 @@ public class Pracownik implements Serializable {
 
 	@Column( name = "telefon", 		 description = "Numer telefonu" )
 	protected String telefon;
-	
+
 	@Override
 	public String toString() {
-		return "Pracownik [pesel=" + pesel + ", imie=" + imie + ", nazwisko=" + nazwisko + ", wynagrodzenie="
-				+ wynagrodzenie + ", stanowisko=" + stanowisko + ", telefon=" + telefon + "]";
+		return Objects.isNull(imie ) ? "" : imie + " " + ( Objects.isNull(nazwisko) ? "" : nazwisko) ;
 	}
 
 	public String getPesel() {
@@ -59,6 +59,14 @@ public class Pracownik implements Serializable {
 		this.nazwisko = nazwisko;
 	}
 
+	public String getSalary() {
+		return String.valueOf(wynagrodzenie);
+	}
+
+	public void setSalary(String wynagrodzenie) {
+		this.wynagrodzenie = BigDecimal.valueOf(Float.parseFloat(wynagrodzenie));
+	}
+
 	public BigDecimal getWynagrodzenie() {
 		return wynagrodzenie;
 	}
@@ -82,6 +90,41 @@ public class Pracownik implements Serializable {
 	public void setTelefon(String telefon) {
 		this.telefon = telefon;
 	}
-	
+
+
+	public String getFullData() {
+
+		StringBuilder fullData =
+			new StringBuilder("----------------------------------\n")
+				.append(getData())
+				.append("----------------------------------\n");
+
+		return fullData.toString();
+	}
+
+
+	protected StringBuilder getData() {
+
+		StringBuilder data = new StringBuilder();
+		if(getPesel() != null)
+			data.append("Identyfikator  : ").append(getPesel()).append("\n");
+
+		if(getImie() != null)
+			data.append("Imie           : ").append(getImie()).append("\n");
+
+		if(getNazwisko() != null)
+			data.append("Nazwisko       : ").append(getNazwisko()).append("\n");
+
+		if(getWynagrodzenie() != null)
+			data.append("Wynagrodzenie  : ").append(getWynagrodzenie()).append(" zl\n");
+
+		if(getStanowisko() != null)
+			data.append("Stanowisko     : ").append(getStanowisko()).append("\n");
+
+		if(getTelefon() != null)
+			data.append("Telefon        : ").append(getTelefon()).append("\n");
+
+		return data;
+	}
 }
 

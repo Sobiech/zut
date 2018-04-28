@@ -5,6 +5,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import pl.zut.zjava.RdbmsConnectionManager;
 import pl.zut.zjava.entity.annotation.Column;
@@ -19,7 +21,7 @@ public abstract class AbstractDAOService<E> implements DAOService<E> {
 	 * @return
 	 * @throws SQLException
 	 */
-	protected E getResult(String query,  Class<E> clazz) throws SQLException {
+	private E getResult(String query, Class<E> clazz) throws SQLException {
 		
 		Connection con = RdbmsConnectionManager.GetConnection();
 		E instance = null;
@@ -49,7 +51,7 @@ public abstract class AbstractDAOService<E> implements DAOService<E> {
 	 * @return
 	 * @throws SQLException
 	 */
-	/**public List<E> getResultList(String query,  Class<E> clazz, Integer limit) throws SQLException {
+	List<E> getResultList(String query, Class<E> clazz, Integer limit) throws SQLException {
 		
 		Connection con = RdbmsConnectionManager.GetConnection();
 		List<E> result = new ArrayList<>();
@@ -77,7 +79,7 @@ public abstract class AbstractDAOService<E> implements DAOService<E> {
 		
 		return result;
 	}
-	 **/
+
 	
 	
 	/**
@@ -86,7 +88,7 @@ public abstract class AbstractDAOService<E> implements DAOService<E> {
 	 * @return
 	 * @throws SQLException
 	 */
-	public Boolean executeQuery(String query) throws SQLException {
+	private Boolean executeQuery(String query) throws SQLException {
 		
 		Connection con = RdbmsConnectionManager.GetConnection();
 		Boolean result = false;
@@ -111,20 +113,12 @@ public abstract class AbstractDAOService<E> implements DAOService<E> {
 	 * @see pl.zut.zjava.entity.service.DAOService#findById(java.lang.Object, java.lang.Class)
 	 */
 	@Override
-	public E findById(String id, Class<E> clazz) {
+	public E findById(String id, Class<E> clazz) throws IllegalArgumentException, SQLException {
 		
 		E result = null;
-		
-		try {
+		String query = EntityHelper.BuildSelectQuery(id, clazz);
+		result = getResult(query, clazz);
 
-			String query = EntityHelper.BuildSelectQuery(id, clazz);
-			result = getResult(query, clazz);
-		} catch (IllegalArgumentException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		
 		return result;
 	}
 	
@@ -134,18 +128,12 @@ public abstract class AbstractDAOService<E> implements DAOService<E> {
 	 * @see pl.zut.zjava.entity.service.DAOService#save(java.lang.Object)
 	 */
 	@Override
-	public E save(E entity) {
+	public E save(E entity) throws SQLException {
 		
-		try {
+		String query = EntityHelper.BuildInsertQuery(entity);
+		System.out.println(query);
+		executeQuery(query);
 
-			String query = EntityHelper.BuildInsertQuery(entity);
-			executeQuery(query);
-		} catch (IllegalArgumentException | IllegalAccessException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		
 		return entity;
 	}
 
@@ -155,19 +143,11 @@ public abstract class AbstractDAOService<E> implements DAOService<E> {
 	 * @see pl.zut.zjava.entity.service.DAOService#delete(java.lang.Object)
 	 */
 	@Override
-	public Boolean delete(E entity) {
+	public Boolean delete(E entity) throws IllegalAccessException, SQLException {
 		
-		try {
-
-			String query = EntityHelper.BuildDeleteQuery(entity);
-			return executeQuery(query);
-		} catch (IllegalArgumentException | IllegalAccessException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		
-		return false;
+		String query = EntityHelper.BuildDeleteQuery(entity);
+		System.out.println(query);
+		return executeQuery(query);
 	}
 	
 	
@@ -176,18 +156,12 @@ public abstract class AbstractDAOService<E> implements DAOService<E> {
 	 * @see pl.zut.zjava.entity.service.DAOService#update(java.lang.Object)
 	 */
 	@Override
-	public E update(E entity) {
+	public E update(E entity) throws SQLException, IllegalAccessException {
 		
-		try {
+		String query = EntityHelper.BuildUpdateQuery(entity);
+		System.out.println(query);
+		executeQuery(query);
 
-			String query = EntityHelper.BuildUpdateQuery(entity);
-			executeQuery(query);
-		} catch (IllegalArgumentException | IllegalAccessException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		
 		return entity;
 	}
 

@@ -1,0 +1,885 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="pl.zut.zjava.swing.MainPanel">
+  <grid id="27dc6" binding="contentPane" layout-manager="FormLayout">
+    <rowspec value="top:600px:noGrow"/>
+    <colspec value="fill:400px:grow"/>
+    <constraints>
+      <xy x="20" y="21" width="727" height="600"/>
+    </constraints>
+    <properties>
+      <background color="-2038047"/>
+      <enabled value="true"/>
+      <font name="Candara" style="0"/>
+      <foreground color="-2038047"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <tabbedpane id="bcfad" binding="tabbedPanel">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="200" height="200"/>
+          </grid>
+          <forms/>
+        </constraints>
+        <properties>
+          <background color="-2038047"/>
+          <foreground color="-16777216"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <grid id="b5e25" binding="workerPane" layout-manager="FormLayout">
+            <rowspec value="center:max(d;4px):noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="center:30px:noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="center:10px:noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="center:34px:noGrow"/>
+            <rowspec value="center:max(d;10dlu):noGrow"/>
+            <rowspec value="top:5dlu:noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="center:30px:noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="center:max(d;4dlu):noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="top:30px:noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="center:29px:noGrow"/>
+            <rowspec value="center:max(d;4px):noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="top:5dlu:noGrow"/>
+            <rowspec value="top:10dlu:noGrow"/>
+            <rowspec value="center:30px:noGrow"/>
+            <rowspec value="center:max(d;4px):noGrow"/>
+            <rowspec value="top:10px:noGrow"/>
+            <rowspec value="fill:30px:noGrow"/>
+            <rowspec value="center:188px:noGrow"/>
+            <colspec value="fill:max(d;4px):noGrow"/>
+            <colspec value="left:4dlu:noGrow"/>
+            <colspec value="fill:max(d;20px):noGrow"/>
+            <colspec value="left:60dlu:noGrow"/>
+            <colspec value="left:4dlu:noGrow"/>
+            <colspec value="fill:max(d;4px):noGrow"/>
+            <colspec value="left:200px:noGrow"/>
+            <colspec value="fill:d:noGrow"/>
+            <colspec value="fill:d:noGrow"/>
+            <colspec value="fill:d:noGrow"/>
+            <colspec value="left:60dlu:noGrow"/>
+            <colspec value="left:4dlu:noGrow"/>
+            <colspec value="fill:max(d;4px):noGrow"/>
+            <colspec value="left:200px:noGrow"/>
+            <colspec value="left:40dlu:noGrow"/>
+            <constraints>
+              <tabbedpane title-resource-bundle="i18n" title-key="pane.title.worker"/>
+            </constraints>
+            <properties>
+              <background color="-14081756"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="73417" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="10" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <foreground color="-2959149"/>
+                  <text resource-bundle="i18n" key="pane.label.firstname"/>
+                </properties>
+              </component>
+              <component id="a1c33" class="javax.swing.JTextField" binding="workerLastName">
+                <constraints>
+                  <grid row="10" column="13" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <foreground color="-16777216"/>
+                </properties>
+              </component>
+              <component id="b656b" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="10" column="10" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <foreground color="-2959149"/>
+                  <text resource-bundle="i18n" key="pane.label.lastname"/>
+                </properties>
+              </component>
+              <component id="88cf" class="javax.swing.JTextField" binding="workerName">
+                <constraints>
+                  <grid row="10" column="6" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <foreground color="-16777216"/>
+                </properties>
+              </component>
+              <component id="b92d9" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="6" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <foreground color="-2959149"/>
+                  <text resource-bundle="i18n" key="pane.label.pesel"/>
+                </properties>
+              </component>
+              <component id="1ed99" class="javax.swing.JTextField" binding="workerId">
+                <constraints>
+                  <grid row="6" column="6" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <editable value="true"/>
+                  <foreground color="-16777216"/>
+                </properties>
+              </component>
+              <component id="83310" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="14" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <foreground color="-2959149"/>
+                  <text resource-bundle="i18n" key="pane.label.salary"/>
+                </properties>
+              </component>
+              <component id="dd106" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="14" column="10" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <foreground color="-2959149"/>
+                  <text resource-bundle="i18n" key="pane.label.place"/>
+                </properties>
+              </component>
+              <component id="1d0a7" class="javax.swing.JTextField" binding="workerSalary">
+                <constraints>
+                  <grid row="14" column="6" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <foreground color="-16777216"/>
+                </properties>
+              </component>
+              <component id="7f2dd" class="javax.swing.JTextField" binding="workerPlace">
+                <constraints>
+                  <grid row="14" column="13" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <foreground color="-16777216"/>
+                </properties>
+              </component>
+              <component id="eb55a" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="18" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <foreground color="-2959149"/>
+                  <text resource-bundle="i18n" key="pane.label.msisdn"/>
+                </properties>
+              </component>
+              <component id="a20a" class="javax.swing.JTextField" binding="workerMsisdn">
+                <constraints>
+                  <grid row="18" column="6" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <foreground color="-16777216"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <component id="8d086" class="javax.swing.JButton" binding="saveWorkerButton" default-binding="true">
+                <constraints>
+                  <grid row="24" column="13" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false"/>
+                </constraints>
+                <properties>
+                  <text resource-bundle="i18n" key="btn.save"/>
+                </properties>
+              </component>
+              <component id="ca962" class="javax.swing.JComboBox" binding="workerComboBox" default-binding="true">
+                <constraints>
+                  <grid row="2" column="10" row-span="1" col-span="4" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                  <forms/>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="308ba" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="2" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2038047"/>
+                  <foreground color="-2038047"/>
+                  <text resource-bundle="i18n" key="pane.label.select_worker"/>
+                </properties>
+              </component>
+              <component id="bddf1" class="javax.swing.JButton" binding="deleteWorkerButton" default-binding="true">
+                <constraints>
+                  <grid row="24" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false"/>
+                </constraints>
+                <properties>
+                  <enabled value="false"/>
+                  <text resource-bundle="i18n" key="btn.delete"/>
+                </properties>
+              </component>
+              <component id="9c03d" class="javax.swing.JButton" binding="serializeWorkerButton">
+                <constraints>
+                  <grid row="27" column="13" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false"/>
+                </constraints>
+                <properties>
+                  <enabled value="false"/>
+                  <text resource-bundle="i18n" key="btn.save.obj"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="3c692" binding="traderPane" layout-manager="FormLayout">
+            <rowspec value="center:max(d;4px):noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="center:30px:noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="center:10px:noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="center:34px:noGrow"/>
+            <rowspec value="center:max(d;10dlu):noGrow"/>
+            <rowspec value="top:5dlu:noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="center:30px:noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="center:max(d;4dlu):noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="top:30px:noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="center:29px:noGrow"/>
+            <rowspec value="center:max(d;4px):noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="top:5dlu:noGrow"/>
+            <rowspec value="top:30px:noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="center:max(d;10px):noGrow"/>
+            <rowspec value="center:34px:noGrow"/>
+            <rowspec value="top:10dlu:noGrow"/>
+            <rowspec value="center:30px:noGrow"/>
+            <rowspec value="fill:188px:noGrow"/>
+            <rowspec value="center:max(d;4dlu):noGrow"/>
+            <colspec value="fill:max(d;4px):noGrow"/>
+            <colspec value="left:4dlu:noGrow"/>
+            <colspec value="fill:max(d;20px):noGrow"/>
+            <colspec value="left:60dlu:noGrow"/>
+            <colspec value="left:4dlu:noGrow"/>
+            <colspec value="fill:max(d;4px):noGrow"/>
+            <colspec value="left:200px:noGrow"/>
+            <colspec value="fill:d:noGrow"/>
+            <colspec value="fill:d:noGrow"/>
+            <colspec value="fill:d:noGrow"/>
+            <colspec value="left:60dlu:noGrow"/>
+            <colspec value="left:4dlu:noGrow"/>
+            <colspec value="fill:max(d;4px):noGrow"/>
+            <colspec value="left:200px:noGrow"/>
+            <colspec value="left:40dlu:noGrow"/>
+            <constraints>
+              <tabbedpane title-resource-bundle="i18n" title-key="pane.title.trader"/>
+            </constraints>
+            <properties>
+              <background color="-14081756"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="dfc31" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="10" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <foreground color="-2959149"/>
+                  <text resource-bundle="i18n" key="pane.label.firstname"/>
+                </properties>
+              </component>
+              <component id="68efe" class="javax.swing.JTextField" binding="traderLastName">
+                <constraints>
+                  <grid row="10" column="13" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <foreground color="-16777216"/>
+                </properties>
+              </component>
+              <component id="3a004" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="10" column="10" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <foreground color="-2959149"/>
+                  <text resource-bundle="i18n" key="pane.label.lastname"/>
+                </properties>
+              </component>
+              <component id="2c13e" class="javax.swing.JTextField" binding="traderFirstName">
+                <constraints>
+                  <grid row="10" column="6" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <foreground color="-16777216"/>
+                </properties>
+              </component>
+              <component id="547a" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="6" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <foreground color="-2959149"/>
+                  <text resource-bundle="i18n" key="pane.label.pesel"/>
+                </properties>
+              </component>
+              <component id="542fe" class="javax.swing.JTextField" binding="traderId">
+                <constraints>
+                  <grid row="6" column="6" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <editable value="true"/>
+                  <foreground color="-16777216"/>
+                </properties>
+              </component>
+              <component id="e00a7" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="14" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <foreground color="-2959149"/>
+                  <text resource-bundle="i18n" key="pane.label.salary"/>
+                </properties>
+              </component>
+              <component id="81f4c" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="14" column="10" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <foreground color="-2959149"/>
+                  <text resource-bundle="i18n" key="pane.label.place"/>
+                </properties>
+              </component>
+              <component id="64af6" class="javax.swing.JTextField" binding="traderSalary">
+                <constraints>
+                  <grid row="14" column="6" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <foreground color="-16777216"/>
+                </properties>
+              </component>
+              <component id="bd9c3" class="javax.swing.JTextField" binding="traderPlace">
+                <constraints>
+                  <grid row="14" column="13" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <foreground color="-16777216"/>
+                </properties>
+              </component>
+              <component id="cce15" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="18" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <foreground color="-2959149"/>
+                  <text resource-bundle="i18n" key="pane.label.msisdn"/>
+                </properties>
+              </component>
+              <component id="5e30e" class="javax.swing.JTextField" binding="traderMsisdn">
+                <constraints>
+                  <grid row="18" column="6" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <foreground color="-16777216"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <component id="377b7" class="javax.swing.JButton" binding="saveTraderButton">
+                <constraints>
+                  <grid row="25" column="13" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false"/>
+                </constraints>
+                <properties>
+                  <text resource-bundle="i18n" key="btn.save"/>
+                </properties>
+              </component>
+              <component id="9a138" class="javax.swing.JComboBox" binding="traderComboBox">
+                <constraints>
+                  <grid row="2" column="10" row-span="1" col-span="4" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                  <forms/>
+                </constraints>
+                <properties>
+                  <model/>
+                </properties>
+              </component>
+              <component id="44022" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="2" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2038047"/>
+                  <foreground color="-2038047"/>
+                  <text resource-bundle="i18n" key="pane.label.select_trader"/>
+                </properties>
+              </component>
+              <component id="e6fa" class="javax.swing.JButton" binding="deleteTraderButton">
+                <constraints>
+                  <grid row="25" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false"/>
+                </constraints>
+                <properties>
+                  <enabled value="false"/>
+                  <text resource-bundle="i18n" key="btn.delete"/>
+                </properties>
+              </component>
+              <component id="9f717" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="18" column="10" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <foreground color="-2959149"/>
+                  <text resource-bundle="i18n" key="pane.label.limit"/>
+                </properties>
+              </component>
+              <component id="efa5a" class="javax.swing.JTextField" binding="traderLimit">
+                <constraints>
+                  <grid row="18" column="13" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <foreground color="-16777216"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <component id="522d6" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="22" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <foreground color="-2959149"/>
+                  <text resource-bundle="i18n" key="pane.label.prowizja"/>
+                </properties>
+              </component>
+              <component id="e2e62" class="javax.swing.JTextField" binding="traderProvision">
+                <constraints>
+                  <grid row="22" column="6" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <foreground color="-16777216"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <component id="21f5c" class="javax.swing.JButton" binding="serializeTraderButton">
+                <constraints>
+                  <grid row="27" column="13" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false"/>
+                </constraints>
+                <properties>
+                  <enabled value="false"/>
+                  <text resource-bundle="i18n" key="btn.save.obj"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="7a454" binding="directorPane" layout-manager="FormLayout">
+            <rowspec value="center:max(d;4px):noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="center:30px:noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="center:10px:noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="center:34px:noGrow"/>
+            <rowspec value="center:max(d;10dlu):noGrow"/>
+            <rowspec value="top:5dlu:noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="center:30px:noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="center:max(d;4dlu):noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="top:30px:noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="center:29px:noGrow"/>
+            <rowspec value="center:max(d;4px):noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="center:31px:noGrow"/>
+            <rowspec value="top:10dlu:noGrow"/>
+            <rowspec value="center:max(d;4px):noGrow"/>
+            <rowspec value="center:30px:noGrow"/>
+            <rowspec value="center:max(d;10px):noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="center:30px:noGrow"/>
+            <rowspec value="fill:188px:noGrow"/>
+            <rowspec value="center:max(d;4dlu):grow"/>
+            <colspec value="fill:max(d;4px):noGrow"/>
+            <colspec value="left:4dlu:noGrow"/>
+            <colspec value="fill:max(d;20px):noGrow"/>
+            <colspec value="left:60dlu:noGrow"/>
+            <colspec value="left:4dlu:noGrow"/>
+            <colspec value="fill:max(d;4px):noGrow"/>
+            <colspec value="left:200px:noGrow"/>
+            <colspec value="fill:d:noGrow"/>
+            <colspec value="fill:d:noGrow"/>
+            <colspec value="fill:d:noGrow"/>
+            <colspec value="left:60dlu:noGrow"/>
+            <colspec value="left:4dlu:noGrow"/>
+            <colspec value="fill:max(d;4px):noGrow"/>
+            <colspec value="left:200px:noGrow"/>
+            <colspec value="left:40dlu:noGrow"/>
+            <constraints>
+              <tabbedpane title-resource-bundle="i18n" title-key="pane.title.director"/>
+            </constraints>
+            <properties>
+              <background color="-14081756"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="72acb" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="10" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <foreground color="-2959149"/>
+                  <text resource-bundle="i18n" key="pane.label.firstname"/>
+                </properties>
+              </component>
+              <component id="20d46" class="javax.swing.JTextField" binding="directorLastName">
+                <constraints>
+                  <grid row="10" column="13" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <foreground color="-16777216"/>
+                </properties>
+              </component>
+              <component id="4d3ad" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="10" column="10" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <foreground color="-2959149"/>
+                  <text resource-bundle="i18n" key="pane.label.lastname"/>
+                </properties>
+              </component>
+              <component id="5ba07" class="javax.swing.JTextField" binding="directorFirstName">
+                <constraints>
+                  <grid row="10" column="6" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <foreground color="-16777216"/>
+                </properties>
+              </component>
+              <component id="e4bb7" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="6" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <foreground color="-2959149"/>
+                  <text resource-bundle="i18n" key="pane.label.pesel"/>
+                </properties>
+              </component>
+              <component id="33bdb" class="javax.swing.JTextField" binding="directorId">
+                <constraints>
+                  <grid row="6" column="6" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <editable value="true"/>
+                  <foreground color="-16777216"/>
+                </properties>
+              </component>
+              <component id="63a39" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="14" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <foreground color="-2959149"/>
+                  <text resource-bundle="i18n" key="pane.label.salary"/>
+                </properties>
+              </component>
+              <component id="2bf0a" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="14" column="10" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <foreground color="-2959149"/>
+                  <text resource-bundle="i18n" key="pane.label.place"/>
+                </properties>
+              </component>
+              <component id="895a5" class="javax.swing.JTextField" binding="directorSalary">
+                <constraints>
+                  <grid row="14" column="6" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <foreground color="-16777216"/>
+                </properties>
+              </component>
+              <component id="51d1f" class="javax.swing.JTextField" binding="directorPlace">
+                <constraints>
+                  <grid row="14" column="13" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <foreground color="-16777216"/>
+                </properties>
+              </component>
+              <component id="aabee" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="18" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <foreground color="-2959149"/>
+                  <text resource-bundle="i18n" key="pane.label.msisdn"/>
+                </properties>
+              </component>
+              <component id="314b" class="javax.swing.JTextField" binding="directorMsisdn">
+                <constraints>
+                  <grid row="18" column="6" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <foreground color="-16777216"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <component id="c92d7" class="javax.swing.JButton" binding="saveDirectorButton">
+                <constraints>
+                  <grid row="25" column="13" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false"/>
+                </constraints>
+                <properties>
+                  <text value="Zapisz"/>
+                </properties>
+              </component>
+              <component id="78225" class="javax.swing.JComboBox" binding="directorComboBox">
+                <constraints>
+                  <grid row="2" column="10" row-span="1" col-span="4" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                  <forms/>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="4aca7" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="2" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2038047"/>
+                  <foreground color="-2038047"/>
+                  <text resource-bundle="i18n" key="pane.label.select_director"/>
+                </properties>
+              </component>
+              <component id="4b09a" class="javax.swing.JButton" binding="deleteDirectorButton">
+                <constraints>
+                  <grid row="25" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false"/>
+                </constraints>
+                <properties>
+                  <enabled value="false"/>
+                  <text value="Usuń"/>
+                </properties>
+              </component>
+              <component id="3ed1a" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="18" column="10" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <foreground color="-2959149"/>
+                  <text resource-bundle="i18n" key="pane.label.add"/>
+                </properties>
+              </component>
+              <component id="f176a" class="javax.swing.JTextField" binding="directorDodatek">
+                <constraints>
+                  <grid row="18" column="13" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <foreground color="-16777216"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <component id="c60f6" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="22" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <foreground color="-2959149"/>
+                  <text resource-bundle="i18n" key="pane.label.card"/>
+                </properties>
+              </component>
+              <component id="efe2e" class="javax.swing.JTextField" binding="directorCard">
+                <constraints>
+                  <grid row="22" column="6" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <foreground color="-16777216"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <component id="31613" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="22" column="10" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <foreground color="-2959149"/>
+                  <text resource-bundle="i18n" key="pane.label.limit"/>
+                </properties>
+              </component>
+              <component id="8719d" class="javax.swing.JTextField" binding="directorLimit">
+                <constraints>
+                  <grid row="22" column="13" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <background color="-2959149"/>
+                  <foreground color="-16777216"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <component id="99ca8" class="javax.swing.JButton" binding="serializeDirectorButton">
+                <constraints>
+                  <grid row="28" column="13" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false"/>
+                </constraints>
+                <properties>
+                  <enabled value="false"/>
+                  <text resource-bundle="i18n" key="btn.save.obj"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+        </children>
+      </tabbedpane>
+    </children>
+  </grid>
+</form>

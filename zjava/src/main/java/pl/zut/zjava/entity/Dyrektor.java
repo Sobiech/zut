@@ -22,19 +22,10 @@ public class Dyrektor extends Pracownik {
 	@Column( name = "limit_kosztow", 	description = "Limit kosztów/miesiąc (zł)" )
 	private Integer limitKosztow;
 
-	
-	@Override
-	public String toString() {
-		return "Dyrektor [dodatekSluzbowy=" + dodatekSluzbowy + ", kartaSluzbowa=" + kartaSluzbowa + ", limitKosztow="
-				+ limitKosztow + ", pesel=" + pesel + ", imie=" + imie + ", nazwisko=" + nazwisko + ", wynagrodzenie="
-				+ wynagrodzenie + ", stanowisko=" + stanowisko + ", telefon=" + telefon + "]";
-	}
-
 
 	public BigDecimal getDodatekSluzbowy() {
 		return dodatekSluzbowy;
 	}
-
 
 	public void setDodatekSluzbowy(BigDecimal dodatekSluzbowy) {
 		this.dodatekSluzbowy = dodatekSluzbowy;
@@ -45,7 +36,6 @@ public class Dyrektor extends Pracownik {
 		return kartaSluzbowa;
 	}
 
-
 	public void setKartaSluzbowa(Integer kartaSluzbowa) {
 		this.kartaSluzbowa = kartaSluzbowa;
 	}
@@ -55,9 +45,57 @@ public class Dyrektor extends Pracownik {
 		return limitKosztow;
 	}
 
-
 	public void setLimitKosztow(Integer limitKosztow) {
 		this.limitKosztow = limitKosztow;
+	}
+
+
+
+
+	/** strings **/
+
+	public String getDodatekSluzbowyStr() {
+		return String.valueOf(dodatekSluzbowy);
+	}
+
+	public void setDodatekSluzbowyStr(String dodatekSluzbowy) {
+		this.dodatekSluzbowy = BigDecimal.valueOf(Float.valueOf(dodatekSluzbowy));
+	}
+
+
+	public String getKartaSluzbowaStr() {
+		return String.valueOf(kartaSluzbowa);
+	}
+
+	public void setKartaSluzbowaStr(String kartaSluzbowa) {
+		this.kartaSluzbowa = Integer.parseInt(kartaSluzbowa);
+	}
+
+
+	public String getLimitKosztowStr() {
+		return String.valueOf(limitKosztow);
+	}
+
+	public void setLimitKosztowStr(String limitKosztow) {
+		this.limitKosztow = Integer.parseInt(limitKosztow);
+	}
+
+
+	@Override
+	protected StringBuilder getData() {
+
+		StringBuilder data = super.getData();
+
+		if(dodatekSluzbowy != null)
+			data.append("Dodatek sluzbowy  : ").append(dodatekSluzbowy).append("\n");
+
+		if(kartaSluzbowa != null)
+			data.append("Karta sluzbowa : ").append(kartaSluzbowa).append("\n");
+
+		if(limitKosztow != null)
+			data.append("Limit kosztow  : ").append(limitKosztow).append("\n");
+
+		return data;
 	}
 
 }

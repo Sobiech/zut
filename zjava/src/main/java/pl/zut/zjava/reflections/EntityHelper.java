@@ -19,9 +19,8 @@ public class EntityHelper {
 	 * @param obj
 	 * @return
 	 * @throws IllegalArgumentException
-	 * @throws IllegalAccessException
 	 */
-	public static <E> String BuildInsertQuery(E obj) throws IllegalArgumentException, IllegalAccessException {
+	public static <E> String BuildInsertQuery(E obj) throws IllegalArgumentException {
 		
 		//TODO: typowanie po refleksji do budowania kwerendy
 		
@@ -113,13 +112,15 @@ public class EntityHelper {
 		
 		List<Field[]> fieldsList = 
 			Arrays.asList( obj.getClass().getDeclaredFields(), obj.getClass().getSuperclass().getDeclaredFields());
-		
+
+		StringBuilder idQuery = new StringBuilder(" WHERE ");
+
 		fieldsList.forEach( fields -> {
 		
 			for ( Field field : fields ) {
 				
 				Column col = field.getAnnotation(Column.class);
-				if ( col == null || ( col != null && col.primaryKey() == Column.PRIMARY_KEY )) {
+				if (col == null) {
 					continue;
 				}
 				
@@ -127,14 +128,25 @@ public class EntityHelper {
 					
 					String value = GetValueByField(field, obj);
 					if ( value != null ) {
-					
-						updateQuery.append(col.name()).append("=");
-						if ( !field.getType().equals(String.class) ) {
-							updateQuery.append(value);
+
+						if ( col.primaryKey() == Column.PRIMARY_KEY ) {
+							idQuery.append(col.name()).append("=");
+
+							if (!field.getType().equals(String.class)) {
+								idQuery.append(value);
+							} else {
+								idQuery.append("'").append(value).append("'");
+							}
+
 						} else {
-							updateQuery.append("'").append(value).append("'");
+							updateQuery.append(col.name()).append("=");
+							if (!field.getType().equals(String.class)) {
+								updateQuery.append(value);
+							} else {
+								updateQuery.append("'").append(value).append("'");
+							}
+							updateQuery.append(PARAMETER_SEPARATOR);
 						}
-						updateQuery.append(PARAMETER_SEPARATOR);
 					}
 					
 				} catch (IllegalArgumentException | IllegalAccessException e) {
@@ -143,16 +155,8 @@ public class EntityHelper {
 			}
 		});		
 		
-		String updateParsed = 
-			updateQuery
-				.toString()
-				.substring(0, updateQuery.length() - 1);
-					
-		return 
-			new StringBuilder(updateParsed)
-				.append(";")
-				.toString();
-				
+		String updateParsed = updateQuery.toString().substring(0, updateQuery.length() - 1);
+		return updateParsed.concat(idQuery.toString()).concat(";");
 	}
 	
 	

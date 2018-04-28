@@ -47,11 +47,8 @@ public class RdbmsConnectionManager {
 		
 		ObjectPool<PoolableConnection> connectionPool =
 				new GenericObjectPool<>(poolableConnectionFactory);
-		
-		PoolingDataSource<PoolableConnection> dataSource =
-				new PoolingDataSource<>(connectionPool);
-		
-		this.dataSource = dataSource;
+
+		this.dataSource = new PoolingDataSource<>(connectionPool);
 	}
 	
 	

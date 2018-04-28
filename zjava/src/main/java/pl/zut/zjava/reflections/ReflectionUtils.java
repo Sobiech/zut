@@ -1,5 +1,10 @@
 package pl.zut.zjava.reflections;
 
+import org.reflections.Reflections;
+import pl.zut.zjava.commons.Frame;
+import pl.zut.zjava.commons.FrameType;
+import pl.zut.zjava.server.processor.FrameProcessor;
+
 import java.lang.reflect.Field;
 
 public class ReflectionUtils {
@@ -49,8 +54,5 @@ public class ReflectionUtils {
 	    }
 	    
 	}
-	
-	
-	
-	
+
 }
