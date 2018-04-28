@@ -1,13 +1,12 @@
 package pl.locon.zut.ia.manager;
 
 
-import pl.locon.zut.ia.xml.XmlFileManager;
 import pl.locon.zut.ia.book.Book;
 import pl.locon.zut.ia.book.BookList;
+import pl.locon.zut.ia.xml.XmlFileManager;
 
 import javax.xml.bind.JAXBException;
 import java.io.IOException;
-import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -16,12 +15,17 @@ public class BookManager extends AbstractDaoManager<Book, BookList> {
 
 
     public BookManager()
-            throws JAXBException, IOException, URISyntaxException {
+            throws JAXBException, IOException {
 
         super(BookList.class);
         this.dataList = getData().getBooks();
     }
 
+
+    @Override
+    protected String getFileUrl() {
+        return XmlFileManager.BOOKS_3;
+    }
 
 
     public List<Book> searchByTitle(String title) {
@@ -71,10 +75,5 @@ public class BookManager extends AbstractDaoManager<Book, BookList> {
         return null;
     }
 
-
-    @Override
-    protected String getFileUrl() {
-        return XmlFileManager.BOOKS_3;
-    }
 }
 

@@ -1,12 +1,11 @@
 package pl.locon.zut.ia.manager;
 
-import pl.locon.zut.ia.xml.XmlFileManager;
 import pl.locon.zut.ia.customer.Customer;
 import pl.locon.zut.ia.customer.CustomerList;
+import pl.locon.zut.ia.xml.XmlFileManager;
 
 import javax.xml.bind.JAXBException;
 import java.io.IOException;
-import java.net.URISyntaxException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -14,7 +13,7 @@ public class CustomerManager extends AbstractDaoManager<Customer, CustomerList> 
 
 
     public CustomerManager()
-            throws JAXBException, IOException, URISyntaxException {
+            throws JAXBException, IOException {
 
         super(CustomerList.class);
         this.dataList = getData().getCustomerList();
