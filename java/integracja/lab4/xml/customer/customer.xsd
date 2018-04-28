@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+    <xs:element name="customers" type="customers" />
+    
+    <xs:complexType name="cusomters">
+        <xs:sequence>
+            <xs:element name="customer" type="customer" minOccurs="1" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="customer">
+        <xs:sequence>
+            <xs:element name="firstname"  type="xs:string" />
+            <xs:element name="surname"    type="xs:string" />
+            <xs:element name="phone"      type="xs:string" />
+            <xs:element name="email"      type="xs:string" />
+            <xs:element name="birth"    type="xs:date" />
+            <xs:element name="deliveryAddress" type="address" />
+            <xs:element name="billingAddress"  type="address" />
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:string" use="required"/>
+    </xs:complexType>
+        
+    
+    <xs:complexType name="address">
+        <xs:sequence>
+            <xs:element name="city"     type="xs:string" />
+            <xs:element name="address1"        type="xs:string" />
+            <xs:element name="address2"        type="xs:string" />
+            <xs:element name="postCode"        type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+    
+</xs:schema>
