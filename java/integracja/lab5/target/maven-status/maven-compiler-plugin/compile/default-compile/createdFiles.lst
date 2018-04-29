@@ -1,0 +1,12 @@
+pl\locon\zut\ia\manager\BookManager.class
+pl\locon\zut\ia\customer\Address.class
+pl\locon\zut\ia\Main.class
+pl\locon\zut\ia\book\Publisher.class
+pl\locon\zut\ia\manager\CustomerManager.class
+pl\locon\zut\ia\book\BookList.class
+pl\locon\zut\ia\manager\AbstractDaoManager.class
+pl\locon\zut\ia\customer\CustomerList.class
+pl\locon\zut\ia\book\Book.class
+pl\locon\zut\ia\xml\XmlUtils.class
+pl\locon\zut\ia\customer\Customer.class
+pl\locon\zut\ia\xml\XmlFileManager.class

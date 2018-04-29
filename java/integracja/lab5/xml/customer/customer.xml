@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<customers>
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="customers.xsd">
+    <customer id="1">
+        <firstname>Krzysztof</firstname>
+        <lastname>Kozłowski</lastname>
+        <phone>555666777</phone>
+        <email>kko@email.com</email>
+        <birth>1990-11-20</birth>
+        <billingAddress>
+            <city>Szczecin</city>
+            <address1>ul.Test 28</address1>
+            <address2>31</address2>
+            <postCode>04-123</postCode>
+        </billingAddress>
+        <deliveryAddress>
+            <city>Warszawa</city>
+            <address1>ul.Test 29</address1>
+            <address2>3</address2>
+            <postCode>00-333</postCode>
+        </deliveryAddress>
+    </customer>
+</customers>

@@ -30,7 +30,7 @@ public class Main {
         */
 
         // Zadanie 2
-        //XmlUtils.UnmarshallDataFromFile(XmlFileManager.BOOKS_2, BookList.class).getBooks().forEach(System.out::println);
+        XmlUtils.UnmarshallDataFromFile(XmlFileManager.BOOKS_2, BookList.class).getBooks().forEach(System.out::println);
 
 
         // Zadanie 3
