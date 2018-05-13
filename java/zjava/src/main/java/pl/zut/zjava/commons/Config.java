@@ -44,10 +44,5 @@ public final class Config {
 		
 	}
 	
-	
-	public static String getDbConnectionString() {
-		return properties.getProperty("rdbm.conn.string");
-	}
-	
-	
+
 }

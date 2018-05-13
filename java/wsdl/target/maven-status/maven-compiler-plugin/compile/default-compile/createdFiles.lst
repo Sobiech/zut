@@ -1,0 +1,9 @@
+pl\zut\pswa\enums\PersistenceUnitFactory.class
+pl\zut\pswa\entity\service\AbstractService.class
+pl\zut\pswa\utils\XmlUtils.class
+pl\zut\pswa\ws\AbstractWebService.class
+pl\zut\pswa\config\Config.class
+pl\zut\pswa\entity\service\UserService.class
+pl\zut\pswa\entity\User.class
+pl\zut\pswa\ws\UserWebService.class
+pl\zut\pswa\Main.class

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="postgres" uuid="44c2cc83-c20e-4eca-839c-a0615fd73a5a">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/kso_test</jdbc-url>
+      <driver-properties>
+        <property name="kso_test" value="kso_test" />
+      </driver-properties>
+    </data-source>
+  </component>
+</project>

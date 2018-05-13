@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://manager.ia.zut.locon.pl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="CustomerManagerService" targetNamespace="http://manager.ia.zut.locon.pl/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:666/customer?xsd=1" namespace="http://manager.ia.zut.locon.pl/" />
+    </xsd:schema>
+  </types>
+  <message name="getCustomerListByLastname">
+    <part name="parameters" element="tns:getCustomerListByLastname" />
+  </message>
+  <message name="getCustomerListByLastnameResponse">
+    <part name="parameters" element="tns:getCustomerListByLastnameResponse" />
+  </message>
+  <message name="Exception">
+    <part name="fault" element="tns:Exception" />
+  </message>
+  <message name="getCustomerListByFirstname">
+    <part name="parameters" element="tns:getCustomerListByFirstname" />
+  </message>
+  <message name="getCustomerListByFirstnameResponse">
+    <part name="parameters" element="tns:getCustomerListByFirstnameResponse" />
+  </message>
+  <message name="login">
+    <part name="parameters" element="tns:login" />
+  </message>
+  <message name="loginResponse">
+    <part name="parameters" element="tns:loginResponse" />
+  </message>
+  <message name="removeSession">
+    <part name="parameters" element="tns:removeSession" />
+  </message>
+  <message name="removeSessionResponse">
+    <part name="parameters" element="tns:removeSessionResponse" />
+  </message>
+  <portType name="CustomerManager">
+    <operation name="getCustomerListByLastname">
+      <input wsam:Action="http://manager.ia.zut.locon.pl/CustomerManager/getCustomerListByLastnameRequest" message="tns:getCustomerListByLastname" />
+      <output wsam:Action="http://manager.ia.zut.locon.pl/CustomerManager/getCustomerListByLastnameResponse" message="tns:getCustomerListByLastnameResponse" />
+      <fault wsam:Action="http://manager.ia.zut.locon.pl/CustomerManager/getCustomerListByLastname/Fault/Exception" name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="getCustomerListByFirstname">
+      <input wsam:Action="http://manager.ia.zut.locon.pl/CustomerManager/getCustomerListByFirstnameRequest" message="tns:getCustomerListByFirstname" />
+      <output wsam:Action="http://manager.ia.zut.locon.pl/CustomerManager/getCustomerListByFirstnameResponse" message="tns:getCustomerListByFirstnameResponse" />
+      <fault wsam:Action="http://manager.ia.zut.locon.pl/CustomerManager/getCustomerListByFirstname/Fault/Exception" name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="login">
+      <input wsam:Action="http://manager.ia.zut.locon.pl/CustomerManager/loginRequest" message="tns:login" />
+      <output wsam:Action="http://manager.ia.zut.locon.pl/CustomerManager/loginResponse" message="tns:loginResponse" />
+      <fault wsam:Action="http://manager.ia.zut.locon.pl/CustomerManager/login/Fault/Exception" name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="removeSession">
+      <input wsam:Action="http://manager.ia.zut.locon.pl/CustomerManager/removeSessionRequest" message="tns:removeSession" />
+      <output wsam:Action="http://manager.ia.zut.locon.pl/CustomerManager/removeSessionResponse" message="tns:removeSessionResponse" />
+      <fault wsam:Action="http://manager.ia.zut.locon.pl/CustomerManager/removeSession/Fault/Exception" name="Exception" message="tns:Exception" />
+    </operation>
+  </portType>
+  <binding name="CustomerManagerPortBinding" type="tns:CustomerManager">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="getCustomerListByLastname">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getCustomerListByFirstname">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="login">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="removeSession">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="CustomerManagerService">
+    <port name="CustomerManagerPort" binding="tns:CustomerManagerPortBinding">
+      <soap:address location="http://localhost:666/customer" />
+    </port>
+  </service>
+</definitions>

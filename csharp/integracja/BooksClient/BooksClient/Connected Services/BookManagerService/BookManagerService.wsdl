@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://manager.ia.zut.locon.pl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="BookManagerService" targetNamespace="http://manager.ia.zut.locon.pl/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:666/books?xsd=1" namespace="http://manager.ia.zut.locon.pl/" />
+    </xsd:schema>
+  </types>
+  <message name="searchByISBN">
+    <part name="parameters" element="tns:searchByISBN" />
+  </message>
+  <message name="searchByISBNResponse">
+    <part name="parameters" element="tns:searchByISBNResponse" />
+  </message>
+  <message name="Exception">
+    <part name="fault" element="tns:Exception" />
+  </message>
+  <message name="searchByTitle">
+    <part name="parameters" element="tns:searchByTitle" />
+  </message>
+  <message name="searchByTitleResponse">
+    <part name="parameters" element="tns:searchByTitleResponse" />
+  </message>
+  <message name="searchByAuthor">
+    <part name="parameters" element="tns:searchByAuthor" />
+  </message>
+  <message name="searchByAuthorResponse">
+    <part name="parameters" element="tns:searchByAuthorResponse" />
+  </message>
+  <message name="removeBook">
+    <part name="parameters" element="tns:removeBook" />
+  </message>
+  <message name="removeBookResponse">
+    <part name="parameters" element="tns:removeBookResponse" />
+  </message>
+  <message name="addBook">
+    <part name="parameters" element="tns:addBook" />
+  </message>
+  <message name="addBookResponse">
+    <part name="parameters" element="tns:addBookResponse" />
+  </message>
+  <portType name="BookManager">
+    <operation name="searchByISBN">
+      <input wsam:Action="http://manager.ia.zut.locon.pl/BookManager/searchByISBNRequest" message="tns:searchByISBN" />
+      <output wsam:Action="http://manager.ia.zut.locon.pl/BookManager/searchByISBNResponse" message="tns:searchByISBNResponse" />
+      <fault wsam:Action="http://manager.ia.zut.locon.pl/BookManager/searchByISBN/Fault/Exception" name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="searchByTitle">
+      <input wsam:Action="http://manager.ia.zut.locon.pl/BookManager/searchByTitleRequest" message="tns:searchByTitle" />
+      <output wsam:Action="http://manager.ia.zut.locon.pl/BookManager/searchByTitleResponse" message="tns:searchByTitleResponse" />
+      <fault wsam:Action="http://manager.ia.zut.locon.pl/BookManager/searchByTitle/Fault/Exception" name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="searchByAuthor">
+      <input wsam:Action="http://manager.ia.zut.locon.pl/BookManager/searchByAuthorRequest" message="tns:searchByAuthor" />
+      <output wsam:Action="http://manager.ia.zut.locon.pl/BookManager/searchByAuthorResponse" message="tns:searchByAuthorResponse" />
+      <fault wsam:Action="http://manager.ia.zut.locon.pl/BookManager/searchByAuthor/Fault/Exception" name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="removeBook">
+      <input wsam:Action="http://manager.ia.zut.locon.pl/BookManager/removeBookRequest" message="tns:removeBook" />
+      <output wsam:Action="http://manager.ia.zut.locon.pl/BookManager/removeBookResponse" message="tns:removeBookResponse" />
+      <fault wsam:Action="http://manager.ia.zut.locon.pl/BookManager/removeBook/Fault/Exception" name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="addBook">
+      <input wsam:Action="http://manager.ia.zut.locon.pl/BookManager/addBookRequest" message="tns:addBook" />
+      <output wsam:Action="http://manager.ia.zut.locon.pl/BookManager/addBookResponse" message="tns:addBookResponse" />
+      <fault wsam:Action="http://manager.ia.zut.locon.pl/BookManager/addBook/Fault/Exception" name="Exception" message="tns:Exception" />
+    </operation>
+  </portType>
+  <binding name="BookManagerPortBinding" type="tns:BookManager">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="searchByISBN">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="searchByTitle">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="searchByAuthor">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="removeBook">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="addBook">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="BookManagerService">
+    <port name="BookManagerPort" binding="tns:BookManagerPortBinding">
+      <soap:address location="http://localhost:666/books" />
+    </port>
+  </service>
+</definitions>

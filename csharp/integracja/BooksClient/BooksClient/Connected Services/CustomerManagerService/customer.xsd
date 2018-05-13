@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://manager.ia.zut.locon.pl/" targetNamespace="http://manager.ia.zut.locon.pl/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Exception" type="tns:Exception" />
+  <xs:element name="getCustomerListByFirstname" type="tns:getCustomerListByFirstname" />
+  <xs:element name="getCustomerListByFirstnameResponse" type="tns:getCustomerListByFirstnameResponse" />
+  <xs:element name="getCustomerListByLastname" type="tns:getCustomerListByLastname" />
+  <xs:element name="getCustomerListByLastnameResponse" type="tns:getCustomerListByLastnameResponse" />
+  <xs:element name="login" type="tns:login" />
+  <xs:element name="loginResponse" type="tns:loginResponse" />
+  <xs:element name="removeSession" type="tns:removeSession" />
+  <xs:element name="removeSessionResponse" type="tns:removeSessionResponse" />
+  <xs:complexType name="removeSession">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="sid" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="removeSessionResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCustomerListByLastname">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="lastname" type="xs:string" />
+      <xs:element minOccurs="0" name="sid" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCustomerListByLastnameResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="customer" type="tns:customer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="customer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="billingAddress" type="tns:address" />
+      <xs:element minOccurs="0" name="birth" type="xs:string" />
+      <xs:element minOccurs="0" name="deliveryAddress" type="tns:address" />
+      <xs:element minOccurs="0" name="email" type="xs:string" />
+      <xs:element minOccurs="0" name="firstname" type="xs:string" />
+      <xs:element minOccurs="0" name="lastname" type="xs:string" />
+      <xs:element minOccurs="0" name="phone" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:int" />
+  </xs:complexType>
+  <xs:complexType name="address">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="address1" type="xs:string" />
+      <xs:element minOccurs="0" name="address2" type="xs:string" />
+      <xs:element minOccurs="0" name="city" type="xs:string" />
+      <xs:element minOccurs="0" name="postCode" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCustomerListByFirstname">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="firstname" type="xs:string" />
+      <xs:element minOccurs="0" name="sid" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCustomerListByFirstnameResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="customer" type="tns:customer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="login">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="user" type="xs:string" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="loginResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="sid" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

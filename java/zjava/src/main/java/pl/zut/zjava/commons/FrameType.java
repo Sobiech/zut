@@ -2,9 +2,7 @@ package pl.zut.zjava.commons;
 
 public enum FrameType {
 
-    F_GET_WORKER_LIST("F_WORKER_LIST"),
-    F_GET_HANDLER_LIST("F_HANDLER_LIST"),
-    F_GET_DIRECTOR_LIST("F_DIRECTOR_LIST"),
+    F_GET_ALL("F_GET_ALL"),
     F_HELP("F_HELP");
 
     private final String frameName;
@@ -22,4 +20,7 @@ public enum FrameType {
         throw new IllegalArgumentException("Processor dla danej bramki nie istnieje!");
     }
 
+    public String getFrameName(){
+        return this.frameName;
+    }
 }

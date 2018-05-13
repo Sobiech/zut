@@ -1,7 +1,7 @@
 package pl.zut.zjava.server.processor;
 
-public interface FrameProcessor<E, T> {
+public interface FrameProcessor<T> {
 
-    T processFrame(E inputFrame);
+    T processFrame();
 
 }

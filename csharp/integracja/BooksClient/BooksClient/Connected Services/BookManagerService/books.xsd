@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://manager.ia.zut.locon.pl/" targetNamespace="http://manager.ia.zut.locon.pl/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Exception" type="tns:Exception" />
+  <xs:element name="addBook" type="tns:addBook" />
+  <xs:element name="addBookResponse" type="tns:addBookResponse" />
+  <xs:element name="removeBook" type="tns:removeBook" />
+  <xs:element name="removeBookResponse" type="tns:removeBookResponse" />
+  <xs:element name="searchByAuthor" type="tns:searchByAuthor" />
+  <xs:element name="searchByAuthorResponse" type="tns:searchByAuthorResponse" />
+  <xs:element name="searchByISBN" type="tns:searchByISBN" />
+  <xs:element name="searchByISBNResponse" type="tns:searchByISBNResponse" />
+  <xs:element name="searchByTitle" type="tns:searchByTitle" />
+  <xs:element name="searchByTitleResponse" type="tns:searchByTitleResponse" />
+  <xs:complexType name="searchByAuthor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="author" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="searchByAuthorResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="book" type="tns:book" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="book">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="authors">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="author" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="isbn" type="xs:string" />
+      <xs:element minOccurs="0" name="pages" type="xs:int" />
+      <xs:element minOccurs="0" name="publisher" type="tns:publisher" />
+      <xs:element minOccurs="0" name="title" type="xs:string" />
+      <xs:element minOccurs="0" name="year" type="xs:int" />
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="publisher">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+      <xs:element minOccurs="0" name="url" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="searchByTitle">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="title" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="searchByTitleResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="book" type="tns:book" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="removeBook">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="removeBookResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="searchByISBN">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="isbn" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="searchByISBNResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="book" type="tns:book" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addBook">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="book" type="tns:book" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addBookResponse">
+    <xs:sequence />
+  </xs:complexType>
+</xs:schema>
