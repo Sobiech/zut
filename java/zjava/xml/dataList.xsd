@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="pracownicy" type="workerList"/>
+
+  <xs:complexType name="workerList">
+    <xs:sequence>
+      <xs:element name="pracownik" type="abstractWorker" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="abstractWorker" abstract="true">
+    <xs:sequence>
+      <xs:element name="imie" type="xs:string" minOccurs="0"/>
+      <xs:element name="nazwisko" type="xs:string" minOccurs="0"/>
+      <xs:element name="numerTelefonu" type="msisdn" minOccurs="0"/>
+      <xs:element name="stanowisko" type="positionType" minOccurs="0"/>
+      <xs:element name="wynagrodzenie" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="pesel"/>
+  </xs:complexType>
+
+
+  <xs:simpleType name="pesel">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]{11}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="msisdn">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]{9}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="positionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PRACOWNIK"/>
+      <xs:enumeration value="HANDLOWIEC"/>
+      <xs:enumeration value="DYREKTOR"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
+

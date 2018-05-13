@@ -12,7 +12,6 @@ import java.math.BigDecimal;
 @Entity
 @DiscriminatorValue(value = PositionType.Values.DYREKTOR )
 @XmlRootElement( name = "dyrektor" )
-@XmlAccessorType( XmlAccessType.FIELD )
 public class Director extends AbstractWorker {
 
 
@@ -20,21 +19,18 @@ public class Director extends AbstractWorker {
 
 
 	@Column( name = "business_allowance" )
-	@XmlElement( name = "business_allowance" )
 	private BigDecimal businessAllowance;
 
 
 	@Column( name = "business_card" )
-	@XmlElement( name = "business_card" )
 	private String businessCard;
 
 
 	@Column( name = "cost_limit" )
-	@XmlElement( name = "cost_limit" )
 	private Integer costLimit;
 
 
-
+	@XmlElement( name = "dodatekSluzbowy" )
 	public BigDecimal getBusinessAllowance() {
 		return businessAllowance;
 	}
@@ -43,6 +39,7 @@ public class Director extends AbstractWorker {
 		this.businessAllowance = businessAllowance;
 	}
 
+	@XmlElement( name = "kartaSluzbowa" )
 	public String getBusinessCard() {
 		return businessCard;
 	}
@@ -51,6 +48,7 @@ public class Director extends AbstractWorker {
 		this.businessCard = businessCard;
 	}
 
+	@XmlElement( name = "limitKosztow" )
 	public Integer getCostLimit() {
 		return costLimit;
 	}

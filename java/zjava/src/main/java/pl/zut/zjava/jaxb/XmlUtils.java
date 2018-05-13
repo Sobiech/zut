@@ -1,9 +1,6 @@
-package pl.zut.zjava.commons.xml;
+package pl.zut.zjava.jaxb;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
-import javax.xml.bind.Unmarshaller;
+import javax.xml.bind.*;
 import java.io.*;
 
 public final class XmlUtils {
@@ -45,6 +42,20 @@ public final class XmlUtils {
         marshaller.marshal(data, writer);
 
         return writer.toString();
+    }
+
+
+    public static <E> void ResolveSchemaBy(Class<E> clazz, String schemaPath)
+            throws IOException, JAXBException {
+
+        // create new JAXB context
+        JAXBContext context = JAXBContext.newInstance(WorkerList.class);
+
+        // create new schema out put resolver
+        SchemaOutputResolver sor = new SchemaResolver();
+
+        // generate schema
+        context.generateSchema(sor);
     }
 
 }

@@ -1,9 +1,18 @@
 package pl.zut.zjava;
 
 import javassist.bytecode.analysis.Executor;
+import org.apache.commons.pool.impl.GenericObjectPool;
+import org.apache.directory.ldap.client.api.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pl.zut.zjava.commons.enums.PersistenceUnitFactory;
+import pl.zut.zjava.entity.AbstractWorker;
+import pl.zut.zjava.entity.Director;
+import pl.zut.zjava.entity.service.AbstractWorkerService;
+import pl.zut.zjava.entity.service.impl.AbstractWorkerServiceImpl;
+import pl.zut.zjava.jaxb.SchemaResolver;
+import pl.zut.zjava.jaxb.WorkerList;
+import pl.zut.zjava.jaxb.XmlUtils;
 import pl.zut.zjava.jline.Shell;
 import pl.zut.zjava.server.connection.rmi.LoginServer;
 import pl.zut.zjava.server.connection.rmi.Validator;
@@ -12,6 +21,11 @@ import pl.zut.zjava.server.session.SessionCache;
 import pl.zut.zjava.server.session.SessionRemoveScheduler;
 
 import javax.jms.Session;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.SchemaOutputResolver;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.util.Base64;
@@ -40,6 +54,16 @@ public class Main {
     public static void main(String[] args) {
 
         try {
+
+
+//            LdapConnectionConfig
+//                config = new LdapConnectionConfig();
+//                config.setLdapHost( "82.145.72.13" );
+//                config.setLdapPort( 389 );
+//                config.setTimeout(10);
+
+//            LdapConnection
+//                connection = new LdapNetworkConnection( config);
 
             initializeRmi();
             initializeSchedulers();

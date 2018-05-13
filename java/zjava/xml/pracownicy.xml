@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<pracownicy>
+
+    <pracownik id="55671743492">
+        <imie>Derron</imie>
+        <nazwisko>Khadir</nazwisko>
+        <numerTelefonu>6300818816</numerTelefonu>
+        <stanowisko>PRACOWNIK</stanowisko>
+        <wynagrodzenie>9660.66</wynagrodzenie>
+    </pracownik>
+
+    <pracownik id="68109660427">
+        <imie>Auroora</imie>
+        <nazwisko>Gatecliffe</nazwisko>
+        <numerTelefonu>3274549709</numerTelefonu>
+        <stanowisko>PRACOWNIK</stanowisko>
+        <wynagrodzenie>6824.72</wynagrodzenie>
+    </pracownik>
+
+    <pracownik id="17232833567">
+        <imie>Tate</imie>
+        <nazwisko>Spowage</nazwisko>
+        <numerTelefonu>8130541131</numerTelefonu>
+        <stanowisko>PRACOWNIK</stanowisko>
+        <wynagrodzenie>7616.33</wynagrodzenie>
+    </pracownik>
+
+    <pracownik id="96927215416">
+        <imie>Bab</imie>
+        <nazwisko>Curnow</nazwisko>
+        <numerTelefonu>5684110313</numerTelefonu>
+        <stanowisko>PRACOWNIK</stanowisko>
+        <wynagrodzenie>9083.89</wynagrodzenie>
+    </pracownik>
+
+    <pracownik id="37943193675">
+        <imie>Salomi</imie>
+        <nazwisko>Gyves</nazwisko>
+        <numerTelefonu>0644556525</numerTelefonu>
+        <stanowisko>PRACOWNIK</stanowisko>
+        <wynagrodzenie>5505.42</wynagrodzenie>
+    </pracownik>
+
+    <pracownik id="98829749539">
+        <imie>Francene</imie>
+        <nazwisko>Geistmann</nazwisko>
+        <numerTelefonu>8819337301</numerTelefonu>
+        <stanowisko>PRACOWNIK</stanowisko>
+        <wynagrodzenie>7559.76</wynagrodzenie>
+    </pracownik>
+
+    <pracownik id="09739330091">
+        <imie>Sascha</imie>
+        <nazwisko>Kitchenman</nazwisko>
+        <numerTelefonu>6022443726</numerTelefonu>
+        <stanowisko>PRACOWNIK</stanowisko>
+        <wynagrodzenie>9991.01</wynagrodzenie>
+    </pracownik>
+
+    <pracownik id="98503191194">
+        <imie>Spencer</imie>
+        <nazwisko>Plackstone</nazwisko>
+        <numerTelefonu>6178451836</numerTelefonu>
+        <stanowisko>PRACOWNIK</stanowisko>
+        <wynagrodzenie>5571.36</wynagrodzenie>
+    </pracownik>
+
+    <pracownik id="66349023392">
+        <imie>Lorilyn</imie>
+        <nazwisko>Tansill</nazwisko>
+        <numerTelefonu>2429537292</numerTelefonu>
+        <stanowisko>PRACOWNIK</stanowisko>
+        <wynagrodzenie>8995.91</wynagrodzenie>
+    </pracownik>
+
+    <pracownik id="36041411309">
+        <imie>Waiter</imie>
+        <nazwisko>Purdom</nazwisko>
+        <numerTelefonu>2859934906</numerTelefonu>
+        <stanowisko>PRACOWNIK</stanowisko>
+        <wynagrodzenie>7448.14</wynagrodzenie>
+    </pracownik>
+
+</pracownicy>

@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pl.zut.zjava.entity.AbstractWorker;
 import pl.zut.zjava.entity.service.impl.AbstractWorkerServiceImpl;
+import pl.zut.zjava.server.processor.GetWorkerProcessor;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -28,7 +29,7 @@ public class BackupCommand implements ICommand {
         if ( action.equalsIgnoreCase("z") ) {
 
             try {
-                Optional<String> maybeFileName = CommandUtils.serializeWorkerList(new AbstractWorkerServiceImpl().getList(300));
+                Optional<String> maybeFileName = CommandUtils.serializeWorkerList(new GetWorkerProcessor().getWorkerList());
                 if ( maybeFileName.isPresent()) {
                     writer.write("-----------------------------------------------\n");
                     writer.write("\tNazwa pliku : \t " + maybeFileName.get());

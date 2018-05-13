@@ -12,7 +12,6 @@ import java.math.BigDecimal;
 @Entity
 @DiscriminatorValue(value = PositionType.Values.HANDLOWIEC )
 @XmlRootElement( name = "handlowiec" )
-@XmlAccessorType( XmlAccessType.FIELD )
 public class Trader extends AbstractWorker {
 
 
@@ -20,12 +19,10 @@ public class Trader extends AbstractWorker {
 
 
 	@Column(name = "comission_rate")
-	@XmlElement( name = "comission_rate" )
 	private BigDecimal comissionRate;
 
 
 	@Column(name = "comission_limit")
-	@XmlElement( name = "comission_limit" )
 	private Integer comissionLimit;
 
 
@@ -40,6 +37,7 @@ public class Trader extends AbstractWorker {
 		return data;
 	}
 
+	@XmlElement( name = "stawkaProwizji" )
 	public BigDecimal getComissionRate() {
 		return comissionRate;
 	}
@@ -48,6 +46,7 @@ public class Trader extends AbstractWorker {
 		this.comissionRate = comissionRate;
 	}
 
+	@XmlElement( name = "limitProwizji" )
 	public Integer getComissionLimit() {
 		return comissionLimit;
 	}

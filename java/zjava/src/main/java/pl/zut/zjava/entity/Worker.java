@@ -11,7 +11,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @DiscriminatorValue(value = PositionType.Values.PRACOWNIK )
 @XmlRootElement( name = "pracownik" )
-@XmlAccessorType(XmlAccessType.FIELD)
+@XmlAccessorType( value = XmlAccessType.FIELD )
 public class Worker extends AbstractWorker {
 
 

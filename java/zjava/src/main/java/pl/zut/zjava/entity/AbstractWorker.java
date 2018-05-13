@@ -17,7 +17,6 @@ public abstract class AbstractWorker
 
 	@Id
 	@Column( name = "id", nullable = false)
-	@XmlAttribute
 	protected String pesel;
 
 	@Column( name = "first_name", nullable = false )
@@ -42,6 +41,7 @@ public abstract class AbstractWorker
 		return getFullData();
 	}
 
+	@XmlAttribute( name = "id" )
 	public String getPesel() {
 		return pesel;
 	}
@@ -50,6 +50,7 @@ public abstract class AbstractWorker
 		this.pesel = pesel;
 	}
 
+	@XmlElement( name = "imie" )
 	public String getFirstName() {
 		return firstName;
 	}
@@ -58,6 +59,7 @@ public abstract class AbstractWorker
 		this.firstName = firstName;
 	}
 
+	@XmlElement( name = "nazwisko" )
 	public String getLastName() {
 		return lastName;
 	}
@@ -66,6 +68,7 @@ public abstract class AbstractWorker
 		this.lastName = lastName;
 	}
 
+	@XmlElement( name = "wynagrodzenie" )
 	public BigDecimal getSalary() {
 		return salary;
 	}
@@ -74,6 +77,7 @@ public abstract class AbstractWorker
 		this.salary = salary;
 	}
 
+	@XmlElement( name = "stanowisko" )
 	public PositionType getPositionType() {
 		return positionType;
 	}
@@ -82,6 +86,7 @@ public abstract class AbstractWorker
 		this.positionType = positionType;
 	}
 
+	@XmlElement( name = "numerTelefonu" )
 	public String getPhone() {
 		return phone;
 	}

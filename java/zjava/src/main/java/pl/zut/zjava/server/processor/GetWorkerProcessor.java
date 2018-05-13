@@ -8,7 +8,7 @@ import java.util.List;
 public class GetWorkerProcessor {
 
     public List<AbstractWorker> getWorkerList() {
-        return new AbstractWorkerServiceImpl().getList(100);
+        return new AbstractWorkerServiceImpl().getAll();
     }
 
 }
