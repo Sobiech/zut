@@ -1,6 +1,6 @@
-package pl.zut.zjava.jaxb;
+package pl.zut.zjava.commons.dto;
 
-import pl.zut.zjava.entity.AbstractWorker;
+import pl.zut.zjava.entity.Worker;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -9,25 +9,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 @XmlRootElement( name = "pracownicy" )
-public class WorkerList
+public class WorkerListDto
         implements Serializable {
 
-    private List<AbstractWorker> workerList;
+    private List<Worker> workerList;
 
-    public WorkerList() {
+    public WorkerListDto() {
         this.workerList = new ArrayList<>();
     }
 
-    public WorkerList(List<AbstractWorker> workers) {
+    public WorkerListDto(List<Worker> workers) {
         this.workerList = workers;
     }
 
     @XmlElement( name = "pracownik" )
-    public List<AbstractWorker> getWorkerList() {
+    public List<Worker> getWorkerList() {
         return workerList;
     }
 
-    public void setWorkerList(List<AbstractWorker> workerList) {
+    public void setWorkerList(List<Worker> workerList) {
         this.workerList = workerList;
     }
 }

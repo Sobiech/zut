@@ -1,4 +1,4 @@
-package pl.zut.zjava.jaxb;
+package pl.zut.zjava.commons.jaxb;
 
 import javax.xml.bind.SchemaOutputResolver;
 import javax.xml.transform.Result;

@@ -3,9 +3,10 @@ package pl.zut.zjava.commands;
 import org.jline.reader.LineReader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.zut.zjava.entity.AbstractWorker;
-import pl.zut.zjava.entity.service.AbstractWorkerService;
-import pl.zut.zjava.entity.service.impl.AbstractWorkerServiceImpl;
+import pl.zut.zjava.commons.utils.CommandUtils;
+import pl.zut.zjava.entity.Worker;
+import pl.zut.zjava.entity.service.WorkerService;
+import pl.zut.zjava.entity.service.impl.WorkerServiceImpl;
 
 import java.io.PrintWriter;
 import java.util.Objects;
@@ -25,10 +26,10 @@ public class RemoveWorkerCommand implements ICommand {
             writer.write(INFO);
 
             String workerId = getData("Podaj Identyfikator", writer, reader);
-            AbstractWorkerService service =
-                new AbstractWorkerServiceImpl();
+            WorkerService service =
+                new WorkerServiceImpl();
 
-            AbstractWorker abstractWorker = service.findById(workerId);
+            Worker abstractWorker = service.findById(workerId);
             if (Objects.isNull(abstractWorker) ){
                 writer.write("\n\tPracownik o podanym id:" + workerId + " nie istnieje\n");
                 writer.flush();

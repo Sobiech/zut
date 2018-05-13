@@ -3,7 +3,6 @@ package pl.zut.zjava.entity.service.impl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pl.zut.zjava.entity.Trader;
-import pl.zut.zjava.entity.Worker;
 import pl.zut.zjava.entity.service.TraderService;
 
 import java.util.List;

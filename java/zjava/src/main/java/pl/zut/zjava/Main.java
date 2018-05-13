@@ -1,41 +1,21 @@
 package pl.zut.zjava;
 
-import javassist.bytecode.analysis.Executor;
-import org.apache.commons.pool.impl.GenericObjectPool;
-import org.apache.directory.ldap.client.api.*;
+import com.google.common.collect.ImmutableList;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.zut.zjava.commons.enums.PersistenceUnitFactory;
-import pl.zut.zjava.entity.AbstractWorker;
-import pl.zut.zjava.entity.Director;
-import pl.zut.zjava.entity.service.AbstractWorkerService;
-import pl.zut.zjava.entity.service.impl.AbstractWorkerServiceImpl;
-import pl.zut.zjava.jaxb.SchemaResolver;
-import pl.zut.zjava.jaxb.WorkerList;
-import pl.zut.zjava.jaxb.XmlUtils;
+import pl.zut.zjava.entity.PersistenceUnitFactory;
 import pl.zut.zjava.jline.Shell;
 import pl.zut.zjava.server.connection.rmi.LoginServer;
-import pl.zut.zjava.server.connection.rmi.Validator;
+import pl.zut.zjava.server.connection.soap.AbstractWebService;
+import pl.zut.zjava.server.connection.soap.impl.WorkerEndpointServiceImpl;
 import pl.zut.zjava.server.connection.tcp.TcpConnectionServer;
-import pl.zut.zjava.server.session.SessionCache;
 import pl.zut.zjava.server.session.SessionRemoveScheduler;
 
-import javax.jms.Session;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.SchemaOutputResolver;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.rmi.Naming;
+import javax.xml.ws.Endpoint;
 import java.rmi.RemoteException;
-import java.util.Base64;
-import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledFuture;
-
-import static java.util.concurrent.TimeUnit.SECONDS;
 
 public class Main {
 
@@ -55,22 +35,14 @@ public class Main {
 
         try {
 
-
-//            LdapConnectionConfig
-//                config = new LdapConnectionConfig();
-//                config.setLdapHost( "82.145.72.13" );
-//                config.setLdapPort( 389 );
-//                config.setTimeout(10);
-
-//            LdapConnection
-//                connection = new LdapNetworkConnection( config);
-
-            initializeRmi();
             initializeSchedulers();
             initializePersistenceUnit();
-            initializeThreadPools();
-            new Shell().initialize();
 
+            initializeServerThreadPool();
+            initializeRmi();
+            initializeWS();
+
+            new Shell().initialize();
         } catch (Exception e) {
 
             e.printStackTrace();
@@ -96,7 +68,7 @@ public class Main {
 
 
 
-    private static void initializeThreadPools() {
+    private static void initializeServerThreadPool() {
 
         final ExecutorService ServerThreadPool = Executors.newFixedThreadPool(100);
         logger.debug("Initialized server thread pool of size: 100");
@@ -112,6 +84,15 @@ public class Main {
         final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
         new SessionRemoveScheduler(scheduler);
 
+    }
+
+
+    private static void initializeWS() {
+
+        ImmutableList<AbstractWebService> serviceList =
+                ImmutableList.of( new WorkerEndpointServiceImpl());
+
+        serviceList.forEach(service -> Endpoint.publish(service.getWebServiceURL(), service));
     }
 
 }

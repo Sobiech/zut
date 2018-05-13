@@ -1,4 +1,4 @@
-package pl.zut.zjava.commons;
+package pl.zut.zjava.commons.enums;
 
 public enum FrameType {
 

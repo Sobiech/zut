@@ -1,7 +1,7 @@
 package pl.zut.zjava.entity.service.impl;
 
 import org.slf4j.Logger;
-import pl.zut.zjava.commons.enums.PersistenceUnitFactory;
+import pl.zut.zjava.entity.PersistenceUnitFactory;
 import pl.zut.zjava.entity.service.AbstractDbService;
 
 import javax.persistence.EntityManager;

@@ -3,23 +3,21 @@ package pl.zut.zjava.commands;
 import org.jline.reader.LineReader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.zut.zjava.commons.FrameType;
-import pl.zut.zjava.entity.AbstractWorker;
+import pl.zut.zjava.commons.enums.ProtocolType;
+import pl.zut.zjava.commons.utils.CommandUtils;
+import pl.zut.zjava.entity.Worker;
 import pl.zut.zjava.server.connection.rmi.LoginServer;
 import pl.zut.zjava.server.connection.rmi.Validator;
+import pl.zut.zjava.server.strategy.ConnectionStrategy;
+import pl.zut.zjava.server.strategy.SoapStrategy;
+import pl.zut.zjava.server.strategy.TcpStrategy;
 
 import java.io.*;
 import java.net.ConnectException;
-import java.net.InetSocketAddress;
-import java.net.Socket;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
-import java.util.ArrayList;
 import java.util.List;
-
-import static pl.zut.zjava.Main.PARAM_FRAME;
-import static pl.zut.zjava.Main.PARAM_TOKEN;
 
 
 public class DataNetworkDownloadCommand implements ICommand {
@@ -40,8 +38,17 @@ public class DataNetworkDownloadCommand implements ICommand {
             String user = CommandUtils.getData("Podaj uzytkownika", writer, reader);
             String pass = CommandUtils.getData("Podaj haslo", writer, reader, '*' );
             writer.write("-----------------------------------------------\n");
+
+            String choosenProtocol = CommandUtils.getData("Protokol [T]CP/IP czy [S]OAP?", writer, reader);
+            ProtocolType protocolType = ProtocolType.getProtocolTypeByAbbrevation(choosenProtocol);
             String ip = CommandUtils.getData("Adres", writer, reader);
             String port = CommandUtils.getData("Port", writer, reader);
+
+            String endpoint = null;
+            if ( protocolType.equals(ProtocolType.SOAP)) {
+                endpoint = CommandUtils.getData("Zasob", writer, reader);
+            }
+
             writer.write("-----------------------------------------------\n");
             writer.flush();
 
@@ -50,7 +57,9 @@ public class DataNetworkDownloadCommand implements ICommand {
 
             writer.write("\tAutoryzacja uzytkownika...Sukces\n");
 
-            List<AbstractWorker> workerList = getOutputData(ip, Integer.valueOf(port), sidInBase64);
+            ConnectionStrategy conn = getStrategyByProtocol(protocolType, endpoint);
+            List<Worker> workerList = conn.getWorkerList(ip, Integer.valueOf(port), sidInBase64);
+
             writer.write("\tUstanawianie polaczenia...Sukces\n");
             writer.write("\tPobieranie...Sukces\n");
 
@@ -89,42 +98,15 @@ public class DataNetworkDownloadCommand implements ICommand {
     }
 
 
-    @SuppressWarnings("unchecked")
-    private List<AbstractWorker> getOutputData(String host, Integer port, String sid)
-            throws IOException {
+    private ConnectionStrategy getStrategyByProtocol(ProtocolType protocolType, String endpoint) {
 
-        Socket
-            client = new Socket();
-            client.connect(new InetSocketAddress(host,port),10);
-
-        if(!client.isConnected()) {
-            throw new ConnectException();
+        if ( protocolType.equals(ProtocolType.TCP_IP)) {
+            return new TcpStrategy();
+        } else {
+            return new SoapStrategy(endpoint);
         }
-
-        DataOutputStream
-            dos = new DataOutputStream(client.getOutputStream());
-            dos.writeUTF(
-                PARAM_TOKEN.concat("=").concat(sid)
-                .concat("&")
-                .concat(PARAM_FRAME).concat("=").concat(FrameType.F_GET_ALL.getFrameName()));
-
-            dos.flush();
-
-        DataInputStream dis   = new DataInputStream(client.getInputStream());
-        ObjectInputStream ois = new ObjectInputStream(dis);
-
-        List<AbstractWorker> workerList = new ArrayList<>();
-        try {
-            workerList = (List<AbstractWorker>) ois.readObject();
-        } catch ( Exception e ) {
-            logger.error("An error occur while trying to deserialize object", e );
-        }
-
-        dis.close();
-        ois.close();
-
-        return workerList;
     }
+
 
 
 }

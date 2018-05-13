@@ -4,10 +4,10 @@ import org.jline.reader.LineReader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pl.zut.zjava.commons.enums.PositionType;
-import pl.zut.zjava.entity.AbstractWorker;
+import pl.zut.zjava.commons.utils.CommandUtils;
+import pl.zut.zjava.entity.Worker;
 import pl.zut.zjava.entity.Director;
 import pl.zut.zjava.entity.Trader;
-import pl.zut.zjava.entity.Worker;
 import pl.zut.zjava.entity.service.AbstractDbService;
 import pl.zut.zjava.entity.service.impl.DirectorServiceImpl;
 import pl.zut.zjava.entity.service.impl.TraderServiceImpl;
@@ -33,7 +33,7 @@ public class AddWorkerCommand implements ICommand {
             writer.write(INFO);
 
             AbstractDbService service;
-            AbstractWorker worker;
+            Worker worker;
             writer.write("Wprowadz dane: \n");
             writer.flush();
 

@@ -3,8 +3,8 @@ package pl.zut.zjava.server.connection.tcp;
 import com.google.common.base.Strings;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.zut.zjava.commons.FrameType;
-import pl.zut.zjava.server.processor.GetWorkerProcessor;
+import pl.zut.zjava.commons.enums.FrameType;
+import pl.zut.zjava.server.processor.GetWorkerFrameProcessor;
 import pl.zut.zjava.server.session.SessionCache;
 import pl.zut.zjava.server.session.SessionDto;
 
@@ -67,7 +67,7 @@ class TcpConnectionClient extends Thread {
 
                 FrameType frameType = FrameType.GetFrameByName(paramMap.get(PARAM_FRAME));
                 if ( frameType.equals(FrameType.F_GET_ALL)) {
-                    oos.writeObject(new GetWorkerProcessor().getWorkerList());
+                    oos.writeObject(new GetWorkerFrameProcessor().getWorkerList());
                 } else if ( frameType.equals(FrameType.F_HELP) ) {
                     oos.writeUTF(CLIENT_WELCOME);
                 }

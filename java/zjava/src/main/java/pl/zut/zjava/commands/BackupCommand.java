@@ -3,9 +3,9 @@ package pl.zut.zjava.commands;
 import org.jline.reader.LineReader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.zut.zjava.entity.AbstractWorker;
-import pl.zut.zjava.entity.service.impl.AbstractWorkerServiceImpl;
-import pl.zut.zjava.server.processor.GetWorkerProcessor;
+import pl.zut.zjava.commons.utils.CommandUtils;
+import pl.zut.zjava.entity.Worker;
+import pl.zut.zjava.server.processor.GetWorkerFrameProcessor;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -29,7 +29,7 @@ public class BackupCommand implements ICommand {
         if ( action.equalsIgnoreCase("z") ) {
 
             try {
-                Optional<String> maybeFileName = CommandUtils.serializeWorkerList(new GetWorkerProcessor().getWorkerList());
+                Optional<String> maybeFileName = CommandUtils.serializeWorkerList(new GetWorkerFrameProcessor().getWorkerList());
                 if ( maybeFileName.isPresent()) {
                     writer.write("-----------------------------------------------\n");
                     writer.write("\tNazwa pliku : \t " + maybeFileName.get());
@@ -46,7 +46,7 @@ public class BackupCommand implements ICommand {
         } else if ( action.equalsIgnoreCase("o")) {
 
             try {
-                List<AbstractWorker> workerList = CommandUtils.deserializeWorkerList();
+                List<Worker> workerList = CommandUtils.deserializeWorkerList();
                 writer.write("\n\tDane zostaly odczytane poprawnie\n");
             } catch (IOException | ClassNotFoundException e) {
 

@@ -1,4 +1,4 @@
-package pl.zut.zjava.commons.enums;
+package pl.zut.zjava.entity;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

@@ -1,4 +1,4 @@
-package pl.zut.zjava.commands;
+package pl.zut.zjava.commons.utils;
 
 import com.google.common.base.Strings;
 import org.jline.keymap.KeyMap;
@@ -7,7 +7,7 @@ import org.jline.reader.UserInterruptException;
 import org.jline.reader.impl.LineReaderImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.zut.zjava.entity.AbstractWorker;
+import pl.zut.zjava.entity.Worker;
 
 import javax.swing.*;
 import java.io.*;
@@ -96,7 +96,7 @@ public class CommandUtils {
 
 
 
-    public static Optional<String> serializeWorkerList(List<AbstractWorker> data)
+    public static Optional<String> serializeWorkerList(List<Worker> data)
             throws IOException {
 
         JFileChooser fileChooser = new JFileChooser();
@@ -118,18 +118,18 @@ public class CommandUtils {
 
 
     @SuppressWarnings("unchecked")
-    public static List<AbstractWorker> deserializeWorkerList()
+    public static List<Worker> deserializeWorkerList()
             throws IOException, ClassNotFoundException {
 
         JFileChooser fileChooser = new JFileChooser();
-        List<AbstractWorker> workerList = new ArrayList<>();
+        List<Worker> workerList = new ArrayList<>();
         if ( fileChooser.showOpenDialog(new JFrame()) == JFileChooser.APPROVE_OPTION ) {
 
             File file = fileChooser.getSelectedFile();
             logger.info("Loading data: from file: {}", file.getAbsolutePath());
 
             ObjectInputStream is = new ObjectInputStream(new FileInputStream(file));
-            workerList = (List<AbstractWorker>) is.readObject();
+            workerList = (List<Worker>) is.readObject();
             is.close();
         }
 

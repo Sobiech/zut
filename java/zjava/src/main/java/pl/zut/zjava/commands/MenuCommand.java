@@ -3,8 +3,9 @@ package pl.zut.zjava.commands;
 import org.apache.commons.lang3.math.NumberUtils;
 import org.jline.reader.LineReader;
 import org.jline.reader.impl.LineReaderImpl;
-import pl.zut.zjava.entity.AbstractWorker;
-import pl.zut.zjava.entity.service.impl.AbstractWorkerServiceImpl;
+import pl.zut.zjava.commons.utils.CommandUtils;
+import pl.zut.zjava.entity.Worker;
+import pl.zut.zjava.entity.service.impl.WorkerServiceImpl;
 
 import java.io.PrintWriter;
 import java.util.List;
@@ -68,7 +69,7 @@ public class MenuCommand implements ICommand {
     private void processReadWorkerList(final PrintWriter writer, final LineReader reader ) {
 
         Integer limit = Integer.valueOf(CommandUtils.getData("Podaj limit", writer, reader));
-        List<AbstractWorker> workerList = new AbstractWorkerServiceImpl().getList(limit);
+        List<Worker> workerList = new WorkerServiceImpl().getList(limit);
 
         int pozycja = 0;
 

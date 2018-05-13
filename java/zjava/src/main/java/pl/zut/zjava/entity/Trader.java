@@ -1,18 +1,18 @@
 package pl.zut.zjava.entity;
 
-import pl.zut.zjava.commons.enums.PositionType;
-
-import javax.persistence.*;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.math.BigDecimal;
 
+import static pl.zut.zjava.commons.enums.PositionType.Values.HANDLOWIEC;
+
 @Entity
-@DiscriminatorValue(value = PositionType.Values.HANDLOWIEC )
+@DiscriminatorValue(HANDLOWIEC )
 @XmlRootElement( name = "handlowiec" )
-public class Trader extends AbstractWorker {
+public class Trader extends Worker {
 
 
 	private static final long serialVersionUID = -2056805239800720312L;
