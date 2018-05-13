@@ -1,4 +1,4 @@
-package pl.zut.zjava.server.connection.tcp;
+package pl.zut.zjava.server.connection.protocol.tcp;
 
 import com.google.common.base.Strings;
 import org.slf4j.Logger;

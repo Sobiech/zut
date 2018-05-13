@@ -1,4 +1,4 @@
-package pl.zut.zjava.server.connection.tcp;
+package pl.zut.zjava.server.connection.protocol.tcp;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

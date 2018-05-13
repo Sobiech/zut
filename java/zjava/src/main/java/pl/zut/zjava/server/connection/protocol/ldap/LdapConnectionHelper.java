@@ -1,4 +1,4 @@
-package pl.zut.zjava.server.connection.ldap;
+package pl.zut.zjava.server.connection.protocol.ldap;
 
 import org.apache.directory.ldap.client.api.LdapConnection;
 import org.apache.directory.ldap.client.api.LdapConnectionConfig;

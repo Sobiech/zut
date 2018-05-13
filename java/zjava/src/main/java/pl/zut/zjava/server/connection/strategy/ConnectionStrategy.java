@@ -1,4 +1,4 @@
-package pl.zut.zjava.server.strategy;
+package pl.zut.zjava.server.connection.strategy;
 
 import pl.zut.zjava.entity.Worker;
 

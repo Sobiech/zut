@@ -1,4 +1,4 @@
-package pl.zut.zjava.server.connection.soap.impl;
+package pl.zut.zjava.server.connection.protocol.soap.impl;
 
 
 import org.postgresql.util.Base64;
@@ -7,14 +7,14 @@ import org.slf4j.LoggerFactory;
 import pl.zut.zjava.commons.dto.WorkerListDto;
 import pl.zut.zjava.entity.service.WorkerService;
 import pl.zut.zjava.entity.service.impl.WorkerServiceImpl;
-import pl.zut.zjava.server.connection.soap.WorkerEndpointService;
+import pl.zut.zjava.server.connection.protocol.soap.WorkerEndpointService;
 import pl.zut.zjava.server.session.SessionCache;
 import pl.zut.zjava.server.session.SessionDto;
 
 import javax.jws.WebService;
 import java.util.Objects;
 
-@WebService(endpointInterface = "pl.zut.zjava.server.connection.soap.WorkerEndpointService")
+@WebService(endpointInterface = "pl.zut.zjava.server.connection.protocol.soap.WorkerEndpointService")
 public class WorkerEndpointServiceImpl
         extends AbstractWebServiceImpl implements WorkerEndpointService {
 

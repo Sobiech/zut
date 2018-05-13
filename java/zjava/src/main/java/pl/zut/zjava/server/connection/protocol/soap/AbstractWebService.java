@@ -1,4 +1,4 @@
-package pl.zut.zjava.server.connection.soap;
+package pl.zut.zjava.server.connection.protocol.soap;
 
 public interface AbstractWebService {
 

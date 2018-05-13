@@ -1,8 +1,8 @@
-package pl.zut.zjava.server.connection.soap.impl;
+package pl.zut.zjava.server.connection.protocol.soap.impl;
 
 import org.apache.commons.lang3.ArrayUtils;
 import org.slf4j.Logger;
-import pl.zut.zjava.server.connection.soap.AbstractWebService;
+import pl.zut.zjava.server.connection.protocol.soap.AbstractWebService;
 
 import java.util.Objects;
 

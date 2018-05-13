@@ -5,10 +5,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pl.zut.zjava.entity.PersistenceUnitFactory;
 import pl.zut.zjava.jline.Shell;
-import pl.zut.zjava.server.connection.rmi.LoginServer;
-import pl.zut.zjava.server.connection.soap.AbstractWebService;
-import pl.zut.zjava.server.connection.soap.impl.WorkerEndpointServiceImpl;
-import pl.zut.zjava.server.connection.tcp.TcpConnectionServer;
+import pl.zut.zjava.server.connection.protocol.rmi.LoginServer;
+import pl.zut.zjava.server.connection.protocol.soap.AbstractWebService;
+import pl.zut.zjava.server.connection.protocol.soap.impl.WorkerEndpointServiceImpl;
+import pl.zut.zjava.server.connection.protocol.tcp.TcpConnectionServer;
 import pl.zut.zjava.server.session.SessionRemoveScheduler;
 
 import javax.xml.ws.Endpoint;

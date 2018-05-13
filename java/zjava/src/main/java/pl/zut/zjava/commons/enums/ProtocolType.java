@@ -1,5 +1,9 @@
 package pl.zut.zjava.commons.enums;
 
+import pl.zut.zjava.server.connection.strategy.ConnectionStrategy;
+import pl.zut.zjava.server.connection.strategy.SoapConnectionStrategy;
+import pl.zut.zjava.server.connection.strategy.TcpConnectionStrategy;
+
 public enum ProtocolType {
 
     TCP_IP("t"),
@@ -23,6 +27,15 @@ public enum ProtocolType {
         }
 
         throw new IllegalArgumentException("Podany skrot jest niepoprawny");
+    }
+
+    public ConnectionStrategy getConnectionStrategy(String ws) {
+
+        if ( this.equals(TCP_IP )) {
+            return new TcpConnectionStrategy();
+        }
+
+        return new SoapConnectionStrategy(ws);
     }
 
 }

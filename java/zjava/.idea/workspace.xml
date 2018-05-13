@@ -18,80 +18,22 @@
       <FILTER>pl.zut.zjava.*</FILTER>
     </SUITE>
   </component>
-  <component name="DockManager">
-    <window id="6">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="Menu.java" pinned="false" current-in-tab="false">
-              <entry file="file://E:/Studia/ZUT/Semestr II/Zaawansowane techniki programowania Java/Laboratoria/Ewidencja_pracownikow_L4/src/Menu/Menu.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="355">
-                    <caret line="503" column="65" selection-start-line="503" selection-start-column="51" selection-end-line="503" selection-end-column="65" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="WebSrvcManager.java" pinned="false" current-in-tab="false">
-              <entry file="file://E:/Studia/ZUT/Semestr II/Zaawansowane techniki programowania Java/Laboratoria/Ewidencja_pracownikow_L4/src/Pracownik/WebSrvcManager.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state>
-                    <caret column="14" lean-forward="true" selection-start-column="14" selection-end-column="14" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="PracownikManager.java" pinned="false" current-in-tab="false">
-              <entry file="file://E:/Studia/ZUT/Semestr II/Zaawansowane techniki programowania Java/Laboratoria/Ewidencja_pracownikow_L4/src/Pracownik/PracownikManager.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="221">
-                    <caret line="26" column="35" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="35" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/Main.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="267">
-                    <caret line="42" column="27" lean-forward="true" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
-                    <folding>
-                      <element signature="imports" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="AddWorkerCommand.java" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/commands/AddWorkerCommand.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="257">
-                    <caret line="64" column="38" lean-forward="true" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="38" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="Director.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/entity/Director.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+              <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WorkerEndpointServiceImpl.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/server/connection/soap/impl/WorkerEndpointServiceImpl.java">
+      <file leaf-file-name="WorkerEndpointServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/server/connection/protocol/soap/impl/WorkerEndpointServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="42" column="53" lean-forward="true" selection-start-line="42" selection-start-column="53" selection-end-line="42" selection-end-column="53" />
+            <state relative-caret-position="326">
+              <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -99,11 +41,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Config.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/commons/Config.java">
+      <file leaf-file-name="ProtocolType.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/commons/enums/ProtocolType.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="36" column="36" lean-forward="true" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
+            <state relative-caret-position="493">
+              <caret line="31" column="51" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="51" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConnectionStrategy.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/server/connection/strategy/ConnectionStrategy.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataNetworkDownloadCommand.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/commands/DataNetworkDownloadCommand.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="213">
+              <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -111,8 +80,8 @@
       <file leaf-file-name="Worker.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/entity/Worker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="30" lean-forward="true" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+            <state relative-caret-position="136">
+              <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -123,20 +92,8 @@
       <file leaf-file-name="AbstractDbServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/entity/service/impl/AbstractDbServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-136">
+            <state relative-caret-position="68">
               <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SoapStrategy.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/server/strategy/SoapStrategy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -144,7 +101,7 @@
       <file leaf-file-name="TraderServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/entity/service/impl/TraderServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
+            <state relative-caret-position="85">
               <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
             </state>
           </provider>
@@ -153,26 +110,10 @@
       <file leaf-file-name="WorkerServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/entity/service/impl/WorkerServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="11" column="46" lean-forward="true" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
+            <state relative-caret-position="85">
+              <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1648#1649#0" expanded="true" />
-                <element signature="e#1698#1699#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WorkerListDto.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/commons/dto/WorkerListDto.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#537#538#0" expanded="true" />
-                <element signature="e#578#579#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -182,7 +123,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/entity/Trader.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+              <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -252,12 +193,10 @@
         <option value="$PROJECT_DIR$/src/main/java/pl/zut/zjava/server/connection/soap/WorkerEndpointServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/zut/zjava/server/connection/soap/AbstractWebService.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/zut/zjava/server/connection/ldap/LdapConnectionHelper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/zut/zjava/commons/enums/ProtocolType.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/zut/zjava/server/strategy/IStrategy.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/zut/zjava/server/strategy/ConnectionStrategy.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/zut/zjava/server/strategy/TcpStrategy.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/zut/zjava/server/connection/soap/WorkerEndpointService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/zut/zjava/commands/DataNetworkDownloadCommand.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/config.properties" />
         <option value="$PROJECT_DIR$/src/main/java/pl/zut/zjava/commons/Config.java" />
@@ -274,6 +213,8 @@
         <option value="$PROJECT_DIR$/src/main/java/pl/zut/zjava/entity/Director.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/zut/zjava/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/zut/zjava/server/connection/soap/impl/WorkerEndpointServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/zut/zjava/commons/enums/ProtocolType.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/zut/zjava/commands/DataNetworkDownloadCommand.java" />
       </list>
     </option>
   </component>
@@ -315,22 +256,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="evidence" type="58d84e3e:PackageViewProjectNode" />
-              <item name="evidence" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="evidence" type="58d84e3e:PackageViewProjectNode" />
-              <item name="evidence" type="616d4139:PackageViewModuleNode" />
-              <item name="pl.zut.zjava" type="1f31426a:PackageElementNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -380,7 +305,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="zjava" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
+              <item name="commons" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="evidence" type="b2602c69:ProjectViewProjectNode" />
@@ -399,7 +324,34 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="zjava" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="connection" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="evidence" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zjava" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="zjava" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="connection" type="462c0819:PsiDirectoryNode" />
               <item name="strategy" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="evidence" type="58d84e3e:PackageViewProjectNode" />
+              <item name="evidence" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="evidence" type="58d84e3e:PackageViewProjectNode" />
+              <item name="evidence" type="616d4139:PackageViewModuleNode" />
+              <item name="pl.zut.zjava" type="1f31426a:PackageElementNode" />
             </path>
           </expand>
           <select />
@@ -575,75 +527,76 @@
       <workItem from="1525524707032" duration="10942000" />
       <workItem from="1526146247427" duration="24407000" />
       <workItem from="1526193998828" duration="34104000" />
+      <workItem from="1526229200931" duration="219000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100834000" />
+    <option name="totallyTimeSpent" value="101053000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info anchor="bottom" id="Java Enterprise" order="8" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" weight="0.32995737" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="CDI" order="4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.36819172" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32897604" />
       <window_info id="Designer" order="2" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" sideWeight="0.49782136" visible="true" weight="0.26918977" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20362474" />
+      <window_info anchor="right" id="Bean Validation" order="4" />
       <window_info anchor="right" id="Database" order="3" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.3267974" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="JSF" order="4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39978212" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.3267974" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info anchor="bottom" id="Java Enterprise" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.36819172" />
-      <window_info anchor="right" id="Coverage" order="4" sideWeight="0.50217867" side_tool="true" visible="true" weight="0.26918977" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32897604" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20149253" />
-      <window_info anchor="right" id="Bean Validation" order="4" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3267974" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" sideWeight="0.49782136" visible="true" weight="0.26918977" />
+      <window_info anchor="right" id="Coverage" order="4" sideWeight="0.50217867" side_tool="true" visible="true" weight="0.26918977" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.3267974" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39978212" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" sideWeight="0.4988399" visible="true" weight="0.26940298" />
-      <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.4433551" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info id="Favorites" order="4" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20149253" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.4433551" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info id="Designer" order="2" />
       <window_info anchor="right" id="JSF" order="7" />
       <window_info id="UI Designer" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3267974" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39978212" />
       <window_info anchor="right" id="Bean Validation" order="8" />
+      <window_info anchor="right" id="Maven Projects" order="6" weight="0.32995737" />
+      <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32897604" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Coverage" order="9" sideWeight="0.5011601" side_tool="true" visible="true" weight="0.26876676" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="CDI" order="10" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3267974" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3267974" />
-      <window_info anchor="right" id="Maven Projects" order="6" weight="0.32995737" />
-      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info anchor="right" id="Coverage" order="9" sideWeight="0.5011601" side_tool="true" visible="true" weight="0.26876676" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -657,6 +610,44 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://E:/Studia/ZUT/Semestr II/Zaawansowane techniki programowania Java/Laboratoria/Ewidencja_pracownikow_L4/src/Menu/Menu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7684">
+          <caret line="503" column="65" selection-start-line="503" selection-start-column="51" selection-end-line="503" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/Studia/ZUT/Semestr II/Zaawansowane techniki programowania Java/Laboratoria/Ewidencja_pracownikow_L4/src/Pracownik/WebSrvcManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="14" lean-forward="true" selection-start-column="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/Studia/ZUT/Semestr II/Zaawansowane techniki programowania Java/Laboratoria/Ewidencja_pracownikow_L4/src/Pracownik/PracownikManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="26" column="35" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/commands/AddWorkerCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="64" column="38" lean-forward="true" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="42" column="27" lean-forward="true" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/entity/service/impl/DirectorServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -681,13 +672,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/commons/Frame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/commons/Frame.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/commons/enums/FrameType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -702,18 +687,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../integracja/lab5/src/main/java/pl/locon/zut/ia/manager/AbstractDaoManager.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/../integracja/lab5/src/main/java/pl/locon/zut/ia/manager/BookManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="30" column="31" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="31" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../integracja/lab5/src/main/java/pl/locon/zut/ia/book/Publisher.java">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/../integracja/lab5/src/main/java/pl/locon/zut/ia/book/BookList.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -740,12 +719,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="18" column="73" selection-start-line="18" selection-start-column="56" selection-end-line="18" selection-end-column="73" />
-          <folding>
-            <element signature="e#334#335#0" expanded="true" />
-            <element signature="e#414#415#0" expanded="true" />
-            <element signature="e#468#469#0" expanded="true" />
-            <element signature="e#552#553#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -763,7 +736,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/server/connection/ldap/LdapConnectionHelper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/server/connection/protocol/ldap/LdapConnectionHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
@@ -773,21 +746,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/server/connection/tcp/TcpConnectionServer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/server/connection/protocol/tcp/TcpConnectionServer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/commons/enums/ProtocolType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="59" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="59" />
-          <folding>
-            <element signature="e#175#176#0" expanded="true" />
-            <element signature="e#225#226#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -795,35 +757,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="36" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#258#259#0" expanded="true" />
-            <element signature="e#321#322#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/client.policy">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/server/strategy/AbstractConnectionStrategyImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="43" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/server/strategy/ConnectionStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/server/strategy/TcpStrategy.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/server/strategy/AbstractConnectionStrategyImpl.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/server/connection/strategy/TcpConnectionStrategy.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="77">
           <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
@@ -861,18 +799,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/run.bat">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="121" column="20" lean-forward="true" selection-start-line="121" selection-start-column="20" selection-end-line="121" selection-end-column="20" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/config.properties">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/../wsdl/src/main/java/pl/zut/pswa/config/Config.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -895,14 +827,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/server/connection/soap/AbstractWebService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/server/connection/protocol/soap/AbstractWebService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/server/connection/soap/WorkerEndpointService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/server/connection/protocol/soap/WorkerEndpointService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="29" lean-forward="true" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
@@ -912,17 +844,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/commands/DataNetworkDownloadCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/server/connection/soap/impl/AbstractWebServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/server/connection/protocol/soap/impl/AbstractWebServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
@@ -945,34 +867,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/commons/Config.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="36" column="36" lean-forward="true" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
+        <state relative-caret-position="510">
+          <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://E:/Studia/ZUT/Semestr II/Zaawansowane techniki programowania Java/Laboratoria/Ewidencja_pracownikow_L4/src/Menu/Menu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
+        <state relative-caret-position="7684">
           <caret line="503" column="65" selection-start-line="503" selection-start-column="51" selection-end-line="503" selection-end-column="65" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/commons/dto/WorkerListDto.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
+        <state relative-caret-position="136">
           <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#537#538#0" expanded="true" />
-            <element signature="e#578#579#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/server/strategy/SoapStrategy.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/server/connection/strategy/SoapConnectionStrategy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
+        <state relative-caret-position="561">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -981,41 +901,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/entity/service/impl/TraderServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
+        <state relative-caret-position="85">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/commands/AddWorkerCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
+        <state relative-caret-position="850">
           <caret line="64" column="38" lean-forward="true" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/entity/service/impl/AbstractDbServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-136">
+        <state relative-caret-position="68">
           <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/entity/service/impl/WorkerServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="11" column="46" lean-forward="true" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
+        <state relative-caret-position="85">
+          <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1648#1649#0" expanded="true" />
-            <element signature="e#1698#1699#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/entity/Worker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="30" lean-forward="true" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+        <state relative-caret-position="136">
+          <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1025,7 +943,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/entity/Trader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -1042,14 +960,44 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/entity/Director.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/server/connection/soap/impl/WorkerEndpointServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/server/connection/protocol/soap/impl/WorkerEndpointServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="42" column="53" lean-forward="true" selection-start-line="42" selection-start-column="53" selection-end-line="42" selection-end-column="53" />
+        <state relative-caret-position="326">
+          <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/commons/enums/ProtocolType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="31" column="51" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/server/connection/strategy/ConnectionStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/zjava/commands/DataNetworkDownloadCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

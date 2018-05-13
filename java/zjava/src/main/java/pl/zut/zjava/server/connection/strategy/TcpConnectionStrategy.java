@@ -1,4 +1,4 @@
-package pl.zut.zjava.server.strategy;
+package pl.zut.zjava.server.connection.strategy;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,10 +17,10 @@ import java.util.List;
 import static pl.zut.zjava.Main.PARAM_FRAME;
 import static pl.zut.zjava.Main.PARAM_TOKEN;
 
-public class TcpStrategy
+public class TcpConnectionStrategy
         implements ConnectionStrategy {
 
-    private static final Logger logger = LoggerFactory.getLogger(TcpStrategy.class);
+    private static final Logger logger = LoggerFactory.getLogger(TcpConnectionStrategy.class);
 
 
     @SuppressWarnings("unchecked")

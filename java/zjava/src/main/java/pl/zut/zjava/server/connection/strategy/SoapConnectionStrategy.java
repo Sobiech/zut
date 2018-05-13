@@ -1,27 +1,27 @@
-package pl.zut.zjava.server.strategy;
+package pl.zut.zjava.server.connection.strategy;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pl.zut.zjava.commons.dto.WorkerListDto;
 import pl.zut.zjava.entity.Worker;
-import pl.zut.zjava.server.connection.soap.WorkerEndpointService;
+import pl.zut.zjava.server.connection.protocol.soap.WorkerEndpointService;
 
 import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
 import java.net.URI;
 import java.util.List;
 
-public class SoapStrategy
+public class SoapConnectionStrategy
         implements ConnectionStrategy {
 
 
-    private static final Logger logger = LoggerFactory.getLogger(SoapStrategy.class);
+    private static final Logger logger = LoggerFactory.getLogger(SoapConnectionStrategy.class);
 
 
     private final String path;
 
 
-    public SoapStrategy(final String path) {
+    public SoapConnectionStrategy(final String path) {
         this.path = path;
     }
 

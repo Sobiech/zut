@@ -6,11 +6,11 @@ import org.slf4j.LoggerFactory;
 import pl.zut.zjava.commons.enums.ProtocolType;
 import pl.zut.zjava.commons.utils.CommandUtils;
 import pl.zut.zjava.entity.Worker;
-import pl.zut.zjava.server.connection.rmi.LoginServer;
-import pl.zut.zjava.server.connection.rmi.Validator;
-import pl.zut.zjava.server.strategy.ConnectionStrategy;
-import pl.zut.zjava.server.strategy.SoapStrategy;
-import pl.zut.zjava.server.strategy.TcpStrategy;
+import pl.zut.zjava.server.connection.protocol.rmi.LoginServer;
+import pl.zut.zjava.server.connection.protocol.rmi.Validator;
+import pl.zut.zjava.server.connection.strategy.ConnectionStrategy;
+import pl.zut.zjava.server.connection.strategy.SoapConnectionStrategy;
+import pl.zut.zjava.server.connection.strategy.TcpConnectionStrategy;
 
 import java.io.*;
 import java.net.ConnectException;
@@ -40,12 +40,12 @@ public class DataNetworkDownloadCommand implements ICommand {
             writer.write("-----------------------------------------------\n");
 
             String choosenProtocol = CommandUtils.getData("Protokol [T]CP/IP czy [S]OAP?", writer, reader);
-            ProtocolType protocolType = ProtocolType.getProtocolTypeByAbbrevation(choosenProtocol);
+            ProtocolType protocol = ProtocolType.getProtocolTypeByAbbrevation(choosenProtocol);
             String ip = CommandUtils.getData("Adres", writer, reader);
             String port = CommandUtils.getData("Port", writer, reader);
 
             String endpoint = null;
-            if ( protocolType.equals(ProtocolType.SOAP)) {
+            if ( protocol.equals(ProtocolType.SOAP)) {
                 endpoint = CommandUtils.getData("Zasob", writer, reader);
             }
 
@@ -57,7 +57,7 @@ public class DataNetworkDownloadCommand implements ICommand {
 
             writer.write("\tAutoryzacja uzytkownika...Sukces\n");
 
-            ConnectionStrategy conn = getStrategyByProtocol(protocolType, endpoint);
+            ConnectionStrategy conn = protocol.getConnectionStrategy(endpoint);
             List<Worker> workerList = conn.getWorkerList(ip, Integer.valueOf(port), sidInBase64);
 
             writer.write("\tUstanawianie polaczenia...Sukces\n");
@@ -96,17 +96,5 @@ public class DataNetworkDownloadCommand implements ICommand {
             writer.flush();
         }
     }
-
-
-    private ConnectionStrategy getStrategyByProtocol(ProtocolType protocolType, String endpoint) {
-
-        if ( protocolType.equals(ProtocolType.TCP_IP)) {
-            return new TcpStrategy();
-        } else {
-            return new SoapStrategy(endpoint);
-        }
-    }
-
-
 
 }
