@@ -1,0 +1,8 @@
+
+./polycc kompilatory_optymalizujace/zad1/multiplyMatrix.c --tile --parallel -o kompilatory_optymalizujace/zad1/multiplyMatrix.poly.c
+
+gcc multiplyMatrix.c -lgomp -fopenmp -O2 -lm -o multiplyMatrix
+gcc multiplyMatrix.poly.c -lgomp -fopenmp -O2 -lm -o multiplyMatrixPoly
+
+./multiplyMatrix TAB_1.txt TAB_2.txt OUTPUT
+./multiplyMatrixPoly TAB_1.txt TAB_2.txt tests/poly
