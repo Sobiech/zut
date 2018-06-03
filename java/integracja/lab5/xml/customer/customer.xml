@@ -21,4 +21,25 @@
             <postCode>00-333</postCode>
         </deliveryAddress>
     </customer>
+
+    <customer id="2">
+        <firstname>Kacper</firstname>
+        <lastname>Sobisz</lastname>
+        <phone>333222333</phone>
+        <email>kko@email.com</email>
+        <birth>1990-11-20</birth>
+        <billingAddress>
+            <city>Szczecin</city>
+            <address1>ul.Test 28</address1>
+            <address2>31</address2>
+            <postCode>04-123</postCode>
+        </billingAddress>
+        <deliveryAddress>
+            <city>Warszawa</city>
+            <address1>ul.Test 29</address1>
+            <address2>3</address2>
+            <postCode>00-333</postCode>
+        </deliveryAddress>
+    </customer>
+
 </customers>
