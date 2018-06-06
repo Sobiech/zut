@@ -9,7 +9,7 @@ import java.util.Objects;
 public abstract class AbstractWebServiceImpl
         implements AbstractWebService {
 
-    public static final String HOST = "http://192.168.4.10:4242";
+    public static final String HOST = "http://localhost:4242";
 
     AbstractWebServiceImpl() {
         getLogger().info("webService served on: {}", getWebServiceURL());

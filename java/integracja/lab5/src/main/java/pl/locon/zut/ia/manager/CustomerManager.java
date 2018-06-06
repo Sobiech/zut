@@ -1,6 +1,5 @@
 package pl.locon.zut.ia.manager;
 
-import com.sun.xml.ws.util.StringUtils;
 import pl.locon.zut.ia.customer.Customer;
 import pl.locon.zut.ia.customer.CustomerList;
 import pl.locon.zut.ia.xml.XmlFileManager;
@@ -60,9 +59,9 @@ public class CustomerManager extends AbstractDaoManager<Customer, CustomerList> 
             throw new Exception("Invalid parameters");
         }
 
-        if ( Objects.isNull(sid) || !sidSet.contains(sid) ) {
-            throw new Exception("Unauthorized");
-        }
+//        if ( Objects.isNull(sid) || !sidSet.contains(sid) ) {
+//            throw new Exception("Unauthorized");
+//        }
 
         return this.dataList
             .stream()
@@ -78,9 +77,9 @@ public class CustomerManager extends AbstractDaoManager<Customer, CustomerList> 
             throw new Exception("Invalid parameters");
         }
 
-        if ( Objects.isNull(sid) || !sidSet.contains(sid) ) {
-            throw new Exception("Unauthorized");
-        }
+//        if ( Objects.isNull(sid) || !sidSet.contains(sid) ) {
+//            throw new Exception("Unauthorized");
+//        }
 
         return this.dataList
             .stream()
@@ -97,6 +96,20 @@ public class CustomerManager extends AbstractDaoManager<Customer, CustomerList> 
         }
 
         sidSet.remove(sid);
+        return true;
+    }
+
+
+    @WebMethod
+    public @WebResult boolean addClient(@WebParam( name = "customer") Customer customer) throws Exception {
+
+        if ( Objects.isNull(customer)) {
+            throw new Exception("invalid data");
+        }
+
+        System.out.println("Got : " + customer);
+        dataList.add(customer);
+        System.out.println(customer);
         return true;
     }
 

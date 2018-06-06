@@ -39,9 +39,10 @@ public class SoapConnectionStrategy
             URI uri = new URI("http", null, host, port, wsdlPath, null, null);
 
             QName serviceQN = new QName(
-                "http://impl.soap.connection.server.zjava.zut.pl/",
+                "http://impl.soap.protocol.connection.server.zjava.zut.pl/",
                 "WorkerEndpointServiceImplService"
             );
+
 
             Service service = Service.create(uri.toURL(), serviceQN);
             WorkerEndpointService endpoint = service.getPort(WorkerEndpointService.class);
