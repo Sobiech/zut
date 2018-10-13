@@ -1,0 +1,11 @@
+- czytamy dwie macierze z pliku
+- mno¿ymy je sekwencyjnie
+
+- mendelbrot
+
+lab 1 w grudniu oddajemy
+
+
+
+lab 2 wystawiæ SOAP
+
