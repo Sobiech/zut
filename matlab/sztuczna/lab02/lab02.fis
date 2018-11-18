@@ -1,0 +1,48 @@
+[System]
+Name='lab02'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=6
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='zarobki'
+Range=[0 10000]
+NumMFs=5
+MF1='BM':'trimf',[0 0 1000]
+MF2='M':'trimf',[0 1000 3000]
+MF3='SR':'trimf',[1000 3000 5000]
+MF4='D':'trapmf',[3000 5000 7000 9000]
+MF5='BD':'trapmf',[5000 9000 10000 10000]
+
+[Input2]
+Name='wiek'
+Range=[18 60]
+NumMFs=4
+MF1='Mlody':'trimf',[18 18 25]
+MF2='Sredni':'trimf',[18 25 30]
+MF3='Dorosly':'trimf',[25 30 40]
+MF4='Stary':'trimf',[30 60 60]
+
+[Output1]
+Name='kredyt'
+Range=[100 500]
+NumMFs=4
+MF1='Maly':'trimf',[100 100 200]
+MF2='Sredni':'trimf',[100 200 300]
+MF3='Duzy':'trimf',[200 300 400]
+MF4='BardzoDuzy':'trimf',[300 500 500]
+
+[Rules]
+5 3, 3 (1) : 2
+4 2, 2 (1) : 2
+2 4, 1 (1) : 1
+1 1, 1 (1) : 2
+2 3, 2 (1) : 2
+1 4, 1 (1) : 2
