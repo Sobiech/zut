@@ -76,7 +76,7 @@ title('Error before learning');
 net = init(net); 
 
 % maksymalna iloœæ epok uczenia
-net.trainParam.epochs = 50; 
+net.trainParam.epochs = 2000; 
 
 % uczenie sieci
 net = train(net, we, wy); 
