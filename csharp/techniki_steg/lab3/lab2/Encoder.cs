@@ -18,7 +18,7 @@ namespace lab2 {
 
         public Bitmap EncodeMessage(Bitmap bitmap, String text) {
 
-            encrypted = EncryptStringToBytes_Aes(text);
+            encrypted = AesHelper.Encrypt(text, passHashKey);
             Console.WriteLine("Original encrypted: {0} \t length: {1}", System.Text.Encoding.UTF8.GetString(encrypted), encrypted.Length);
 
             // zakodowana wiadomosc w bajtach
@@ -35,22 +35,11 @@ namespace lab2 {
 
             // kod nadmiarowy
             encrypted = RedundantEncoding(encrypted);
-            EncryptMessageOnBitmap(encodedBitmap, encrypted);
-
-            return encodedBitmap;
-        }
-
-        private byte getCode(bool bitValue) {
-            byte redundantKey = 28; //11100
-
-            if (bitValue == true)
-                return redundantKey; //return 11100
-            else
-                return ( byte ) ( redundantKey ^ 31 );     //return 00011
+            return Encode(encodedBitmap, encrypted);
         }
 
 
-        private Bitmap EncryptMessageOnBitmap(Bitmap bitmap, byte[] messageToEncode) {
+        private Bitmap Encode(Bitmap bitmap, byte[] messageToEncode) {
 
             Console.WriteLine("Message to encode: " + Encoding.UTF8.GetString(messageToEncode));
             byte input, x1, x2;
@@ -88,8 +77,8 @@ namespace lab2 {
                     encodedBit = 0;
                 }
 
-                //losowanie wspolrzednych pixsela
                 while (true) {
+                    //losowanie wspolrzednych pixsela
                     pixIndex = rnd.Next(0, maxIndex);
                     if (unvisitedPixels.IndexOf(pixIndex) > -1) {
                         rndH = pixIndex / imgW;
@@ -159,30 +148,14 @@ namespace lab2 {
             return newMessage;
         }
 
-        private byte[] EncryptStringToBytes_Aes(string plainText) {
+        private byte getCode(bool bitValue) {
+            byte redundantKey = 28; //11100
 
-            byte[] encrypted;
-            byte[] nonce = new byte[16];
-            byte[] key = new byte[32];
-
-            Array.Copy(this.passHashKey, 0, key, 0, 32);
-            Array.Copy(this.passHashKey, 32, nonce, 0, 16);
-
-            using (Aes aesAlg = Aes.Create()) {
-                aesAlg.Key = key;
-                aesAlg.IV = nonce;
-
-                ICryptoTransform encryptor = aesAlg.CreateEncryptor(aesAlg.Key, aesAlg.IV);
-                using (MemoryStream msEncrypt = new MemoryStream()) {
-                    using (CryptoStream csEncrypt = new CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write)) {
-                        using (StreamWriter swEncrypt = new StreamWriter(csEncrypt)) {
-                            swEncrypt.Write(plainText);
-                        }
-                        encrypted = msEncrypt.ToArray();
-                    }
-                }
-            }
-            return encrypted;
+            if (bitValue == true)
+                return redundantKey; //return 11100
+            else
+                return ( byte ) ( redundantKey ^ 31 );     //return 00011
         }
+
     }
 }

@@ -16,32 +16,31 @@ namespace lab2 {
         }
 
         public String DecodeMessage(Bitmap bitmap) {
-
             byte[] hiddenMessage = Decode(bitmap);
 
-            if (hiddenMessage.Length <= 0)
+            if (hiddenMessage.Length <= 0) {
                 throw new BadImageFormatException("Given image doesnt contain any encrypted message");
+            }
 
             Console.WriteLine("hidden size: {0} message: {1}", hiddenMessage.Length, Encoding.UTF8.GetString(hiddenMessage));
+            // kod nadmiarowy
+            hiddenMessage = RedundantDecoding(hiddenMessage);
+            List<int> unvisitedPixels = new List<int>();
 
-            hiddenMessage = redundantDecoding(hiddenMessage);
-            return DecryptStringFromBytes_Aes(hiddenMessage);
+            return AesHelper.Decrypt(hiddenMessage, passHashKey);
         }
 
         private byte[] Decode(Bitmap bitmap) {
-            int messageLength = getMessageLength(bitmap, passHashKey),
-                maxIndex = bitmap.Width * bitmap.Height,
-                pixelCounter = 0,
-                pixIndex,
-                counter = 1,
-                mByteCounter = 0;
+
+            int maxIndex = bitmap.Width * bitmap.Height;
+            int messageLength = getMessageLength(bitmap);
+            int counter = 1, mByteCounter = 0, pixIndex, pixelCounter = 0;
 
             byte[] message = new byte[messageLength];
-            Color pixel = new Color();
-            List<int> unvisitedPixels = new List<int>();
 
-            //ineksy 4 pierwszych pikseli - z dlugoscia wiad.
+            Color pixel = new Color();
             Random rnd = new Random(BitConverter.ToInt32(this.stegHashKey, 0));
+            List<int> unvisitedPixels = new List<int>();
 
             //lista indexów wszystkich pikseli bitmapy
             for (int i = 0; i < maxIndex; i++) {
@@ -51,6 +50,8 @@ namespace lab2 {
             int x1, x2;
 
             while (pixelCounter < messageLength * 4) {
+
+                // permutation of given stegHashKey
                 pixIndex = rnd.Next(0, maxIndex);
                 if (unvisitedPixels.IndexOf(pixIndex) > -1) {
                     unvisitedPixels.Remove(pixIndex);
@@ -82,78 +83,7 @@ namespace lab2 {
             return message;
         }
 
-        public byte[] getMessage(Bitmap bitmap, byte messageLength) {
-            Bitmap encodedBitmap = bitmap;
-            byte[] message = new byte[messageLength + 2];
-            return DecryptMessageFromBitmap(bitmap, message, messageLength);
-        }
-
-        private byte[] DecryptMessageFromBitmap(Bitmap bitmap, byte[] message, byte messageLength) {
-
-            int byteCounter = 0;
-            int bitPosition = 0;
-
-            byte x1, x2;
-
-            Color color;
-
-            for (int x = 0; x < bitmap.Width; x++) {
-                for (int y = 0; y < bitmap.Height; y++) {
-                    if (byteCounter > messageLength && bitPosition == 4) {
-                        return message;
-                    }
-                    if (bitPosition == 4) {
-                        byteCounter++;
-                        bitPosition = 0;
-                    }
-                    color = bitmap.GetPixel(x, y);
-
-                    byte a1 = color.R, a2 = color.G, a3 = color.B;
-
-                    x1 = ( byte ) ( ( ( a1 & 1 ) + ( a3 & 1 ) ) & 1 );
-                    x2 = ( byte ) ( ( ( a2 & 1 ) + ( a3 & 1 ) ) & 1 );
-
-                    message[byteCounter] |= ( byte ) ( x1 << ( 2 * bitPosition ) );
-                    message[byteCounter] |= ( byte ) ( x2 << ( 2 * bitPosition + 1 ) );
-                    bitPosition++;
-                }
-            }
-
-            return message;
-        }
-
-        private string DecryptStringFromBytes_Aes(byte[] cipherText) {
-
-            if (cipherText == null || cipherText.Length <= 0)
-                throw new ArgumentNullException("cipherText");
-
-            string plaintext = null;
-
-            byte[] nonce = new byte[16];
-            byte[] key = new byte[32];
-
-            Array.Copy(this.passHashKey, 0, key, 0, 32);
-            Array.Copy(this.passHashKey, 32, nonce, 0, 16);
-
-            using (Aes aesAlg = Aes.Create()) {
-                aesAlg.Key = key;
-                aesAlg.IV = nonce;
-
-                ICryptoTransform decryptor = aesAlg.CreateDecryptor(aesAlg.Key, aesAlg.IV);
-                using (MemoryStream msDecrypt = new MemoryStream(cipherText)) {
-                    using (CryptoStream csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read)) {
-                        using (StreamReader srDecrypt = new StreamReader(csDecrypt)) {
-                            plaintext = srDecrypt.ReadToEnd();
-                        }
-                    }
-                }
-            }
-
-            return plaintext;
-
-        }
-
-        private byte[] redundantDecoding(byte[] encodedText) {
+        private byte[] RedundantDecoding(byte[] encodedText) {
             int messageLength = encodedText.Length / 5;
             byte[] message = new byte[messageLength];
 
@@ -202,7 +132,7 @@ namespace lab2 {
             return 0;
         }
 
-        private int getMessageLength(Bitmap bitmap, byte[] encryptedSKey) {
+        private int getMessageLength(Bitmap bitmap) {
             int maxIndex = bitmap.Width * bitmap.Height,
                 pixelCounter = 0,
                 pixIndex;
@@ -214,8 +144,7 @@ namespace lab2 {
 
             List<int> unvisitedPixels = new List<int>();
 
-            //ineksy 4 pierwszych pikseli - z dlugoscia wiad.
-            Random rnd = new Random(BitConverter.ToInt32(encryptedSKey, 0));
+            Random rnd = new Random(BitConverter.ToInt32(this.stegHashKey, 0));
 
             //lista indexów wszystkich pikseli bitmapy
             for (int i = 0; i < maxIndex; i++) {
@@ -225,6 +154,8 @@ namespace lab2 {
             byte x1, x2;
 
             while (pixelCounter < 4) {
+
+                // permutation of given stegHashKey
                 pixIndex = rnd.Next(0, maxIndex);
 
                 if (unvisitedPixels.IndexOf(pixIndex) > -1) {
@@ -242,9 +173,6 @@ namespace lab2 {
                     pixelCounter++;
                 }
             }
-
-            //Console.WriteLine("Msg len is: " + (int)messageLength);
-
             return ( int ) messageLength;
         }
 
