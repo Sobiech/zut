@@ -1,0 +1,33 @@
+
+
+Legitymacja studencka ( sektor 1 )
+ - blok 0: 73 97 4C A2 0A 88 04 00 C8 04 00 20 00 00 00 16
+ 
+ 73 97 4C A2 ( serial number )
+ 0A ( access byte ) [1010 0000]
+ 88 04 00 C8 04 00 20 00 00 00 16 ( informacje o producencie )
+ 
+8804 - electronic purse Fourth Way - Alpetour Fourth Way NW part of Sloven4 01.01.98 Automatic Fare Co Trgovina in Informatika d.o
+
+
+ 
+ - blok 1: 00000000000000000000000000000000
+ 
+ - blok 2: 00000000000000000000000000000000
+ 
+ Blok 1 i 2 są zerowe, przeznaczone dla aplikacji dodatkowych
+ 
+ 
+ 
+ 
+ Karta 2:
+ 
+ SN: 63 8D DD 97
+ MOD: A4 
+ 88 04 00 46 B9 95 18 59 60 49 09
+ 
+ 8804 - electronic purse Fourth Way - Alpetour Fourth Way NW part of Sloven4 01.01.98 Automatic Fare Co Trgovina in Informatika d.o
+ 
+ 
+ 1 bl: 000000000000000000000000000000FF
+ 2 bl: 00000000000000000000000000000000

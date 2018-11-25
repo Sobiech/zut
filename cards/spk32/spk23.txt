@@ -1,0 +1,104 @@
+Zapis i odczyt danych z plików elementarnych o ró¿nych w³aœciwoœciach strukturalnych
+
+- select card:
+OMNIKEY CardMan 5x21 0
+There is a card in the reader.
+3B B7 94 00 81 31 FE 65 53 50 4B 32 33 90 00 D1 
+
+- try to connect via direct connection / connection-protocol (T1) 
+OMNIKEY CardMan 5x21 0
+State of the reader is unknown to the Resource Manager
+3B B7 94 00 81 31 FE 65 53 50 4B 32 33 90 00 D1 
+
+
+Przyk³adowe komendy:
+ 
+ - req cmd select: 00 A4 04 00 03 12 34 56
+ - res Answer:62 84[$6284]
+ 
+ - req cmd select: 00 A4 00 0C 02 3F 02
+ - res Answer:90 00[$9000] / ok
+
+ - req cmd select: 00 A4 00 0C 02 40 01
+ - res Answer:90 00[$9000] / ok
+ 
+ - req cmd select: 00 A4 02 00 02 40 01 [ wybór pliku EF 00 A4 02 (FID) ]
+ - res Answer:6F 07 80 02 00 20 82 01 01 90 00[$9000] 
+ 
+
+ 6A 82 / nie odnaleziono pliku
+ 6A 81 / nie obslugiwana komenda
+ 69 82 – nie spe³niono warunków zwi¹zanych z bezpieczeñstwem
+ 
+ 
+EF1 (FID=0x4001)
+EF1 (FID=0x4001)
+EF3 (FID=0x4003)
+
+DF (FID=0x3F02) (nazwa DF: AID=0x123456)
+ 
+00 A4 00 / select DF by FID
+00 A4 02 / select EF in current DF by FID
+00 A4 04 / select by AID 
+
+
+
+
+DF = 3F03 / FID
+EF = 5001
+
+- 00 A4 00 0C 02 3F 02 / select 2 bytes by FID / answer 9000
+- 00 A4 02 00 02 50 01 / Answer:6A 82[$6A82]
+
+  
+  SELECT DF = 3F03 
+- 00 A4 00 0C 02 3F 03: / Answer:90 00[$9000]
+- 00 A4 04 00 03 78 9A BC: / Answer:62 84[$6284] // by AID
+
+- 00 A4 02 00 02 50 01: / Answer:6F 07 80 02 00 20 82 01 01 90 00[$9000]
+
+Pocz¹tkowe wartoœci PINów oraz wartoœci PUKów:
+PIN 1: 0x0123456789ABCDEF
+PIN 3: 0Xfedcba9876543210
+PUK 2: 0x1313131326262626
+PUK 4: 0x7788990011223344
+
+00 B0 00 00 20 / Read 32 bytes from card / Answer: 69 82[$6982]
+
+- 00 20 00 81 08 01 23 45 67 89 AB CD EF / verify PIN / response: Answer:90 00[$9000]
+- 00 20 00 81 08 02 23 45 67 89 AB CD EF / verify invalid PIN / Answer:63 C2[$63C2]
+- 00 20 00 81 08 FE DC BA 98 76 54 32 10 / verify PIN v2  response: Answer:63 C1[$63C1]
+
+After verify PIN: 
+00 B0 00 00 20 / Answer:11 22 33 44 55 66 77 88 FA 13 F3 E2 26 46 E1 08 13 31 11 11 11 11 11 11 11 11 11 01 11 11 11 11 90 00[$9000]
+ 
+// change pin ( from 01 23 45 67 89 AB CD EF ----- na ----- FE DC BA 98 76 54 32 10 )
+- 00 24 00 81 10 01 23 45 67 89 AB CD EF FE DC BA 98 76 54 32 10 / Answer:90 00[$9000]
+- 00 20 00 81 08 01 23 45 67 89 AB CD EF / verify PIN / Answer:63 C2[$63C2]
+- 00 20 00 81 08 FE DC BA 98 76 54 32 10 / verify PIN v2 / Answer:90 00[$9000]
+
+00 20 00 81 08 01 23 45 67 89 AB CD EF after 3 frames got: Answer:69 83[$6983]
+
+// reset counter / puk
+00 2C 00 82 10 13 13 13 13 26 26 26 26 FE DC BA 98 76 54 32 10 / Answer:90 00[$9000]
+verify / invalid pin
+- 00 20 00 81 08 01 23 45 67 89 AB CD EF - Answer:63 C2[$63C2]
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
