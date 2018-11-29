@@ -45,7 +45,7 @@ namespace PluginSystem {
             saveFileDialog.DefaultExt = "*.rtf";
             saveFileDialog.Filter = "RTF Files|*.rtf";
 
-            if (saveFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK && saveFileDialog.FileName.Length > 0) {
+            if (saveFileDialog.ShowDialog() == DialogResult.OK && saveFileDialog.FileName.Length > 0) {
                 editorRichTextBox.SaveFile(saveFileDialog.FileName);
             }
         }
@@ -54,7 +54,7 @@ namespace PluginSystem {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.DefaultExt = "*.rtf";
             openFileDialog.Filter = "RTF Files|*.rtf";
-            if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK && openFileDialog.FileName.Length > 0) {
+            if (openFileDialog.ShowDialog() == DialogResult.OK && openFileDialog.FileName.Length > 0) {
                 editorRichTextBox.LoadFile(openFileDialog.FileName);
             }
         }
