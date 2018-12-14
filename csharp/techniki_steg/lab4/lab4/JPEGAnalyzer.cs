@@ -55,7 +55,6 @@ namespace lab4 {
                     Color finalColor = mFinalBitmap.GetPixel(x, y);
 
                     if (!originalColor.Equals(finalColor)) {
-                        //Console.WriteLine("different pixels");
                         ChangedPixels.Add(new Point(x, y));
                     }
                 }
