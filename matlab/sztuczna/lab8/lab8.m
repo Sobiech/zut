@@ -21,9 +21,8 @@ literaH = [ -1 -1 -1 -1 -1 -1;-1  1 -1 -1  1 -1;-1  1 -1 -1  1 -1;  -1  1  1  1 
 literaJ = [ -1 -1 -1 -1 -1 -1;-1 -1 -1 -1  1 -1;-1 -1 -1 -1  1 -1;  -1 -1 -1 -1  1 -1;-1 -1  1 -1  1 -1;-1 -1  1  1  1 -1;-1 -1 -1 -1 -1 -1];
 literaK = [ -1 -1 -1 -1 -1 -1;-1  1 -1 -1  1 -1;-1  1 -1  1 -1 -1;  -1  1  1 -1 -1 -1;-1  1 -1  1 -1 -1;-1  1 -1 -1  1 -1;-1 -1 -1 -1 -1 -1];
 
-
 colormap('gray');
-figure
+figure('NumberTitle', 'off', 'Name', 'Figure[1] - Letters base');
 
 drawMatrix(literaL,1);
 drawMatrix(literaI,2);
@@ -55,7 +54,7 @@ m = [ M1 M2 M3 M4 M5 M6 M7 M8 M9 M10 ];
 net = newhop(m);                    
 
 % wagi sieci (dla ciekawskich)
-w = net.LW{1,1}                     
+w = net.LW{1,1}
 
 % wagi wejœæ progowych (dla ciekawskich)
 b = net.b{1,1}                      
@@ -81,17 +80,22 @@ literaDoTestow = [
 ];
 
 % testujemy wejœcie ró¿ne od zapamiêtanego wzorca
-figure
+figure('NumberTitle', 'off', 'Name', 'Figure[2] -  Test letter with noise');
 imagesc(literaDoTestow)
 a = reshape(literaDoTestow, 42, 1);
 
-% symulacja dzia³ania sieci dla wzorca a podanego na wejœcie
-% (drugi parametr funkcji sim oznacza iloœæ iteracji – tu 20)
-[y,pf,af] = sim(net, {1 20}, {}, a); 
+figure('NumberTitle', 'off', 'Name', 'Figure[3] - TEST RESULT / Letter with noise');
+imagesc(findLetter( net, a, y, pf, af ));
 
-%poka¿ wyniki
-y1 = cell2mat(y)                    
+figure('NumberTitle', 'off', 'Name', 'Figure[4] - TEST RESULT / Letters base');
+drawMatrix(findLetter( net, M1, y, pf, af ), 1);
+drawMatrix(findLetter( net, M2, y, pf, af ), 2);
+drawMatrix(findLetter( net, M3, y, pf, af ), 3);
+drawMatrix(findLetter( net, M4, y, pf, af ), 4);
+drawMatrix(findLetter( net, M5, y, pf, af ), 5);
+drawMatrix(findLetter( net, M6, y, pf, af ), 6);
+drawMatrix(findLetter( net, M7, y, pf, af ), 7);
+drawMatrix(findLetter( net, M8, y, pf, af ), 8);
+drawMatrix(findLetter( net, M9, y, pf, af ), 9);
+drawMatrix(findLetter( net, M10, y, pf, af ), 10);
 
-figure
-wyn = reshape(y1(: , end), 7, 6);                                    
-imagesc(wyn)
