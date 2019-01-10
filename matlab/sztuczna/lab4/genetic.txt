@@ -1,0 +1,86 @@
+bochaczewski
+
+Zmienna # 1 = 0.0138,
+Zmienna # 2 = 0.0005,
+Wartosc przystosowania:    0.0027,
+
+x:25 / y:25,
+populacja: 1000,
+liczba generacji: 1000,
+prawd. mutacji: 0.9,
+prawd. krzyzowania: 0.9,
+
+jednorodne,
+elitaryzm włączony 
+
+
+
+//  rosenbrock 
+global minima: 
+x* =  (1, …, 1), f(x*) = 0.
+
+Zmienna # 1 = 0.9978 
+Zmienna # 2 = 0.9937 
+Wartosc przystosowania:    0.0003 
+
+x:20 / y:20
+populacja: 1000
+generacja: 1000
+mutacja: 0.4
+krzyzowanie: 0.8
+elitaryzm: wlaczony
+dwupunktowe
+
+
+
+// michalewicz
+The global minima:
+
+at n=2, f(x*) = -1.8013.
+at n=5, f(x*) = --4.687658.
+at n=10, f(x*) = -9.66015.
+
+Zmienna # 1 = 2.2047 
+Zmienna # 2 = 1.5715 
+Wartosc przystosowania:   -1.8012 
+
+x:20 / y:20
+populacja: 1000
+generacja: 1000
+mutacja: 0.4
+krzyzowanie: 0.8
+elitaryzm: wlaczony
+dwupunktowe
+
+// easom
+The global minima: 
+x* =  (π, π), f(x*) = - 1.
+
+Zmienna # 1 = 3.1392 
+Zmienna # 2 = 3.1890 
+Wartosc przystosowania:   -0.9966 
+
+x:20 / y:20
+populacja: 1000
+generacja: 1000
+mutacja: 0.2
+krzyzowanie: 0.9
+elitaryzm: wlaczony
+jednopunktowe
+
+
+// schwefel
+The global minima: 
+x* =  (1, …, 1), f(x*) = 0.
+
+Zmienna # 1 = 421.1116 
+Zmienna # 2 = 421.0409 
+Wartosc przystosowania:    0.0033 
+
+x:25 / y:25
+populacja: 1000
+generacja: 1000
+mutacja: 0.2
+krzyzowanie: 0.9
+elitaryzm: wlaczony
+jednopunktowe
