@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true" scan="true" scanPeriod="30 seconds">
+
+    <conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter" />
+    <conversionRule conversionWord="wex" converterClass="org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter" />
+    <property name="pattern" value="%d{yyyy-MM-dd HH:mm:ss.SSS} %5p ${PID:- } --- [%15.15t] %-40.40logger{39} : %m%n%wex" />
+
+    <!-- Append messages to the console -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(%5p) %clr([%X{X-B3-TraceId:-},%X{X-B3-SpanId:-}]){yellow} %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n%wex</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="SYSLOG" class="ch.qos.logback.classic.net.SyslogAppender">
+        <syslogHost>${sys_ip:-127.0.0.1}</syslogHost>
+        <facility>USER</facility>
+        <port>514</port>
+        <suffixPattern> po: ${pattern}</suffixPattern>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/po.log</file>
+        <append>true</append>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>logs/archive/po-%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+            <maxFileSize>100MB</maxFileSize>
+            <maxHistory>500</maxHistory>
+            <totalSizeCap>20GB</totalSizeCap>
+        </rollingPolicy>
+
+        <encoder>
+            <pattern>${pattern}</pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="SYSLOG" />
+        <appender-ref ref="FILE" />
+    </root>
+
+    <logger name="org.springframework.security" level="DEBUG" />
+    <logger name="org.springframework.amqp" level="INFO" />
+    <logger name="org.springframework.amqp.rabbit.core" level="INFO" />
+    <logger name="org.springframework.ws" level="TRACE" />
+    <logger name="pki.services.idprovider" level="DEBUG" />
+
+    <logger name="jdbc.audit" level="WARN" />
+    <logger name="jdbc.resultset" level="WARN" />
+    <logger name="jdbc.sqltiming" level="WARN" />
+    <logger name="jdbc.sqlonly" level="WARN" />
+    <logger name="jdbc.connection" level="WARN" />
+</configuration>

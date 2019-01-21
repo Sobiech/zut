@@ -18,61 +18,103 @@
   <packaging>pom</packaging>
 
   <modules>
-    <module>makro</module>
+    <module>makro-service</module>
+    <module>makro-domain</module>
+    <module>makro-controller</module>
+    <module>makro-commons</module>
   </modules>
 
   <name>AWMPS - ROOT</name>
   <description>Algorytm wyznaczania miejsc postawienia stacji ładowania na podstawie przewidywanej trasy poruszania się pojazdów elektrycznych MIKRO/MAKRO</description>
 
   <properties>
+
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>1.8</java.version>
+
+    <!-- versions -->
     <ver.spring-boot>2.1.0.RELEASE</ver.spring-boot>
+    <ver.lombok>1.18.2</ver.lombok>
+    <ver.h2>1.4.196</ver.h2>
+
   </properties>
 
-  <dependencies>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-actuator</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-data-jpa</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-data-rest</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-web</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.h2database</groupId>
-      <artifactId>h2</artifactId>
-      <scope>runtime</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <optional>true</optional>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-test</artifactId>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+  <dependencyManagement>
+    <dependencies>
 
-  <build>
-    <defaultGoal>spring-boot:run</defaultGoal>
-    <plugins>
-      <plugin>
+      <!-- Spring dependencies -->
+
+      <dependency>
         <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
-      </plugin>
-    </plugins>
-  </build>
+        <artifactId>spring-boot-starter-actuator</artifactId>
+        <version>${ver.spring-boot}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-jpa</artifactId>
+        <version>${ver.spring-boot}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-rest</artifactId>
+        <version>${ver.spring-boot}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+        <version>${ver.spring-boot}</version>
+      </dependency>
+
+      <!-- awmps -->
+      <dependency>
+        <groupId>pl.kso.awmps</groupId>
+        <artifactId>makro-service</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>pl.kso.awmps</groupId>
+        <artifactId>makro-commons</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>pl.kso.awmps</groupId>
+        <artifactId>makro-controller</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>pl.kso.awmps</groupId>
+        <artifactId>makro-domain</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <!-- others -->
+
+      <dependency>
+        <groupId>com.h2database</groupId>
+        <artifactId>h2</artifactId>
+        <version>${ver.h2}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>${ver.lombok}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-test</artifactId>
+        <version>${ver.spring-boot}</version>
+      </dependency>
+
+    </dependencies>
+  </dependencyManagement>
 
 </project>

@@ -48,7 +48,7 @@ public class MendelbroteGenerator {
 
 
         Parallel.For(0, iYmax, iY => {
-
+            
             Cy = CyMin + iY * PixelHeight;
             if (Math.Abs(Cy) < PixelHeight / 2) {
                 Cy = 0.0;
