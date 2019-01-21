@@ -2,43 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="651e1295-404a-452f-9c12-773c948e0419" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/logback.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/zut/pk/BasePersonController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/zut/pk/Bootstrap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/zut/pk/PersonController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/zut/pk/PersonRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../magisterka/server/makro-controller/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../magisterka/server/makro-domain/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../magisterka/server/makro-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../csharp/systemy-rozproszone/WebSite1/WebSite1/App_Code/MendelbroteGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../csharp/systemy-rozproszone/WebSite1/WebSite1/App_Code/MendelbroteGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../csharp/systemy-rozproszone/WebSite1/WebSite1/ResultMatrix.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../csharp/systemy-rozproszone/WebSite1/WebSite1/ResultMatrix.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../magisterka/client/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../magisterka/client/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../magisterka/server/makro-service/target/classes/pl/kso/awmps/Car.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../magisterka/server/makro-service/target/classes/pl/kso/awmps/CarRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../magisterka/server/makro-service/target/classes/pl/kso/awmps/CoolCarController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../magisterka/server/makro-service/target/classes/pl/kso/awmps/config/AppConfiguration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../magisterka/server/makro-service/target/makro-0.0.1-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../magisterka/server/makro-service/target/makro-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../magisterka/server/makro/config/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../../magisterka/server/makro-service/config/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../magisterka/server/makro/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../magisterka/server/makro-commons/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../magisterka/server/makro/src/main/java/pl/kso/awmps/Bootstrap.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../magisterka/server/makro-service/src/main/java/pl/kso/awmps/Bootstrap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../magisterka/server/makro/src/main/java/pl/kso/awmps/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../magisterka/server/makro-domain/src/main/java/pl/kso/awmps/domain/entity/Car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../magisterka/server/makro/src/main/java/pl/kso/awmps/CarRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../magisterka/server/makro/src/main/java/pl/kso/awmps/CoolCarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../magisterka/server/makro-controller/src/main/java/pl/kso/awmps/controller/CarController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../magisterka/server/makro/src/main/java/pl/kso/awmps/config/AppConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../magisterka/server/makro-commons/src/main/java/pl/kso/awmps/commons/config/AppConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../magisterka/server/makro/src/test/java/pl/kso/awmps/BootstrapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../magisterka/server/makro-service/src/test/java/pl/kso/awmps/BootstrapTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../magisterka/server/makro/target/classes/pl/kso/awmps/Bootstrap.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../magisterka/server/makro-service/target/classes/pl/kso/awmps/Bootstrap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../magisterka/server/makro/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../magisterka/server/makro-service/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../magisterka/server/makro/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../../magisterka/server/makro-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../magisterka/server/makro/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../../magisterka/server/makro-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../magisterka/server/makro/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../../magisterka/server/makro-service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../magisterka/server/makro/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../../magisterka/server/makro-service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../magisterka/server/makro/target/surefire-reports/TEST-pl.kso.awmps.BootstrapTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../magisterka/server/makro-service/target/surefire-reports/TEST-pl.kso.awmps.BootstrapTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../magisterka/server/makro/target/surefire-reports/pl.kso.awmps.BootstrapTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../magisterka/server/makro-service/target/surefire-reports/pl.kso.awmps.BootstrapTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../magisterka/server/makro/target/test-classes/pl/kso/awmps/BootstrapTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../magisterka/server/makro-service/target/test-classes/pl/kso/awmps/BootstrapTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../magisterka/server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../magisterka/server/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/zut/pk/commons/EventType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/zut/pk/controller/BaseEventRegisterController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/zut/pk/controller/EventRegisterController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/zut/pk/domain/EventRegister.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/zut/pk/domain/repository/EventRegisterRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/zut/pk/BasePersonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/zut/pk/controller/BaseUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/zut/pk/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/zut/pk/domain/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/zut/pk/PersonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/zut/pk/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/zut/pk/PersonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/zut/pk/domain/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/zut/pk/BasePersonController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/zut/pk/Person.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/zut/pk/PersonController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/zut/pk/PersonRepository.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -51,33 +28,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/pk/domain/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/pk/Bootstrap.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="21" column="32" lean-forward="true" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#182#183#0" expanded="true" />
-                <element signature="e#220#221#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/pk/Person.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="23" column="77" selection-start-line="23" selection-start-column="77" selection-end-line="23" selection-end-column="77" />
+            <state relative-caret-position="217">
+              <caret line="36" column="29" lean-forward="true" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -86,10 +40,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/pk/PersonRepository.java">
+        <entry file="jar://$MAVEN_REPOSITORY$/javax/persistence/javax.persistence-api/2.2/javax.persistence-api-2.2-sources.jar!/javax/persistence/OneToMany.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="468">
+              <caret line="126" column="11" selection-start-line="126" selection-start-column="11" selection-end-line="126" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/pk/domain/EventRegister.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="31" column="20" lean-forward="true" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -98,10 +61,31 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/pk/PersonController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/pk/domain/repository/UserRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="552">
-              <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+            <state relative-caret-position="138">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/pk/controller/UserController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="211">
+              <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/pk/controller/EventRegisterController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="441">
+              <caret line="30" column="95" lean-forward="true" selection-start-line="30" selection-start-column="95" selection-end-line="30" selection-end-column="95" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -110,48 +94,37 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/pk/BasePersonController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/pk/controller/BaseEventRegisterController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="50" column="60" lean-forward="true" selection-start-line="50" selection-start-column="60" selection-end-line="50" selection-end-column="60" />
+            <state relative-caret-position="345">
+              <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#469#470#0" expanded="true" />
-                <element signature="e#524#525#0" expanded="true" />
-                <element signature="e#1334#1335#0" expanded="true" />
+                <element signature="e#1821#1822#0" expanded="true" />
+                <element signature="e#1879#1880#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/application.yml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/pk/domain/repository/EventRegisterRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+            <state relative-caret-position="115">
+              <caret line="8" column="76" selection-start-line="8" selection-start-column="76" selection-end-line="8" selection-end-column="76" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/logback.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/pk/controller/BaseUserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/po.iml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.1.2.RELEASE/spring-core-5.1.2.RELEASE.jar!/org/springframework/util/ReflectionUtils.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="394" column="37" selection-start-line="394" selection-start-column="37" selection-end-line="394" selection-end-column="37" />
+            <state relative-caret-position="372">
+              <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+              <folding>
+                <element signature="e#1269#1270#0" expanded="true" />
+                <element signature="e#1334#1335#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -168,7 +141,11 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>fly</find>
+      <find>User</find>
     </findStrings>
+    <replaceStrings>
+      <replace>EventRegister</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -187,6 +164,17 @@
         <option value="$PROJECT_DIR$/config/application.yml" />
         <option value="$PROJECT_DIR$/src/main/java/pl/zut/pk/Person.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/zut/pk/BasePersonController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/zut/pk/controller/PersonController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/zut/pk/domain/repository/PersonRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/zut/pk/domain/repository/EventRegisterRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/zut/pk/commons/EventType.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/zut/pk/domain/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/zut/pk/domain/EventRegister.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/zut/pk/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/zut/pk/controller/BaseUserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/zut/pk/controller/EventRegisterController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/zut/pk/controller/ExceptionControllerHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/zut/pk/controller/BaseEventRegisterController.java" />
       </list>
     </option>
   </component>
@@ -252,6 +240,34 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="pk" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="crud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="po" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="pk" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="crud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="po" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="pk" type="462c0819:PsiDirectoryNode" />
+              <item name="domain" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="crud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="po" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="pk" type="462c0819:PsiDirectoryNode" />
+              <item name="domain" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -267,12 +283,19 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548093483291" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548101842337" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="pl.zut.pk.domain" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="pl.zut.pk.domain.repository" />
+      <recent name="pl.zut.pk.controller" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Projekty\github\zut\java\po\config" />
     </key>
@@ -294,7 +317,7 @@
       <module name="po" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pl.zut.pk.*" />
+          <option name="PATTERN" value="pl.zut.pk.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -321,31 +344,29 @@
       <updated>1547899985261</updated>
       <workItem from="1547899997502" duration="621000" />
       <workItem from="1548009502672" duration="729000" />
-      <workItem from="1548011011952" duration="5180000" />
+      <workItem from="1548011011952" duration="5854000" />
+      <workItem from="1548099052039" duration="2783000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6530000" />
+    <option name="totallyTimeSpent" value="9987000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Web" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12579957" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22068231" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Spring" />
-      <window_info anchor="bottom" id="Messages" />
-      <window_info anchor="bottom" id="Java Enterprise" />
+      <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.43366778" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32998884" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.4548495" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -355,16 +376,19 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="right" id="Bean Validation" />
+      <window_info anchor="bottom" id="Spring" order="12" />
+      <window_info anchor="bottom" id="Java Enterprise" order="13" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.32998884" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" visible="true" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Theme Preview" order="4" />
       <window_info anchor="right" id="Maven" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Database" order="8" />
+      <window_info anchor="right" id="Bean Validation" order="9" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -378,101 +402,153 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/pk/PersonRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/pk/PersonDto.java" />
+    <entry file="file://$PROJECT_DIR$/config/db/test.sql" />
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="1311">
+          <caret line="57" selection-start-line="57" selection-end-line="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/pk/Bootstrap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/pk/PersonController.java">
+    <entry file="file://$PROJECT_DIR$/config/application.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="253">
+          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/pk/PersonDto.java">
+    <entry file="file://$PROJECT_DIR$/config/logback.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/db/test.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.1.2.RELEASE/spring-core-5.1.2.RELEASE.jar!/org/springframework/util/ReflectionUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="394" column="37" selection-start-line="394" selection-start-column="37" selection-end-line="394" selection-end-column="37" />
+        <state relative-caret-position="874">
+          <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/po.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/pk/Bootstrap.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.1.2.RELEASE/spring-core-5.1.2.RELEASE.jar!/org/springframework/util/ReflectionUtils.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="21" column="32" lean-forward="true" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#182#183#0" expanded="true" />
-            <element signature="e#220#221#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="8556">
+          <caret line="394" column="37" selection-start-line="394" selection-start-column="37" selection-end-line="394" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/pk/commons/EventType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
+        <state relative-caret-position="92">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/logback.xml">
+    <entry file="jar://$MAVEN_REPOSITORY$/javax/persistence/javax.persistence-api/2.2/javax.persistence-api-2.2.jar!/javax/persistence/OneToMany.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
+        <state relative-caret-position="345">
+          <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/application.yml">
+    <entry file="jar://$MAVEN_REPOSITORY$/javax/persistence/javax.persistence-api/2.2/javax.persistence-api-2.2-sources.jar!/javax/persistence/OneToMany.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+        <state relative-caret-position="468">
+          <caret line="126" column="11" selection-start-line="126" selection-start-column="11" selection-end-line="126" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/pk/Person.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/pk/domain/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="23" column="77" selection-start-line="23" selection-start-column="77" selection-end-line="23" selection-end-column="77" />
+        <state relative-caret-position="217">
+          <caret line="36" column="29" lean-forward="true" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/pk/BasePersonController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/pk/domain/repository/EventRegisterRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="50" column="60" lean-forward="true" selection-start-line="50" selection-start-column="60" selection-end-line="50" selection-end-column="60" />
+        <state relative-caret-position="115">
+          <caret line="8" column="76" selection-start-line="8" selection-start-column="76" selection-end-line="8" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/pk/domain/repository/UserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/pk/domain/EventRegister.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="31" column="20" lean-forward="true" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#469#470#0" expanded="true" />
-            <element signature="e#524#525#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/pk/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/pk/controller/EventRegisterController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="30" column="95" lean-forward="true" selection-start-line="30" selection-start-column="95" selection-end-line="30" selection-end-column="95" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/pk/controller/BaseUserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+          <folding>
+            <element signature="e#1269#1270#0" expanded="true" />
             <element signature="e#1334#1335#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/pk/controller/ExceptionControllerHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/zut/pk/controller/BaseEventRegisterController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1821#1822#0" expanded="true" />
+            <element signature="e#1879#1880#0" expanded="true" />
           </folding>
         </state>
       </provider>
